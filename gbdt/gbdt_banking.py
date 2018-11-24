@@ -93,6 +93,6 @@ Data = namedtuple("Data", ['X', 'y'])
 
 estimator = GradientBoostingClassifier(n_estimators=160, learning_rate=0.1, max_depth=5)
 estimator.fit(training_data.X, training_data.y)
-test_data = pd.read_csv('../data/banking/bank-additional-full-transformed-train.csv', sep=';')
+test_data = pd.read_csv('../data/banking/bank-additional-full-transformed-test.csv', sep=';')
 test_data = Data(X=test_data.iloc[:, :-1], y=test_data.iloc[:, -1])
 evaluate_generalization(test_data, estimator)
