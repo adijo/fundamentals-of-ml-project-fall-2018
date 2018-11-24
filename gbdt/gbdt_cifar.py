@@ -63,7 +63,7 @@ def experiment(estimator, preprocessed_train, hyper_parameter_name, hyper_parame
     train_scores_std = np.std(train_scores, axis=1)
     valid_scores_mean = np.mean(valid_scores, axis=1)
     valid_scores_std = np.std(valid_scores, axis=1)
-    plt.title("Validation Curve with GBDT")
+    plt.title("Validation Curve with GBDT on CIFAR-10")
     plt.xlabel(x_axis_label)
     plt.ylabel("Accuracy")
     plt.xticks(hyper_parameter_values)
@@ -82,25 +82,41 @@ def experiment(estimator, preprocessed_train, hyper_parameter_name, hyper_parame
     print("Training Accuracy:", train_scores)
     print("Valid Accuracy:", valid_scores)
     plt.legend(loc="best")
-    plt.savefig(hyper_parameter_name + "_cv.png", format="png")
+    plt.savefig("cifar_" + hyper_parameter_name + "_cv.png", format="png")
 
 
-path = '/Users/adityajoshi/Documents/IFT6390/fundamentals-of-ml-project-fall-2018/data/cifar_10/cifar-10-batches-py/'
+path = '../data/cifar_10/cifar-10-batches-py/'
 
-training_data = load_training(path, num_batches=2)
+training_data = load_training(path, num_batches=1)
 test_data = load_test(path)
 
 preprocessed_training_data, preprocessed_test_data = pre_process(training_data, test_data)
 
 tree_depths = [3, 5, 10]
 learning_rates = [0.001, 0.1, 0.5]  # regularization
+#
+# # Experiment 1: CV on Number of Boosting Stages.
+# experiment(GradientBoostingClassifier(max_depth=3),
+#            preprocessed_training_data,
+#            "n_estimators",
+#            [10, 50, 150],
+#            "Number of Estimators")
 
-# Experiment 1: CV on Number of Boosting Stages.
-experiment(GradientBoostingClassifier(max_depth=3),
+# # Experiment 2: CV on Max Tree Depth
+# experiment(GradientBoostingClassifier(n_estimators=10),
+#            preprocessed_training_data,
+#            "max_depth",
+#            [1, 5, 15],
+#            "Max Depth")
+
+# Experiment 3: CV on learning rate
+experiment(GradientBoostingClassifier(n_estimators=10, max_depth=3),
            preprocessed_training_data,
-           "n_estimators",
-           [10, 100, 500, 1000],
-           "Number of Estimators")
+           "learning_rate",
+           [0.001, 0.1, 1],
+           "Max Depth")
+
+
 
 
 
