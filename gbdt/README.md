@@ -3,18 +3,18 @@
 
 ## Cross-Validation 
 * Number of Estimators
-![alt text](https://raw.githubusercontent.com/adijo/fundamentals-of-ml-project-fall-2018/tree/master/gbdt/figures/cifar_n_estimators_cv.png)
+![alt text](https://github.com/adijo/fundamentals-of-ml-project-fall-2018/blob/master/gbdt/figures/cifar_n_estimators_cv.png)
 
 * Max Depth
-![alt text](https://raw.githubusercontent.com/adijo/fundamentals-of-ml-project-fall-2018/tree/master/gbdt/figures/cifar_max_depth_cv.png)
+![alt text](https://github.com/adijo/fundamentals-of-ml-project-fall-2018/blob/master/gbdt/figures/cifar_max_depth_cv.png)
 
 * Learning Rate
-![alt text](https://raw.githubusercontent.com/adijo/fundamentals-of-ml-project-fall-2018/tree/master/gbdt/figures/cifar_learning_rate_cv.png)
+![alt text](https://github.com/adijo/fundamentals-of-ml-project-fall-2018/blob/master/gbdt/figures/cifar_learning_rate_cv.png)
 
-## Trained on batch 1 (10k images)
+## Generalization: Trained on batch 1 (10k images)
 Estimators: 160, Max Depth: 5, Learning Rate: 0.1
 * Generalization Confusion Matrix
-![alt text](https://raw.githubusercontent.com/adijo/fundamentals-of-ml-project-fall-2018/tree/master/gbdt/figures/cifar_generalization_confusion_matrix.png)
+![alt text](https://github.com/adijo/fundamentals-of-ml-project-fall-2018/blob/master/gbdt/figures/cifar_generalization_confusion_matrix.png)
 
 * Accuracy: 0.4783
 * Classification Report
@@ -37,15 +37,19 @@ avg / total     |  0.48   |   0.48   |   0.48   |  10000|
 
 ## Cross-Validation 
 * Number of Estimators
-![alt text](https://raw.githubusercontent.com/adijo/fundamentals-of-ml-project-fall-2018/tree/master/gbdt/figures/banking_n_estimators_cv.png)
+![alt text](https://github.com/adijo/fundamentals-of-ml-project-fall-2018/blob/master/gbdt/figures/banking_n_estimators_cv.png)
 
 * Max Depth
-![alt text](https://raw.githubusercontent.com/adijo/fundamentals-of-ml-project-fall-2018/tree/master/gbdt/figures/banking_max_depth_cv.png)
+![alt text](https://github.com/adijo/fundamentals-of-ml-project-fall-2018/blob/master/gbdt/figures/banking_max_depth_cv.png)
 
 * Learning Rate
-![alt text](https://raw.githubusercontent.com/adijo/fundamentals-of-ml-project-fall-2018/tree/master/gbdt/figures/banking_learning_rate_cv.png)
+![alt text](https://github.com/adijo/fundamentals-of-ml-project-fall-2018/blob/master/gbdt/figures/banking_learning_rate_cv.png)
+
+## Generalization: Trained on the full Dataset
+Estimators: 160, Max Depth: 5, Learning Rate: 0.1
 
 
-
+* Generalization Confusion Matrix
+![alt text](https://github.com/adijo/fundamentals-of-ml-project-fall-2018/blob/master/gbdt/figures/banking_generalization_confusion_matrix.png)
 
 
