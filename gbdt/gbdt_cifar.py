@@ -4,6 +4,9 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import validation_curve
 import matplotlib.pyplot as plt
+from sklearn.metrics import accuracy_score
+from sklearn_evaluation import plot
+from sklearn.metrics import classification_report
 
 NAVY = "#001f3f"
 
@@ -57,7 +60,7 @@ def experiment(estimator, preprocessed_train, hyper_parameter_name, hyper_parame
                                                   hyper_parameter_values,
                                                   cv=3,
                                                   verbose=3,
-                                                  n_jobs=3,
+                                                  n_jobs=1,
                                                   scoring="accuracy")
     train_scores_mean = np.mean(train_scores, axis=1)
     train_scores_std = np.std(train_scores, axis=1)
@@ -92,14 +95,12 @@ test_data = load_test(path)
 
 preprocessed_training_data, preprocessed_test_data = pre_process(training_data, test_data)
 
-tree_depths = [3, 5, 10]
-learning_rates = [0.001, 0.1, 0.5]  # regularization
 #
 # # Experiment 1: CV on Number of Boosting Stages.
-# experiment(GradientBoostingClassifier(max_depth=3),
+# experiment(GradientBoostingClassifier(max_depth=3, verbose=3),
 #            preprocessed_training_data,
 #            "n_estimators",
-#            [10, 50, 150],
+#            [500, 1000],
 #            "Number of Estimators")
 
 # # Experiment 2: CV on Max Tree Depth
@@ -109,14 +110,41 @@ learning_rates = [0.001, 0.1, 0.5]  # regularization
 #            [1, 5, 15],
 #            "Max Depth")
 
-# Experiment 3: CV on learning rate
-experiment(GradientBoostingClassifier(n_estimators=10, max_depth=3),
-           preprocessed_training_data,
-           "learning_rate",
-           [0.001, 0.1, 1],
-           "Max Depth")
+# # Experiment 3: CV on learning rate
+# experiment(GradientBoostingClassifier(n_estimators=10, max_depth=3),
+#            preprocessed_training_data,
+#            "learning_rate",
+#            [0.001, 0.1, 1],
+#            "Learning Rate")
 
 
+def evaluate_generalization(test_dataset, estimator):
+    predictions = estimator.predict(test_dataset.X)
+    true_labels = test_dataset.y
+    accuracy = accuracy_score(true_labels, predictions)
+    # loss = log_loss(true_labels, predictions)
+    ax = plot.confusion_matrix(true_labels, predictions, target_names=[
+        "plane",
+         "auto",
+         "bird",
+         "cat",
+         "deer",
+         "dog",
+         "frog",
+         "horse",
+         "ship",
+         "truck"
+    ])
+    plt.subplot(ax)
+    plt.savefig("cifar_generalization_confusion_matrix.png", format="png")
+    print("Accuracy", accuracy)
+    #print("Log Loss", loss)
+    print(classification_report(true_labels, predictions))
+
+
+estimator = GradientBoostingClassifier(n_estimators=160, learning_rate=0.1, max_depth=5, verbose=3)
+estimator.fit(preprocessed_training_data.X, preprocessed_training_data.y)
+evaluate_generalization(preprocessed_test_data, estimator)
 
 
 
