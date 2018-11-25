@@ -4,6 +4,9 @@ import torch
 import torch.nn as nn
 import torchvision
 import torchvision.transforms as transforms
+import random
+import numpy as np
+from torch.utils.data.sampler import SubsetRandomSampler
 
 
 # Device configuration
@@ -16,6 +19,7 @@ num_classes = 10
 batch_size = 100
 learning_rate = 0.001
 
+
 # MNIST dataset
 train_dataset = torchvision.datasets.CIFAR10(root='../../data/',
                                            train=True, 
@@ -26,10 +30,22 @@ test_dataset = torchvision.datasets.CIFAR10(root='../../data/',
                                           train=False, 
                                           transform=transforms.ToTensor())
 
+
+n_train = 45000
+indices = list(range(len(train_dataset)))
+random.shuffle(indices)
+
+
 # Data loader
 train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
                                            batch_size=batch_size, 
-                                           shuffle=True)
+                                           shuffle=False,
+                                           sampler=SubsetRandomSampler(indices[:n_train]))
+                                        
+validation_loader = torch.utils.data.DataLoader(dataset=train_dataset,
+                                           batch_size=batch_size, 
+                                           shuffle=False,
+                                           sampler=SubsetRandomSampler(indices[n_train:]))
 
 test_loader = torch.utils.data.DataLoader(dataset=test_dataset,
                                           batch_size=batch_size, 
@@ -88,15 +104,30 @@ class ConvNet(nn.Module):
 
 model = ConvNet(num_classes).to(device)
 
+
+#Logging functions. Will be used later for ploting graphs
+import time
+import datetime
+logfile_prefix = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d-%H_%M_%S')
+
+logfile = open("results/" + logfile_prefix + ".txt","w+")
 # Loss and optimizer
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
+print(model, file=logfile)
+print(optimizer, file=logfile)
+print("Learning rate:", learning_rate, file=logfile)
+logfile.flush()
+
 # Train the model
 total_step = len(train_loader)
+
 for epoch in range(num_epochs):
     correct = 0
     total = 0
+    validation_total = 0
+    validation_correct = 0
     for i, (images, labels) in enumerate(train_loader):
         images = images.to(device)
         labels = labels.to(device)
@@ -112,12 +143,33 @@ for epoch in range(num_epochs):
         total += labels.size(0)
         _, predicted = torch.max(outputs.data, 1)
         correct += (predicted == labels).sum().item()
-        if (i+1) % batch_size == 0:
+        
+        if (i+1) % (batch_size/2) == 0:
+            print ('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}, Accuracy:{:.2f}' 
+                   .format(epoch+1, num_epochs, i+1, total_step, loss.item(), correct/total), file=logfile)
+            logfile.flush()
             print ('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}, Accuracy:{:.2f}' 
                    .format(epoch+1, num_epochs, i+1, total_step, loss.item(), correct/total))
-
+    #At the end of the epoch, perform validation.
+    with torch.no_grad():
+        validation_correct = 0
+        validation_total = 0
+        for images, labels in validation_loader:
+            validation_images = images.to(device)
+            validation_labels = labels.to(device)
+            validation_outputs = model(validation_images)
+            _, validation_predicted = torch.max(validation_outputs.data, 1)
+            validation_total += validation_labels.size(0)
+            validation_correct += (validation_predicted == validation_labels).sum().item()
+        print ("Epoch {} validation accuracy= {:.4f}".format(epoch+1, validation_correct/validation_total))
+        print ("Epoch {} validation accuracy= {:.4f}".format(epoch+1, validation_correct/validation_total), file=logfile)
+            
 # Test the model
 model.eval()  # eval mode (batchnorm uses moving mean/variance instead of mini-batch mean/variance)
+
+w, h = 10,10
+confusion_matrix = [[0 for x in range(w)] for y in range(h)] 
+
 with torch.no_grad():
     correct = 0
     total = 0
@@ -128,8 +180,26 @@ with torch.no_grad():
         _, predicted = torch.max(outputs.data, 1)
         total += labels.size(0)
         correct += (predicted == labels).sum().item()
+        predicted = predicted.cpu().numpy().tolist()
+        labels = labels.cpu().numpy().tolist()
+        #Builds the confusion matrix
+        for prediction, target in zip(predicted,labels):
+            confusion_matrix[prediction][target]+=1
 
+
+    print('Test Accuracy of the model on the 10000 test images: {} %'.format(100 * correct / total), file=logfile)
     print('Test Accuracy of the model on the 10000 test images: {} %'.format(100 * correct / total))
 
 # Save the model checkpoint
 torch.save(model.state_dict(), 'model.ckpt')
+
+np.savetxt("results\\"+logfile_prefix+"_confusion_matrix.txt",np.matrix(confusion_matrix))
+
+#Just for the log
+print("Predicted (row) labels vs targets (column)", file=logfile)
+for i in range(0,10):
+    for j in range(0,10):
+        print(confusion_matrix[i][j],"\t",end='', file=logfile)
+    print("\n",end="", file=logfile)
+
+logfile.close()

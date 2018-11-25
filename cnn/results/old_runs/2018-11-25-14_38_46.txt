@@ -1,0 +1,59 @@
+ConvNet(
+  (layer1): Sequential(
+    (0): Conv2d(3, 96, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer2): Sequential(
+    (0): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer3): Sequential(
+    (0): Conv2d(96, 192, kernel_size=(3, 3), stride=(2, 2))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer4): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer5): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer6): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(2, 2))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (fc): Linear(in_features=3072, out_features=10, bias=True)
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+Learning rate: 0.001
+Epoch [1/20], Step [50/450], Loss: 1.4562, Accuracy:0.35
+Epoch [1/20], Step [100/450], Loss: 1.5556, Accuracy:0.41
+Epoch [1/20], Step [150/450], Loss: 1.3865, Accuracy:0.43
+Epoch [1/20], Step [200/450], Loss: 1.1323, Accuracy:0.46
+Epoch [1/20], Step [250/450], Loss: 1.3615, Accuracy:0.48
+Epoch [1/20], Step [300/450], Loss: 0.9869, Accuracy:0.50
+Epoch [1/20], Step [350/450], Loss: 1.2573, Accuracy:0.51
+Epoch [1/20], Step [400/450], Loss: 0.9085, Accuracy:0.53
+Epoch [1/20], Step [450/450], Loss: 0.8066, Accuracy:0.54
+Epoch 0 validation accuracy= 0.6564
+Epoch [2/20], Step [50/450], Loss: 0.9342, Accuracy:0.68
+Epoch [2/20], Step [100/450], Loss: 0.8212, Accuracy:0.68
+Epoch [2/20], Step [150/450], Loss: 0.7729, Accuracy:0.68
+Epoch [2/20], Step [200/450], Loss: 0.7754, Accuracy:0.69
+Epoch [2/20], Step [250/450], Loss: 0.7596, Accuracy:0.69
+Epoch [2/20], Step [300/450], Loss: 0.8114, Accuracy:0.70
+Epoch [2/20], Step [350/450], Loss: 0.8816, Accuracy:0.70

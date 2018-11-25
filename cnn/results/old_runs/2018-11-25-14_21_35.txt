@@ -1,0 +1,99 @@
+ConvNet(
+  (layer1): Sequential(
+    (0): Conv2d(3, 96, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer2): Sequential(
+    (0): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer3): Sequential(
+    (0): Conv2d(96, 192, kernel_size=(3, 3), stride=(2, 2))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer4): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer5): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer6): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(2, 2))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (fc): Linear(in_features=3072, out_features=10, bias=True)
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+Learning rate: 0.001
+Epoch [1/20], Step [100/450], Loss: 1.5117, Accuracy:0.39
+Epoch [1/20], Step [200/450], Loss: 1.3204, Accuracy:0.46
+Epoch [1/20], Step [300/450], Loss: 1.1019, Accuracy:0.50
+Epoch [1/20], Step [400/450], Loss: 1.1584, Accuracy:0.53
+Epoch 0 validation accurary= 0.6500
+Epoch 0 validation accurary= 0.6600
+Epoch 0 validation accurary= 0.6533
+Epoch 0 validation accurary= 0.6425
+Epoch 0 validation accurary= 0.6520
+Epoch 0 validation accurary= 0.6433
+Epoch 0 validation accurary= 0.6357
+Epoch 0 validation accurary= 0.6350
+Epoch 0 validation accurary= 0.6367
+Epoch 0 validation accurary= 0.6420
+Epoch 0 validation accurary= 0.6345
+Epoch 0 validation accurary= 0.6442
+Epoch 0 validation accurary= 0.6477
+Epoch 0 validation accurary= 0.6436
+Epoch 0 validation accurary= 0.6400
+Epoch 0 validation accurary= 0.6425
+Epoch 0 validation accurary= 0.6406
+Epoch 0 validation accurary= 0.6383
+Epoch 0 validation accurary= 0.6358
+Epoch 0 validation accurary= 0.6355
+Epoch 0 validation accurary= 0.6376
+Epoch 0 validation accurary= 0.6305
+Epoch 0 validation accurary= 0.6274
+Epoch 0 validation accurary= 0.6288
+Epoch 0 validation accurary= 0.6264
+Epoch 0 validation accurary= 0.6246
+Epoch 0 validation accurary= 0.6230
+Epoch 0 validation accurary= 0.6221
+Epoch 0 validation accurary= 0.6248
+Epoch 0 validation accurary= 0.6283
+Epoch 0 validation accurary= 0.6274
+Epoch 0 validation accurary= 0.6256
+Epoch 0 validation accurary= 0.6282
+Epoch 0 validation accurary= 0.6285
+Epoch 0 validation accurary= 0.6294
+Epoch 0 validation accurary= 0.6303
+Epoch 0 validation accurary= 0.6319
+Epoch 0 validation accurary= 0.6311
+Epoch 0 validation accurary= 0.6321
+Epoch 0 validation accurary= 0.6318
+Epoch 0 validation accurary= 0.6305
+Epoch 0 validation accurary= 0.6305
+Epoch 0 validation accurary= 0.6316
+Epoch 0 validation accurary= 0.6318
+Epoch 0 validation accurary= 0.6309
+Epoch 0 validation accurary= 0.6320
+Epoch 0 validation accurary= 0.6328
+Epoch 0 validation accurary= 0.6310
+Epoch 0 validation accurary= 0.6310
+Epoch 0 validation accurary= 0.6310
+Epoch [2/20], Step [100/450], Loss: 0.8147, Accuracy:0.68
+Epoch [2/20], Step [200/450], Loss: 0.7195, Accuracy:0.68
+Epoch [2/20], Step [300/450], Loss: 0.8212, Accuracy:0.69
