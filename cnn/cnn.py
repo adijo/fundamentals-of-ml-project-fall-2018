@@ -14,11 +14,10 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 print("Using device:", device)
 # Hyper parameters
-num_epochs = 10
+num_epochs = 100
 num_classes = 10
 batch_size = 100
 learning_rate = 0.001
-
 
 # MNIST dataset
 train_dataset = torchvision.datasets.CIFAR10(root='../../data/',
@@ -57,6 +56,12 @@ test_loader = torch.utils.data.DataLoader(dataset=test_dataset,
 # (Attempt at 2 Pytorch implementation of the paper : STRIVING FOR SIMPLICITY - THE ALL CONVOLUTIONAL NET
 # JostTobiasSpringenberg∗,AlexeyDosovitskiy∗,ThomasBrox,MartinRiedmiller
 # Department of Computer Science - University of Freiburg - Freiburg, 79110, Germany
+
+# Roughly corresponds to the "All-CNN-C" network.
+
+# However, we are using the Adam optimizer and no dropout for the baseline.
+
+# Also, they were training the model for 350 epochs. Maximum that was tested here so far is 40.
 
 # Based on the code from the PyTorch Tutorial.
 

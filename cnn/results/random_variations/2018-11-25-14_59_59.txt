@@ -1,0 +1,91 @@
+ConvNet(
+  (layer1): Sequential(
+    (0): Conv2d(3, 96, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer2): Sequential(
+    (0): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer3): Sequential(
+    (0): Conv2d(96, 192, kernel_size=(3, 3), stride=(2, 2))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer4): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer5): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer6): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(2, 2))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (fc): Linear(in_features=3072, out_features=10, bias=True)
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+Learning rate: 0.001
+Epoch [1/5], Step [50/450], Loss: 1.5185, Accuracy:0.34
+Epoch [1/5], Step [100/450], Loss: 1.4815, Accuracy:0.39
+Epoch [1/5], Step [150/450], Loss: 1.2508, Accuracy:0.42
+Epoch [1/5], Step [200/450], Loss: 1.1710, Accuracy:0.44
+Epoch [1/5], Step [250/450], Loss: 1.3041, Accuracy:0.47
+Epoch [1/5], Step [300/450], Loss: 1.0708, Accuracy:0.49
+Epoch [1/5], Step [350/450], Loss: 1.0053, Accuracy:0.50
+Epoch [1/5], Step [400/450], Loss: 1.0241, Accuracy:0.52
+Epoch [1/5], Step [450/450], Loss: 0.9814, Accuracy:0.53
+Epoch 1 validation accuracy= 0.6382
+Epoch [2/5], Step [50/450], Loss: 1.1150, Accuracy:0.67
+Epoch [2/5], Step [100/450], Loss: 0.8461, Accuracy:0.67
+Epoch [2/5], Step [150/450], Loss: 0.7826, Accuracy:0.68
+Epoch [2/5], Step [200/450], Loss: 0.8842, Accuracy:0.68
+Epoch [2/5], Step [250/450], Loss: 0.6720, Accuracy:0.68
+Epoch [2/5], Step [300/450], Loss: 0.8272, Accuracy:0.69
+Epoch [2/5], Step [350/450], Loss: 0.8370, Accuracy:0.69
+Epoch [2/5], Step [400/450], Loss: 0.7561, Accuracy:0.70
+Epoch [2/5], Step [450/450], Loss: 0.8482, Accuracy:0.70
+Epoch 2 validation accuracy= 0.7260
+Epoch [3/5], Step [50/450], Loss: 0.5364, Accuracy:0.76
+Epoch [3/5], Step [100/450], Loss: 0.6100, Accuracy:0.76
+Epoch [3/5], Step [150/450], Loss: 0.6095, Accuracy:0.77
+Epoch [3/5], Step [200/450], Loss: 0.5683, Accuracy:0.77
+Epoch [3/5], Step [250/450], Loss: 0.7604, Accuracy:0.77
+Epoch [3/5], Step [300/450], Loss: 0.6205, Accuracy:0.77
+Epoch [3/5], Step [350/450], Loss: 0.6351, Accuracy:0.77
+Epoch [3/5], Step [400/450], Loss: 0.6471, Accuracy:0.77
+Epoch [3/5], Step [450/450], Loss: 0.7509, Accuracy:0.77
+Epoch 3 validation accuracy= 0.7556
+Epoch [4/5], Step [50/450], Loss: 0.5384, Accuracy:0.82
+Epoch [4/5], Step [100/450], Loss: 0.4085, Accuracy:0.82
+Epoch [4/5], Step [150/450], Loss: 0.4492, Accuracy:0.81
+Epoch [4/5], Step [200/450], Loss: 0.5004, Accuracy:0.81
+Epoch [4/5], Step [250/450], Loss: 0.4372, Accuracy:0.82
+Epoch [4/5], Step [300/450], Loss: 0.5916, Accuracy:0.81
+Epoch [4/5], Step [350/450], Loss: 0.5234, Accuracy:0.81
+Epoch [4/5], Step [400/450], Loss: 0.6134, Accuracy:0.81
+Epoch [4/5], Step [450/450], Loss: 0.4091, Accuracy:0.81
+Epoch 4 validation accuracy= 0.7886
+Epoch [5/5], Step [50/450], Loss: 0.4511, Accuracy:0.86
+Epoch [5/5], Step [100/450], Loss: 0.3429, Accuracy:0.87
+Epoch [5/5], Step [150/450], Loss: 0.4075, Accuracy:0.86
+Epoch [5/5], Step [200/450], Loss: 0.3191, Accuracy:0.86
+Epoch [5/5], Step [250/450], Loss: 0.5616, Accuracy:0.85
+Epoch [5/5], Step [300/450], Loss: 0.4329, Accuracy:0.85
+Epoch [5/5], Step [350/450], Loss: 0.4244, Accuracy:0.85
+Epoch [5/5], Step [400/450], Loss: 0.5502, Accuracy:0.85
+Epoch [5/5], Step [450/450], Loss: 0.3297, Accuracy:0.85

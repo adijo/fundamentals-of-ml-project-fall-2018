@@ -87,17 +87,18 @@ def plot_accuracy_curves():
 #https://codeyarns.com/2014/10/24/how-to-create-a-confusion-matrix-plot-using-matplotlib/
 import numpy as np
 import os.path
+import seaborn as sns
 def plot_confusion_matrix():
     for log_filename in loss_dict:
         confusion_matrix_filename = log_filename.replace(".txt","_confusion_matrix.txt")
         if os.path.isfile(confusion_matrix_filename):
-            matrix = np.loadtxt(confusion_matrix_filename)
-            plt.matshow(matrix)
-            plt.colorbar()
+            matrix = np.loadtxt(confusion_matrix_filename).astype(int)
+            f, ax = plt.subplots(figsize=(9, 6))
+            sns.heatmap(matrix, annot=True, fmt="d", linewidths=.5, ax=ax, xticklabels = ["plane","auto", "bird", "cat",  "deer",  "dog", "frog", "horse", "ship",   "truck"], yticklabels = ["plane","auto", "bird", "cat",  "deer",  "dog", "frog", "horse", "ship",   "truck"])
+            plt.ylabel("Predicted label")
+            plt.xlabel("Target label")
             plt.title(log_filename)
             plt.show()
-        
-
 
 plot_loss_curves()
 plot_accuracy_curves()
