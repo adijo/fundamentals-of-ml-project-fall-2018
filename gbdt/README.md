@@ -1,4 +1,4 @@
-# CIFAR-10 (Only 10k images were used for training)
+# CIFAR-10 (10k images were used for training)
 
 
 ## Cross-Validation 
@@ -16,8 +16,8 @@ Estimators: 160, Max Depth: 5, Learning Rate: 0.1
 * Generalization Confusion Matrix
 ![alt text](https://github.com/adijo/fundamentals-of-ml-project-fall-2018/blob/master/gbdt/figures/cifar_generalization_confusion_matrix.png)
 
-* Accuracy: 0.4783
-* Classification Report
+* **Accuracy:** 0.4783
+* **Classification Report**
 
 
 |class | precision |recall  | f1-score  |  support|
@@ -34,6 +34,8 @@ Estimators: 160, Max Depth: 5, Learning Rate: 0.1
 |9   |    0.53  |    0.54 |     0.53 |     1000|
 |**avg / total**    |  **0.48**   |   **0.48**   |   **0.48**   |  **10000**|
 
+______
+
 # Banking
 
 ## Cross-Validation 
@@ -46,11 +48,24 @@ Estimators: 160, Max Depth: 5, Learning Rate: 0.1
 * Learning Rate
 ![alt text](https://github.com/adijo/fundamentals-of-ml-project-fall-2018/blob/master/gbdt/figures/banking_learning_rate_cv.png)
 
-## Generalization: Trained on the full Dataset
+## Generalization: Trained on the Full Dataset. Train-Test split: 0.8/0.2
 Estimators: 160, Max Depth: 5, Learning Rate: 0.1
 
 
 * Generalization Confusion Matrix
 ![alt text](https://github.com/adijo/fundamentals-of-ml-project-fall-2018/blob/master/gbdt/figures/banking_generalization_confusion_matrix.png)
+
+
+* **Accuracy:** 0.9186695799951444
+
+* **Classification Report**
+
+| class | precision  |   recall |  f1-score   | support |
+| ---- | ---- | ---- | ---- | ---- |
+| 0    |   0.95   |   0.96   |   0.95 |     7322 |
+|1   |    0.66 |     0.56   |   0.61    |   916 |
+|**avg / total**   | **0.91** |  **0.92**    |  **0.92** |     **8238**|
+
+_____
 
 

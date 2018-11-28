@@ -1,0 +1,111 @@
+ConvNet(
+  (layer1): Sequential(
+    (0): Conv1d(1, 96, kernel_size=(3,), stride=(1,))
+    (1): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer2): Sequential(
+    (0): Conv1d(96, 96, kernel_size=(3,), stride=(1,))
+    (1): ReLU()
+  )
+  (layer3): Sequential(
+    (0): Conv1d(96, 192, kernel_size=(3,), stride=(2,))
+    (1): ReLU()
+  )
+  (layer4): Sequential(
+    (0): Conv1d(192, 192, kernel_size=(3,), stride=(1,))
+    (1): ReLU()
+  )
+  (layer5): Sequential(
+    (0): Conv1d(192, 192, kernel_size=(3,), stride=(1,))
+    (1): ReLU()
+  )
+  (layer6): Sequential(
+    (0): Conv1d(192, 192, kernel_size=(3,), stride=(2,))
+    (1): ReLU()
+  )
+  (fc): Linear(in_features=2112, out_features=2, bias=True)
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+Learning rate: 0.001
+Epoch [1/10], Step [50/300], Loss: 0.4399, Accuracy:0.89
+Epoch [1/10], Step [100/300], Loss: 0.3894, Accuracy:0.89
+Epoch [1/10], Step [150/300], Loss: 0.2906, Accuracy:0.89
+Epoch [1/10], Step [200/300], Loss: 0.3270, Accuracy:0.89
+Epoch [1/10], Step [250/300], Loss: 0.1794, Accuracy:0.89
+Epoch [1/10], Step [300/300], Loss: 0.1673, Accuracy:0.90
+Epoch 1 validation accuracy= 0.9115
+Epoch [2/10], Step [50/300], Loss: 0.2491, Accuracy:0.91
+Epoch [2/10], Step [100/300], Loss: 0.3079, Accuracy:0.91
+Epoch [2/10], Step [150/300], Loss: 0.3096, Accuracy:0.90
+Epoch [2/10], Step [200/300], Loss: 0.2889, Accuracy:0.90
+Epoch [2/10], Step [250/300], Loss: 0.1962, Accuracy:0.90
+Epoch [2/10], Step [300/300], Loss: 0.2028, Accuracy:0.90
+Epoch 2 validation accuracy= 0.9115
+Epoch [3/10], Step [50/300], Loss: 0.2691, Accuracy:0.91
+Epoch [3/10], Step [100/300], Loss: 0.2827, Accuracy:0.91
+Epoch [3/10], Step [150/300], Loss: 0.3204, Accuracy:0.91
+Epoch [3/10], Step [200/300], Loss: 0.1564, Accuracy:0.91
+Epoch [3/10], Step [250/300], Loss: 0.2420, Accuracy:0.91
+Epoch [3/10], Step [300/300], Loss: 0.2946, Accuracy:0.90
+Epoch 3 validation accuracy= 0.9112
+Epoch [4/10], Step [50/300], Loss: 0.2064, Accuracy:0.91
+Epoch [4/10], Step [100/300], Loss: 0.3985, Accuracy:0.91
+Epoch [4/10], Step [150/300], Loss: 0.2930, Accuracy:0.91
+Epoch [4/10], Step [200/300], Loss: 0.1795, Accuracy:0.91
+Epoch [4/10], Step [250/300], Loss: 0.2409, Accuracy:0.91
+Epoch [4/10], Step [300/300], Loss: 0.2698, Accuracy:0.91
+Epoch 4 validation accuracy= 0.9108
+Epoch [5/10], Step [50/300], Loss: 0.3796, Accuracy:0.90
+Epoch [5/10], Step [100/300], Loss: 0.1804, Accuracy:0.90
+Epoch [5/10], Step [150/300], Loss: 0.2318, Accuracy:0.91
+Epoch [5/10], Step [200/300], Loss: 0.2411, Accuracy:0.90
+Epoch [5/10], Step [250/300], Loss: 0.2206, Accuracy:0.90
+Epoch [5/10], Step [300/300], Loss: 0.2583, Accuracy:0.90
+Epoch 5 validation accuracy= 0.9125
+Epoch [6/10], Step [50/300], Loss: 0.1784, Accuracy:0.91
+Epoch [6/10], Step [100/300], Loss: 0.1350, Accuracy:0.91
+Epoch [6/10], Step [150/300], Loss: 0.1997, Accuracy:0.91
+Epoch [6/10], Step [200/300], Loss: 0.1881, Accuracy:0.91
+Epoch [6/10], Step [250/300], Loss: 0.2099, Accuracy:0.91
+Epoch [6/10], Step [300/300], Loss: 0.3313, Accuracy:0.90
+Epoch 6 validation accuracy= 0.9125
+Epoch [7/10], Step [50/300], Loss: 0.2169, Accuracy:0.91
+Epoch [7/10], Step [100/300], Loss: 0.2663, Accuracy:0.90
+Epoch [7/10], Step [150/300], Loss: 0.2925, Accuracy:0.90
+Epoch [7/10], Step [200/300], Loss: 0.2193, Accuracy:0.91
+Epoch [7/10], Step [250/300], Loss: 0.1671, Accuracy:0.91
+Epoch [7/10], Step [300/300], Loss: 0.2455, Accuracy:0.91
+Epoch 7 validation accuracy= 0.9142
+Epoch [8/10], Step [50/300], Loss: 0.2235, Accuracy:0.91
+Epoch [8/10], Step [100/300], Loss: 0.3148, Accuracy:0.91
+Epoch [8/10], Step [150/300], Loss: 0.2832, Accuracy:0.91
+Epoch [8/10], Step [200/300], Loss: 0.1381, Accuracy:0.91
+Epoch [8/10], Step [250/300], Loss: 0.2521, Accuracy:0.91
+Epoch [8/10], Step [300/300], Loss: 0.3451, Accuracy:0.91
+Epoch 8 validation accuracy= 0.9142
+Epoch [9/10], Step [50/300], Loss: 0.1969, Accuracy:0.90
+Epoch [9/10], Step [100/300], Loss: 0.2961, Accuracy:0.90
+Epoch [9/10], Step [150/300], Loss: 0.2119, Accuracy:0.91
+Epoch [9/10], Step [200/300], Loss: 0.2300, Accuracy:0.91
+Epoch [9/10], Step [250/300], Loss: 0.2248, Accuracy:0.91
+Epoch [9/10], Step [300/300], Loss: 0.3409, Accuracy:0.91
+Epoch 9 validation accuracy= 0.9122
+Epoch [10/10], Step [50/300], Loss: 0.2130, Accuracy:0.90
+Epoch [10/10], Step [100/300], Loss: 0.2129, Accuracy:0.90
+Epoch [10/10], Step [150/300], Loss: 0.2361, Accuracy:0.91
+Epoch [10/10], Step [200/300], Loss: 0.1712, Accuracy:0.91
+Epoch [10/10], Step [250/300], Loss: 0.2198, Accuracy:0.90
+Epoch [10/10], Step [300/300], Loss: 0.2545, Accuracy:0.90
+Epoch 10 validation accuracy= 0.9136
+Test Accuracy of the model on the 10000 test images: 90.48312697256615 %
+Predicted (row) labels vs targets (column)
+7074 	559 	
+225 	380 	
