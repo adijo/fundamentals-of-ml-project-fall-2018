@@ -14,16 +14,16 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 print("Using device:", device)
 # Hyper parameters
-num_epochs = 100
+num_epochs = 10
 num_classes = 10
 batch_size = 100
 learning_rate = 0.001
 
 # MNIST dataset
 train_dataset = torchvision.datasets.CIFAR10(root='../../data/',
-                                           train=True, 
-                                           transform=transforms.ToTensor(),
-                                           download=True)
+                                            train=True, 
+                                            transform=transforms.ToTensor(),
+                                            download=True)
 
 test_dataset = torchvision.datasets.CIFAR10(root='../../data/',
                                           train=False, 
@@ -69,6 +69,7 @@ class ConvNet(nn.Module):
     def __init__(self, num_classes=10):
         super(ConvNet, self).__init__()
         self.layer1 = nn.Sequential(
+            nn.Dropout(0.2),
             nn.Conv2d(3, 96, kernel_size=3, stride=1, padding=0), #Adapted to CIFAR here. 3 channels instead of one
             nn.BatchNorm2d(96),
             nn.ReLU())
@@ -78,6 +79,7 @@ class ConvNet(nn.Module):
             nn.BatchNorm2d(96),
             nn.ReLU())
         self.layer3 = nn.Sequential(
+            nn.Dropout(),
             nn.Conv2d(96, 192, kernel_size=3, stride=2, padding=0),
             nn.BatchNorm2d(192),
             nn.ReLU())
@@ -90,6 +92,7 @@ class ConvNet(nn.Module):
             nn.BatchNorm2d(192),
             nn.ReLU())
         self.layer6 = nn.Sequential(
+            nn.Dropout(),
             nn.Conv2d(192, 192, kernel_size=3, stride=2, padding=0),
             nn.BatchNorm2d(192),
             nn.ReLU())

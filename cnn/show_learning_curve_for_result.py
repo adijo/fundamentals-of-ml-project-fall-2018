@@ -5,7 +5,7 @@ import glob
 
 filelist = []
 if len(sys.argv) == 1:
-    filelist = glob.glob("results\\*.txt")
+    filelist = glob.glob("results\\banking\\*.txt")
 else:
     #Also accepts wildcards
     for log_filename in sys.argv[1:]:
