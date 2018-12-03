@@ -1,0 +1,68 @@
+ConvNet(
+  (layer1): Sequential(
+    (0): Dropout(p=0)
+    (1): Conv2d(3, 96, kernel_size=(3, 3), stride=(1, 1))
+    (2): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (3): ReLU()
+  )
+  (layer2): Sequential(
+    (0): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer3): Sequential(
+    (0): Conv2d(96, 192, kernel_size=(3, 3), stride=(2, 2))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer4): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer5): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer6): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(2, 2))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (fc): Linear(in_features=3072, out_features=10, bias=True)
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0.001
+)
+Learning rate: 0.001
+Epoch [1/100], Step [50/450], Loss: 1.6192, Accuracy:0.32
+Epoch [1/100], Step [100/450], Loss: 1.4040, Accuracy:0.37
+Epoch [1/100], Step [150/450], Loss: 1.4294, Accuracy:0.40
+Epoch [1/100], Step [200/450], Loss: 1.5039, Accuracy:0.42
+Epoch [1/100], Step [250/450], Loss: 1.2688, Accuracy:0.43
+Epoch [1/100], Step [300/450], Loss: 1.3637, Accuracy:0.45
+Epoch [1/100], Step [350/450], Loss: 1.3677, Accuracy:0.46
+Epoch [1/100], Step [400/450], Loss: 1.0915, Accuracy:0.47
+Epoch [1/100], Step [450/450], Loss: 1.1337, Accuracy:0.48
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.51      0.52      0.52      4447
+       auto       0.64      0.59      0.61      4831
+       bird       0.32      0.39      0.35      3629
+        cat       0.32      0.34      0.33      4255
+       deer       0.35      0.42      0.38      3763
+        dog       0.42      0.41      0.41      4649
+       frog       0.61      0.52      0.56      5316
+      horse       0.55      0.52      0.54      4739
+       ship       0.59      0.56      0.57      4729
+      truck       0.55      0.53      0.54      4642
+
+avg / total       0.50      0.48      0.49     45000
+

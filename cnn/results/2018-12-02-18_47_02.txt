@@ -1,0 +1,4271 @@
+ConvNet(
+  (layer1): Sequential(
+    (0): Dropout(p=0)
+    (1): Conv2d(3, 96, kernel_size=(3, 3), stride=(1, 1))
+    (2): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (3): ReLU()
+  )
+  (layer2): Sequential(
+    (0): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer3): Sequential(
+    (0): Conv2d(96, 192, kernel_size=(3, 3), stride=(2, 2))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer4): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer5): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer6): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(2, 2))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (fc): Linear(in_features=3072, out_features=10, bias=True)
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0.001
+)
+Learning rate: 0.001
+Epoch [1/100], Step [50/450], Loss: 1.5256, Accuracy:0.33
+Epoch [1/100], Step [100/450], Loss: 1.5346, Accuracy:0.37
+Epoch [1/100], Step [150/450], Loss: 1.3902, Accuracy:0.40
+Epoch [1/100], Step [200/450], Loss: 1.2747, Accuracy:0.41
+Epoch [1/100], Step [250/450], Loss: 1.1959, Accuracy:0.43
+Epoch [1/100], Step [300/450], Loss: 1.6152, Accuracy:0.45
+Epoch [1/100], Step [350/450], Loss: 1.4412, Accuracy:0.46
+Epoch [1/100], Step [400/450], Loss: 1.3145, Accuracy:0.47
+Epoch [1/100], Step [450/450], Loss: 1.1402, Accuracy:0.48
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.51      0.52      0.52      4466
+       auto       0.64      0.58      0.61      5002
+       bird       0.30      0.38      0.34      3621
+        cat       0.31      0.33      0.32      4116
+       deer       0.35      0.41      0.38      3885
+        dog       0.42      0.41      0.41      4615
+       frog       0.60      0.52      0.56      5282
+      horse       0.54      0.51      0.52      4775
+       ship       0.58      0.55      0.57      4690
+      truck       0.53      0.53      0.53      4548
+
+avg / total       0.49      0.48      0.48     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.65      0.58      0.61       562
+       auto       0.75      0.66      0.70       565
+       bird       0.42      0.45      0.43       481
+        cat       0.16      0.44      0.23       202
+       deer       0.42      0.48      0.45       433
+        dog       0.66      0.37      0.47       841
+       frog       0.71      0.61      0.66       552
+      horse       0.63      0.57      0.60       522
+       ship       0.58      0.77      0.66       389
+      truck       0.62      0.68      0.65       453
+
+avg / total       0.60      0.55      0.56      5000
+
+Epoch 1 validation accuracy= 0.5518
+Epoch [2/100], Step [50/450], Loss: 1.0278, Accuracy:0.59
+Epoch [2/100], Step [100/450], Loss: 1.1766, Accuracy:0.59
+Epoch [2/100], Step [150/450], Loss: 1.2135, Accuracy:0.59
+Epoch [2/100], Step [200/450], Loss: 0.9795, Accuracy:0.60
+Epoch [2/100], Step [250/450], Loss: 1.0282, Accuracy:0.60
+Epoch [2/100], Step [300/450], Loss: 1.0402, Accuracy:0.61
+Epoch [2/100], Step [350/450], Loss: 1.0115, Accuracy:0.61
+Epoch [2/100], Step [400/450], Loss: 0.9692, Accuracy:0.62
+Epoch [2/100], Step [450/450], Loss: 0.9010, Accuracy:0.62
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.63      0.64      0.63      4452
+       auto       0.77      0.74      0.75      4664
+       bird       0.47      0.50      0.48      4241
+        cat       0.41      0.44      0.42      4113
+       deer       0.53      0.55      0.54      4301
+        dog       0.55      0.54      0.54      4641
+       frog       0.70      0.65      0.67      4910
+      horse       0.67      0.68      0.68      4462
+       ship       0.74      0.71      0.73      4657
+      truck       0.72      0.71      0.71      4559
+
+avg / total       0.62      0.62      0.62     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.71      0.64      0.68       545
+       auto       0.83      0.74      0.78       552
+       bird       0.43      0.60      0.50       369
+        cat       0.49      0.49      0.49       561
+       deer       0.61      0.62      0.62       488
+        dog       0.51      0.52      0.52       471
+       frog       0.75      0.68      0.72       523
+      horse       0.70      0.69      0.69       476
+       ship       0.82      0.72      0.77       587
+      truck       0.66      0.76      0.70       428
+
+avg / total       0.66      0.65      0.65      5000
+
+Epoch 2 validation accuracy= 0.6476
+Epoch [3/100], Step [50/450], Loss: 0.8388, Accuracy:0.66
+Epoch [3/100], Step [100/450], Loss: 0.8613, Accuracy:0.66
+Epoch [3/100], Step [150/450], Loss: 0.9243, Accuracy:0.67
+Epoch [3/100], Step [200/450], Loss: 1.0418, Accuracy:0.67
+Epoch [3/100], Step [250/450], Loss: 0.7333, Accuracy:0.67
+Epoch [3/100], Step [300/450], Loss: 0.7398, Accuracy:0.67
+Epoch [3/100], Step [350/450], Loss: 0.8584, Accuracy:0.67
+Epoch [3/100], Step [400/450], Loss: 1.0901, Accuracy:0.67
+Epoch [3/100], Step [450/450], Loss: 0.9677, Accuracy:0.67
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.69      0.69      0.69      4512
+       auto       0.81      0.81      0.81      4502
+       bird       0.54      0.57      0.55      4257
+        cat       0.48      0.49      0.48      4351
+       deer       0.63      0.63      0.63      4508
+        dog       0.58      0.59      0.58      4459
+       frog       0.75      0.72      0.73      4708
+      horse       0.71      0.72      0.72      4485
+       ship       0.79      0.76      0.77      4645
+      truck       0.77      0.76      0.77      4573
+
+avg / total       0.68      0.67      0.68     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.75      0.69      0.72       542
+       auto       0.74      0.87      0.80       424
+       bird       0.66      0.51      0.58       668
+        cat       0.49      0.53      0.51       513
+       deer       0.59      0.71      0.65       422
+        dog       0.50      0.62      0.55       384
+       frog       0.75      0.74      0.75       486
+      horse       0.75      0.63      0.69       560
+       ship       0.73      0.85      0.79       447
+      truck       0.81      0.72      0.76       554
+
+avg / total       0.68      0.68      0.68      5000
+
+Epoch 3 validation accuracy= 0.6764
+Epoch [4/100], Step [50/450], Loss: 0.8547, Accuracy:0.70
+Epoch [4/100], Step [100/450], Loss: 0.9303, Accuracy:0.71
+Epoch [4/100], Step [150/450], Loss: 0.7480, Accuracy:0.71
+Epoch [4/100], Step [200/450], Loss: 0.7913, Accuracy:0.71
+Epoch [4/100], Step [250/450], Loss: 0.8527, Accuracy:0.71
+Epoch [4/100], Step [300/450], Loss: 0.9089, Accuracy:0.71
+Epoch [4/100], Step [350/450], Loss: 0.6458, Accuracy:0.71
+Epoch [4/100], Step [400/450], Loss: 0.6638, Accuracy:0.71
+Epoch [4/100], Step [450/450], Loss: 0.9324, Accuracy:0.71
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.74      0.73      0.73      4558
+       auto       0.84      0.85      0.84      4463
+       bird       0.60      0.61      0.60      4378
+        cat       0.52      0.53      0.53      4340
+       deer       0.67      0.67      0.67      4505
+        dog       0.61      0.63      0.62      4404
+       frog       0.76      0.74      0.75      4662
+      horse       0.74      0.74      0.74      4514
+       ship       0.82      0.80      0.81      4636
+      truck       0.80      0.80      0.80      4540
+
+avg / total       0.71      0.71      0.71     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.79      0.73      0.76       531
+       auto       0.83      0.83      0.83       493
+       bird       0.55      0.67      0.60       428
+        cat       0.52      0.59      0.55       496
+       deer       0.70      0.68      0.69       518
+        dog       0.57      0.66      0.61       408
+       frog       0.86      0.67      0.75       614
+      horse       0.75      0.69      0.72       511
+       ship       0.82      0.85      0.83       494
+      truck       0.80      0.78      0.79       507
+
+avg / total       0.73      0.72      0.72      5000
+
+Epoch 4 validation accuracy= 0.7160
+Epoch [5/100], Step [50/450], Loss: 0.6926, Accuracy:0.73
+Epoch [5/100], Step [100/450], Loss: 0.7651, Accuracy:0.73
+Epoch [5/100], Step [150/450], Loss: 0.7021, Accuracy:0.73
+Epoch [5/100], Step [200/450], Loss: 0.6715, Accuracy:0.73
+Epoch [5/100], Step [250/450], Loss: 0.6023, Accuracy:0.73
+Epoch [5/100], Step [300/450], Loss: 0.7235, Accuracy:0.73
+Epoch [5/100], Step [350/450], Loss: 0.8631, Accuracy:0.73
+Epoch [5/100], Step [400/450], Loss: 0.8586, Accuracy:0.73
+Epoch [5/100], Step [450/450], Loss: 0.6882, Accuracy:0.73
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.75      0.74      0.75      4550
+       auto       0.86      0.86      0.86      4494
+       bird       0.61      0.63      0.62      4364
+        cat       0.54      0.55      0.55      4391
+       deer       0.70      0.69      0.69      4563
+        dog       0.63      0.64      0.64      4411
+       frog       0.78      0.76      0.77      4625
+      horse       0.76      0.77      0.77      4494
+       ship       0.83      0.82      0.82      4576
+      truck       0.83      0.82      0.82      4532
+
+avg / total       0.73      0.73      0.73     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.82      0.69      0.75       583
+       auto       0.83      0.83      0.83       498
+       bird       0.61      0.69      0.65       459
+        cat       0.54      0.57      0.55       522
+       deer       0.68      0.75      0.71       454
+        dog       0.59      0.64      0.61       434
+       frog       0.87      0.68      0.76       614
+      horse       0.80      0.69      0.74       537
+       ship       0.81      0.92      0.86       451
+      truck       0.77      0.85      0.80       448
+
+avg / total       0.74      0.73      0.73      5000
+
+Epoch 5 validation accuracy= 0.7276
+Epoch [6/100], Step [50/450], Loss: 0.5544, Accuracy:0.75
+Epoch [6/100], Step [100/450], Loss: 0.7580, Accuracy:0.75
+Epoch [6/100], Step [150/450], Loss: 0.8428, Accuracy:0.75
+Epoch [6/100], Step [200/450], Loss: 0.5995, Accuracy:0.75
+Epoch [6/100], Step [250/450], Loss: 0.6158, Accuracy:0.75
+Epoch [6/100], Step [300/450], Loss: 0.7212, Accuracy:0.75
+Epoch [6/100], Step [350/450], Loss: 0.6659, Accuracy:0.75
+Epoch [6/100], Step [400/450], Loss: 0.7763, Accuracy:0.75
+Epoch [6/100], Step [450/450], Loss: 0.7724, Accuracy:0.75
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.78      0.76      0.77      4609
+       auto       0.87      0.87      0.87      4489
+       bird       0.64      0.66      0.65      4379
+        cat       0.58      0.59      0.58      4408
+       deer       0.72      0.71      0.71      4571
+        dog       0.65      0.67      0.66      4368
+       frog       0.80      0.79      0.79      4623
+      horse       0.78      0.78      0.78      4483
+       ship       0.85      0.84      0.84      4549
+      truck       0.84      0.83      0.84      4521
+
+avg / total       0.75      0.75      0.75     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.75      0.80      0.78       464
+       auto       0.88      0.81      0.84       536
+       bird       0.66      0.66      0.66       513
+        cat       0.51      0.64      0.57       448
+       deer       0.73      0.70      0.72       526
+        dog       0.70      0.60      0.65       553
+       frog       0.77      0.79      0.78       467
+      horse       0.79      0.76      0.78       483
+       ship       0.85      0.83      0.84       527
+      truck       0.82      0.84      0.83       483
+
+avg / total       0.75      0.74      0.75      5000
+
+Epoch 6 validation accuracy= 0.7436
+Epoch [7/100], Step [50/450], Loss: 0.7753, Accuracy:0.76
+Epoch [7/100], Step [100/450], Loss: 0.8277, Accuracy:0.76
+Epoch [7/100], Step [150/450], Loss: 0.6639, Accuracy:0.76
+Epoch [7/100], Step [200/450], Loss: 0.6619, Accuracy:0.76
+Epoch [7/100], Step [250/450], Loss: 0.6998, Accuracy:0.76
+Epoch [7/100], Step [300/450], Loss: 0.8392, Accuracy:0.76
+Epoch [7/100], Step [350/450], Loss: 0.7394, Accuracy:0.76
+Epoch [7/100], Step [400/450], Loss: 0.7995, Accuracy:0.76
+Epoch [7/100], Step [450/450], Loss: 0.6770, Accuracy:0.76
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.79      0.77      0.78      4590
+       auto       0.87      0.88      0.87      4454
+       bird       0.67      0.68      0.67      4409
+        cat       0.60      0.59      0.60      4452
+       deer       0.73      0.72      0.72      4556
+        dog       0.66      0.68      0.67      4382
+       frog       0.81      0.80      0.81      4578
+      horse       0.79      0.79      0.79      4506
+       ship       0.85      0.83      0.84      4578
+      truck       0.84      0.84      0.84      4495
+
+avg / total       0.76      0.76      0.76     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.74      0.78      0.76       468
+       auto       0.88      0.89      0.88       490
+       bird       0.58      0.71      0.64       419
+        cat       0.64      0.62      0.63       582
+       deer       0.79      0.65      0.71       605
+        dog       0.64      0.69      0.66       437
+       frog       0.83      0.73      0.78       542
+      horse       0.73      0.83      0.78       409
+       ship       0.88      0.81      0.84       555
+      truck       0.83      0.83      0.83       493
+
+avg / total       0.76      0.75      0.75      5000
+
+Epoch 7 validation accuracy= 0.7510
+Epoch [8/100], Step [50/450], Loss: 0.6002, Accuracy:0.78
+Epoch [8/100], Step [100/450], Loss: 0.6619, Accuracy:0.77
+Epoch [8/100], Step [150/450], Loss: 0.6493, Accuracy:0.76
+Epoch [8/100], Step [200/450], Loss: 0.5806, Accuracy:0.77
+Epoch [8/100], Step [250/450], Loss: 0.6586, Accuracy:0.77
+Epoch [8/100], Step [300/450], Loss: 0.6777, Accuracy:0.77
+Epoch [8/100], Step [350/450], Loss: 0.7608, Accuracy:0.77
+Epoch [8/100], Step [400/450], Loss: 0.5133, Accuracy:0.77
+Epoch [8/100], Step [450/450], Loss: 0.6427, Accuracy:0.77
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.79      0.77      0.78      4604
+       auto       0.88      0.89      0.88      4448
+       bird       0.67      0.68      0.67      4422
+        cat       0.61      0.61      0.61      4414
+       deer       0.74      0.73      0.74      4556
+        dog       0.67      0.69      0.68      4385
+       frog       0.82      0.80      0.81      4636
+      horse       0.79      0.80      0.79      4497
+       ship       0.86      0.85      0.85      4538
+      truck       0.84      0.84      0.84      4500
+
+avg / total       0.77      0.77      0.77     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.83      0.75      0.79       549
+       auto       0.86      0.84      0.85       510
+       bird       0.56      0.80      0.66       366
+        cat       0.61      0.57      0.59       596
+       deer       0.76      0.73      0.74       524
+        dog       0.63      0.67      0.65       448
+       frog       0.80      0.80      0.80       479
+      horse       0.84      0.73      0.78       534
+       ship       0.87      0.83      0.85       539
+      truck       0.79      0.85      0.82       455
+
+avg / total       0.76      0.75      0.75      5000
+
+Epoch 8 validation accuracy= 0.7520
+Epoch [9/100], Step [50/450], Loss: 0.7997, Accuracy:0.78
+Epoch [9/100], Step [100/450], Loss: 0.6097, Accuracy:0.78
+Epoch [9/100], Step [150/450], Loss: 0.6357, Accuracy:0.78
+Epoch [9/100], Step [200/450], Loss: 0.5782, Accuracy:0.78
+Epoch [9/100], Step [250/450], Loss: 0.6298, Accuracy:0.78
+Epoch [9/100], Step [300/450], Loss: 0.5999, Accuracy:0.78
+Epoch [9/100], Step [350/450], Loss: 0.4537, Accuracy:0.78
+Epoch [9/100], Step [400/450], Loss: 0.8072, Accuracy:0.78
+Epoch [9/100], Step [450/450], Loss: 0.6904, Accuracy:0.78
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.80      0.78      0.79      4618
+       auto       0.88      0.89      0.88      4449
+       bird       0.69      0.70      0.70      4387
+        cat       0.62      0.62      0.62      4395
+       deer       0.76      0.74      0.75      4597
+        dog       0.68      0.71      0.69      4335
+       frog       0.83      0.82      0.83      4600
+      horse       0.81      0.81      0.81      4519
+       ship       0.87      0.85      0.86      4572
+      truck       0.86      0.85      0.85      4528
+
+avg / total       0.78      0.78      0.78     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.78      0.81      0.79       477
+       auto       0.87      0.89      0.88       488
+       bird       0.66      0.72      0.69       471
+        cat       0.49      0.64      0.56       429
+       deer       0.72      0.77      0.74       469
+        dog       0.71      0.61      0.66       549
+       frog       0.84      0.74      0.78       541
+      horse       0.85      0.69      0.76       581
+       ship       0.83      0.88      0.86       486
+      truck       0.85      0.82      0.84       509
+
+avg / total       0.77      0.76      0.76      5000
+
+Epoch 9 validation accuracy= 0.7554
+Epoch [10/100], Step [50/450], Loss: 0.6368, Accuracy:0.79
+Epoch [10/100], Step [100/450], Loss: 0.6126, Accuracy:0.79
+Epoch [10/100], Step [150/450], Loss: 0.6645, Accuracy:0.78
+Epoch [10/100], Step [200/450], Loss: 0.5863, Accuracy:0.78
+Epoch [10/100], Step [250/450], Loss: 0.8050, Accuracy:0.78
+Epoch [10/100], Step [300/450], Loss: 0.4999, Accuracy:0.78
+Epoch [10/100], Step [350/450], Loss: 0.6495, Accuracy:0.78
+Epoch [10/100], Step [400/450], Loss: 0.5139, Accuracy:0.78
+Epoch [10/100], Step [450/450], Loss: 0.5045, Accuracy:0.78
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.80      0.78      0.79      4616
+       auto       0.88      0.89      0.88      4458
+       bird       0.69      0.70      0.70      4417
+        cat       0.63      0.63      0.63      4429
+       deer       0.76      0.76      0.76      4532
+        dog       0.69      0.71      0.70      4364
+       frog       0.84      0.82      0.83      4604
+      horse       0.81      0.81      0.81      4538
+       ship       0.87      0.85      0.86      4553
+      truck       0.85      0.86      0.85      4489
+
+avg / total       0.78      0.78      0.78     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.79      0.80      0.80       490
+       auto       0.87      0.88      0.88       489
+       bird       0.69      0.75      0.72       479
+        cat       0.59      0.62      0.61       534
+       deer       0.80      0.73      0.76       549
+        dog       0.66      0.67      0.67       469
+       frog       0.78      0.83      0.81       446
+      horse       0.85      0.72      0.78       552
+       ship       0.88      0.85      0.87       533
+      truck       0.82      0.88      0.85       459
+
+avg / total       0.77      0.77      0.77      5000
+
+Epoch 10 validation accuracy= 0.7712
+Epoch [11/100], Step [50/450], Loss: 0.7598, Accuracy:0.80
+Epoch [11/100], Step [100/450], Loss: 0.6697, Accuracy:0.80
+Epoch [11/100], Step [150/450], Loss: 0.5486, Accuracy:0.79
+Epoch [11/100], Step [200/450], Loss: 0.5653, Accuracy:0.79
+Epoch [11/100], Step [250/450], Loss: 0.6104, Accuracy:0.79
+Epoch [11/100], Step [300/450], Loss: 0.6547, Accuracy:0.79
+Epoch [11/100], Step [350/450], Loss: 0.4489, Accuracy:0.79
+Epoch [11/100], Step [400/450], Loss: 0.7303, Accuracy:0.79
+Epoch [11/100], Step [450/450], Loss: 0.6400, Accuracy:0.79
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.82      0.80      0.81      4596
+       auto       0.89      0.89      0.89      4490
+       bird       0.72      0.73      0.72      4390
+        cat       0.65      0.65      0.65      4458
+       deer       0.78      0.77      0.77      4582
+        dog       0.69      0.72      0.71      4341
+       frog       0.84      0.82      0.83      4617
+      horse       0.82      0.82      0.82      4522
+       ship       0.87      0.86      0.87      4561
+      truck       0.86      0.87      0.86      4443
+
+avg / total       0.79      0.79      0.79     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.75      0.79      0.77       468
+       auto       0.83      0.92      0.88       448
+       bird       0.68      0.72      0.70       494
+        cat       0.46      0.69      0.55       377
+       deer       0.77      0.72      0.74       538
+        dog       0.81      0.57      0.67       666
+       frog       0.73      0.86      0.79       408
+      horse       0.81      0.78      0.80       485
+       ship       0.88      0.81      0.84       562
+      truck       0.88      0.78      0.83       554
+
+avg / total       0.77      0.76      0.76      5000
+
+Epoch 11 validation accuracy= 0.7568
+Epoch [12/100], Step [50/450], Loss: 0.5044, Accuracy:0.81
+Epoch [12/100], Step [100/450], Loss: 0.5402, Accuracy:0.80
+Epoch [12/100], Step [150/450], Loss: 0.5455, Accuracy:0.80
+Epoch [12/100], Step [200/450], Loss: 0.7313, Accuracy:0.80
+Epoch [12/100], Step [250/450], Loss: 0.4276, Accuracy:0.80
+Epoch [12/100], Step [300/450], Loss: 0.6688, Accuracy:0.80
+Epoch [12/100], Step [350/450], Loss: 0.5153, Accuracy:0.80
+Epoch [12/100], Step [400/450], Loss: 0.6765, Accuracy:0.79
+Epoch [12/100], Step [450/450], Loss: 0.5885, Accuracy:0.79
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.82      0.80      0.81      4599
+       auto       0.89      0.90      0.89      4437
+       bird       0.71      0.73      0.72      4410
+        cat       0.65      0.65      0.65      4436
+       deer       0.78      0.76      0.77      4586
+        dog       0.70      0.73      0.71      4383
+       frog       0.84      0.82      0.83      4611
+      horse       0.82      0.83      0.82      4467
+       ship       0.87      0.86      0.87      4556
+      truck       0.87      0.86      0.86      4515
+
+avg / total       0.80      0.79      0.79     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.82      0.77      0.80       527
+       auto       0.88      0.90      0.89       480
+       bird       0.69      0.74      0.71       487
+        cat       0.62      0.68      0.65       513
+       deer       0.80      0.70      0.75       576
+        dog       0.64      0.72      0.67       420
+       frog       0.86      0.78      0.82       524
+      horse       0.81      0.78      0.79       488
+       ship       0.83      0.87      0.85       496
+      truck       0.84      0.85      0.84       489
+
+avg / total       0.78      0.78      0.78      5000
+
+Epoch 12 validation accuracy= 0.7772
+Epoch [13/100], Step [50/450], Loss: 0.5857, Accuracy:0.81
+Epoch [13/100], Step [100/450], Loss: 0.7678, Accuracy:0.81
+Epoch [13/100], Step [150/450], Loss: 0.4482, Accuracy:0.80
+Epoch [13/100], Step [200/450], Loss: 0.5533, Accuracy:0.80
+Epoch [13/100], Step [250/450], Loss: 0.5290, Accuracy:0.80
+Epoch [13/100], Step [300/450], Loss: 0.4886, Accuracy:0.80
+Epoch [13/100], Step [350/450], Loss: 0.6268, Accuracy:0.80
+Epoch [13/100], Step [400/450], Loss: 0.6688, Accuracy:0.80
+Epoch [13/100], Step [450/450], Loss: 0.5482, Accuracy:0.80
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.82      0.80      0.81      4590
+       auto       0.89      0.89      0.89      4476
+       bird       0.71      0.73      0.72      4380
+        cat       0.66      0.65      0.66      4459
+       deer       0.78      0.77      0.78      4536
+        dog       0.70      0.73      0.71      4316
+       frog       0.85      0.83      0.84      4623
+      horse       0.83      0.83      0.83      4559
+       ship       0.88      0.86      0.87      4568
+      truck       0.87      0.87      0.87      4493
+
+avg / total       0.80      0.80      0.80     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.82      0.81      0.81       500
+       auto       0.86      0.89      0.87       476
+       bird       0.72      0.74      0.73       506
+        cat       0.55      0.71      0.62       434
+       deer       0.76      0.79      0.77       488
+        dog       0.75      0.65      0.69       547
+       frog       0.84      0.79      0.81       513
+      horse       0.84      0.75      0.80       523
+       ship       0.90      0.81      0.85       575
+      truck       0.81      0.91      0.85       438
+
+avg / total       0.79      0.78      0.78      5000
+
+Epoch 13 validation accuracy= 0.7818
+Epoch [14/100], Step [50/450], Loss: 0.6548, Accuracy:0.81
+Epoch [14/100], Step [100/450], Loss: 0.5189, Accuracy:0.81
+Epoch [14/100], Step [150/450], Loss: 0.7563, Accuracy:0.81
+Epoch [14/100], Step [200/450], Loss: 0.6531, Accuracy:0.81
+Epoch [14/100], Step [250/450], Loss: 0.5165, Accuracy:0.81
+Epoch [14/100], Step [300/450], Loss: 0.5844, Accuracy:0.81
+Epoch [14/100], Step [350/450], Loss: 0.6312, Accuracy:0.81
+Epoch [14/100], Step [400/450], Loss: 0.4528, Accuracy:0.81
+Epoch [14/100], Step [450/450], Loss: 0.6639, Accuracy:0.81
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.83      0.80      0.82      4640
+       auto       0.89      0.91      0.90      4446
+       bird       0.73      0.74      0.74      4409
+        cat       0.67      0.66      0.67      4471
+       deer       0.79      0.78      0.78      4532
+        dog       0.70      0.74      0.72      4294
+       frog       0.86      0.84      0.85      4614
+      horse       0.84      0.83      0.84      4541
+       ship       0.89      0.87      0.88      4557
+      truck       0.87      0.87      0.87      4496
+
+avg / total       0.81      0.81      0.81     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.83      0.79      0.81       520
+       auto       0.90      0.86      0.88       521
+       bird       0.75      0.69      0.72       561
+        cat       0.64      0.69      0.67       518
+       deer       0.78      0.75      0.76       522
+        dog       0.69      0.68      0.69       482
+       frog       0.81      0.87      0.84       442
+      horse       0.80      0.85      0.83       442
+       ship       0.86      0.88      0.87       508
+      truck       0.86      0.88      0.87       484
+
+avg / total       0.79      0.79      0.79      5000
+
+Epoch 14 validation accuracy= 0.7908
+Epoch [15/100], Step [50/450], Loss: 0.7008, Accuracy:0.80
+Epoch [15/100], Step [100/450], Loss: 0.5572, Accuracy:0.81
+Epoch [15/100], Step [150/450], Loss: 0.5326, Accuracy:0.81
+Epoch [15/100], Step [200/450], Loss: 0.5615, Accuracy:0.80
+Epoch [15/100], Step [250/450], Loss: 0.4983, Accuracy:0.81
+Epoch [15/100], Step [300/450], Loss: 0.5023, Accuracy:0.81
+Epoch [15/100], Step [350/450], Loss: 0.5765, Accuracy:0.81
+Epoch [15/100], Step [400/450], Loss: 0.5101, Accuracy:0.81
+Epoch [15/100], Step [450/450], Loss: 0.4954, Accuracy:0.81
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.82      0.81      0.81      4595
+       auto       0.89      0.90      0.90      4467
+       bird       0.74      0.75      0.74      4409
+        cat       0.67      0.66      0.66      4481
+       deer       0.79      0.78      0.79      4562
+        dog       0.71      0.74      0.72      4329
+       frog       0.85      0.83      0.84      4623
+      horse       0.83      0.84      0.84      4484
+       ship       0.88      0.87      0.88      4536
+      truck       0.87      0.87      0.87      4514
+
+avg / total       0.81      0.81      0.81     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.83      0.73      0.78       563
+       auto       0.81      0.92      0.86       436
+       bird       0.65      0.81      0.73       417
+        cat       0.51      0.65      0.57       442
+       deer       0.77      0.79      0.78       488
+        dog       0.77      0.56      0.65       654
+       frog       0.77      0.86      0.82       426
+      horse       0.85      0.79      0.82       502
+       ship       0.88      0.83      0.86       548
+      truck       0.85      0.80      0.83       524
+
+avg / total       0.78      0.77      0.77      5000
+
+Epoch 15 validation accuracy= 0.7664
+Epoch [16/100], Step [50/450], Loss: 0.4609, Accuracy:0.82
+Epoch [16/100], Step [100/450], Loss: 0.7513, Accuracy:0.81
+Epoch [16/100], Step [150/450], Loss: 0.5160, Accuracy:0.81
+Epoch [16/100], Step [200/450], Loss: 0.4832, Accuracy:0.81
+Epoch [16/100], Step [250/450], Loss: 0.4531, Accuracy:0.81
+Epoch [16/100], Step [300/450], Loss: 0.5365, Accuracy:0.81
+Epoch [16/100], Step [350/450], Loss: 0.3835, Accuracy:0.81
+Epoch [16/100], Step [400/450], Loss: 0.6519, Accuracy:0.81
+Epoch [16/100], Step [450/450], Loss: 0.6326, Accuracy:0.81
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.83      0.81      0.82      4620
+       auto       0.89      0.90      0.90      4449
+       bird       0.74      0.75      0.75      4408
+        cat       0.67      0.67      0.67      4485
+       deer       0.79      0.79      0.79      4518
+        dog       0.72      0.75      0.73      4339
+       frog       0.86      0.84      0.85      4627
+      horse       0.84      0.83      0.84      4563
+       ship       0.88      0.87      0.88      4505
+      truck       0.87      0.87      0.87      4486
+
+avg / total       0.81      0.81      0.81     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.80      0.84      0.82       467
+       auto       0.87      0.86      0.86       501
+       bird       0.74      0.75      0.74       510
+        cat       0.75      0.64      0.69       656
+       deer       0.76      0.85      0.80       446
+        dog       0.59      0.76      0.67       368
+       frog       0.85      0.83      0.84       492
+      horse       0.86      0.77      0.81       525
+       ship       0.89      0.86      0.88       534
+      truck       0.83      0.82      0.83       501
+
+avg / total       0.80      0.79      0.79      5000
+
+Epoch 16 validation accuracy= 0.7936
+Epoch [17/100], Step [50/450], Loss: 0.4198, Accuracy:0.82
+Epoch [17/100], Step [100/450], Loss: 0.4399, Accuracy:0.82
+Epoch [17/100], Step [150/450], Loss: 0.4610, Accuracy:0.82
+Epoch [17/100], Step [200/450], Loss: 0.4718, Accuracy:0.82
+Epoch [17/100], Step [250/450], Loss: 0.4502, Accuracy:0.82
+Epoch [17/100], Step [300/450], Loss: 0.4018, Accuracy:0.82
+Epoch [17/100], Step [350/450], Loss: 0.5125, Accuracy:0.82
+Epoch [17/100], Step [400/450], Loss: 0.5642, Accuracy:0.81
+Epoch [17/100], Step [450/450], Loss: 0.5689, Accuracy:0.81
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.83      0.81      0.82      4591
+       auto       0.90      0.91      0.90      4453
+       bird       0.74      0.75      0.75      4399
+        cat       0.68      0.68      0.68      4487
+       deer       0.81      0.79      0.80      4564
+        dog       0.72      0.75      0.73      4332
+       frog       0.86      0.85      0.86      4591
+      horse       0.84      0.84      0.84      4539
+       ship       0.88      0.88      0.88      4516
+      truck       0.88      0.88      0.88      4528
+
+avg / total       0.81      0.81      0.81     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.81      0.81      0.81       497
+       auto       0.86      0.89      0.88       481
+       bird       0.72      0.71      0.71       530
+        cat       0.67      0.64      0.65       592
+       deer       0.81      0.77      0.79       526
+        dog       0.57      0.76      0.65       356
+       frog       0.82      0.84      0.83       469
+      horse       0.87      0.77      0.82       524
+       ship       0.89      0.82      0.86       561
+      truck       0.82      0.88      0.85       464
+
+avg / total       0.79      0.78      0.79      5000
+
+Epoch 17 validation accuracy= 0.7844
+Epoch [18/100], Step [50/450], Loss: 0.6541, Accuracy:0.82
+Epoch [18/100], Step [100/450], Loss: 0.6649, Accuracy:0.82
+Epoch [18/100], Step [150/450], Loss: 0.4350, Accuracy:0.82
+Epoch [18/100], Step [200/450], Loss: 0.6486, Accuracy:0.82
+Epoch [18/100], Step [250/450], Loss: 0.5294, Accuracy:0.82
+Epoch [18/100], Step [300/450], Loss: 0.6185, Accuracy:0.81
+Epoch [18/100], Step [350/450], Loss: 0.6013, Accuracy:0.81
+Epoch [18/100], Step [400/450], Loss: 0.4385, Accuracy:0.81
+Epoch [18/100], Step [450/450], Loss: 0.5249, Accuracy:0.81
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.83      0.81      0.82      4603
+       auto       0.90      0.90      0.90      4478
+       bird       0.74      0.75      0.74      4443
+        cat       0.68      0.67      0.67      4477
+       deer       0.80      0.79      0.79      4553
+        dog       0.72      0.75      0.74      4320
+       frog       0.85      0.85      0.85      4571
+      horse       0.85      0.84      0.84      4558
+       ship       0.89      0.88      0.88      4519
+      truck       0.88      0.88      0.88      4478
+
+avg / total       0.81      0.81      0.81     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.86      0.75      0.80       568
+       auto       0.88      0.84      0.86       522
+       bird       0.62      0.82      0.71       388
+        cat       0.65      0.66      0.66       557
+       deer       0.75      0.82      0.78       459
+        dog       0.73      0.69      0.71       504
+       frog       0.88      0.75      0.81       554
+      horse       0.82      0.79      0.80       486
+       ship       0.83      0.88      0.86       483
+      truck       0.83      0.86      0.85       479
+
+avg / total       0.79      0.78      0.78      5000
+
+Epoch 18 validation accuracy= 0.7828
+Epoch [19/100], Step [50/450], Loss: 0.5937, Accuracy:0.82
+Epoch [19/100], Step [100/450], Loss: 0.4809, Accuracy:0.82
+Epoch [19/100], Step [150/450], Loss: 0.4166, Accuracy:0.82
+Epoch [19/100], Step [200/450], Loss: 0.5970, Accuracy:0.82
+Epoch [19/100], Step [250/450], Loss: 0.6064, Accuracy:0.82
+Epoch [19/100], Step [300/450], Loss: 0.5009, Accuracy:0.82
+Epoch [19/100], Step [350/450], Loss: 0.6275, Accuracy:0.82
+Epoch [19/100], Step [400/450], Loss: 0.4336, Accuracy:0.82
+Epoch [19/100], Step [450/450], Loss: 0.5309, Accuracy:0.82
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.83      0.81      0.82      4599
+       auto       0.90      0.91      0.91      4454
+       bird       0.74      0.76      0.75      4402
+        cat       0.70      0.69      0.69      4493
+       deer       0.80      0.80      0.80      4540
+        dog       0.72      0.75      0.74      4328
+       frog       0.87      0.85      0.86      4600
+      horse       0.84      0.84      0.84      4525
+       ship       0.89      0.88      0.88      4548
+      truck       0.88      0.88      0.88      4511
+
+avg / total       0.82      0.82      0.82     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.80      0.83      0.81       482
+       auto       0.87      0.91      0.89       476
+       bird       0.72      0.74      0.73       504
+        cat       0.61      0.68      0.64       498
+       deer       0.76      0.80      0.78       483
+        dog       0.68      0.70      0.69       458
+       frog       0.83      0.85      0.84       462
+      horse       0.90      0.70      0.79       608
+       ship       0.87      0.86      0.86       521
+      truck       0.87      0.84      0.86       508
+
+avg / total       0.80      0.79      0.79      5000
+
+Epoch 19 validation accuracy= 0.7894
+Epoch [20/100], Step [50/450], Loss: 0.4629, Accuracy:0.83
+Epoch [20/100], Step [100/450], Loss: 0.4954, Accuracy:0.83
+Epoch [20/100], Step [150/450], Loss: 0.5950, Accuracy:0.83
+Epoch [20/100], Step [200/450], Loss: 0.5493, Accuracy:0.83
+Epoch [20/100], Step [250/450], Loss: 0.3683, Accuracy:0.82
+Epoch [20/100], Step [300/450], Loss: 0.5786, Accuracy:0.82
+Epoch [20/100], Step [350/450], Loss: 0.5762, Accuracy:0.82
+Epoch [20/100], Step [400/450], Loss: 0.6869, Accuracy:0.82
+Epoch [20/100], Step [450/450], Loss: 0.4121, Accuracy:0.82
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.84      0.82      0.83      4581
+       auto       0.90      0.91      0.91      4465
+       bird       0.76      0.77      0.76      4427
+        cat       0.69      0.69      0.69      4443
+       deer       0.81      0.80      0.80      4550
+        dog       0.73      0.75      0.74      4378
+       frog       0.87      0.85      0.86      4632
+      horse       0.84      0.84      0.84      4506
+       ship       0.89      0.88      0.89      4547
+      truck       0.87      0.88      0.88      4471
+
+avg / total       0.82      0.82      0.82     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.77      0.82       564
+       auto       0.91      0.86      0.89       524
+       bird       0.69      0.74      0.72       486
+        cat       0.57      0.73      0.64       437
+       deer       0.83      0.74      0.78       565
+        dog       0.70      0.67      0.68       491
+       frog       0.87      0.75      0.81       553
+      horse       0.80      0.84      0.82       446
+       ship       0.83      0.92      0.88       467
+      truck       0.82      0.87      0.84       467
+
+avg / total       0.80      0.79      0.79      5000
+
+Epoch 20 validation accuracy= 0.7884
+Epoch [21/100], Step [50/450], Loss: 0.3214, Accuracy:0.84
+Epoch [21/100], Step [100/450], Loss: 0.3726, Accuracy:0.84
+Epoch [21/100], Step [150/450], Loss: 0.3927, Accuracy:0.85
+Epoch [21/100], Step [200/450], Loss: 0.3665, Accuracy:0.85
+Epoch [21/100], Step [250/450], Loss: 0.5101, Accuracy:0.85
+Epoch [21/100], Step [300/450], Loss: 0.3137, Accuracy:0.85
+Epoch [21/100], Step [350/450], Loss: 0.3564, Accuracy:0.86
+Epoch [21/100], Step [400/450], Loss: 0.3045, Accuracy:0.86
+Epoch [21/100], Step [450/450], Loss: 0.3668, Accuracy:0.86
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.85      0.86      4620
+       auto       0.93      0.94      0.93      4477
+       bird       0.80      0.81      0.81      4442
+        cat       0.74      0.74      0.74      4435
+       deer       0.85      0.84      0.85      4572
+        dog       0.77      0.80      0.79      4352
+       frog       0.91      0.89      0.90      4625
+      horse       0.87      0.88      0.88      4493
+       ship       0.92      0.92      0.92      4488
+      truck       0.91      0.91      0.91      4496
+
+avg / total       0.86      0.86      0.86     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.82      0.85       534
+       auto       0.89      0.91      0.90       483
+       bird       0.77      0.79      0.78       505
+        cat       0.70      0.73      0.72       538
+       deer       0.83      0.82      0.83       510
+        dog       0.73      0.75      0.74       461
+       frog       0.88      0.88      0.88       474
+      horse       0.87      0.84      0.85       486
+       ship       0.88      0.91      0.89       498
+      truck       0.88      0.86      0.87       511
+
+avg / total       0.83      0.83      0.83      5000
+
+Epoch 21 validation accuracy= 0.8306
+Epoch [22/100], Step [50/450], Loss: 0.2698, Accuracy:0.87
+Epoch [22/100], Step [100/450], Loss: 0.3523, Accuracy:0.87
+Epoch [22/100], Step [150/450], Loss: 0.4902, Accuracy:0.87
+Epoch [22/100], Step [200/450], Loss: 0.4260, Accuracy:0.87
+Epoch [22/100], Step [250/450], Loss: 0.3625, Accuracy:0.87
+Epoch [22/100], Step [300/450], Loss: 0.3993, Accuracy:0.87
+Epoch [22/100], Step [350/450], Loss: 0.3832, Accuracy:0.87
+Epoch [22/100], Step [400/450], Loss: 0.3672, Accuracy:0.87
+Epoch [22/100], Step [450/450], Loss: 0.3000, Accuracy:0.87
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.87      0.88      4613
+       auto       0.93      0.94      0.94      4463
+       bird       0.82      0.83      0.82      4426
+        cat       0.76      0.75      0.76      4481
+       deer       0.86      0.86      0.86      4510
+        dog       0.79      0.82      0.80      4364
+       frog       0.91      0.90      0.90      4576
+      horse       0.89      0.89      0.89      4537
+       ship       0.93      0.91      0.92      4537
+      truck       0.92      0.92      0.92      4493
+
+avg / total       0.87      0.87      0.87     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.84      0.86       515
+       auto       0.89      0.89      0.89       494
+       bird       0.75      0.80      0.78       487
+        cat       0.71      0.75      0.73       526
+       deer       0.86      0.80      0.83       541
+        dog       0.75      0.74      0.75       480
+       frog       0.86      0.87      0.86       476
+      horse       0.87      0.86      0.87       473
+       ship       0.90      0.91      0.90       510
+      truck       0.88      0.88      0.88       498
+
+avg / total       0.84      0.83      0.83      5000
+
+Epoch 22 validation accuracy= 0.8340
+Epoch [23/100], Step [50/450], Loss: 0.3960, Accuracy:0.88
+Epoch [23/100], Step [100/450], Loss: 0.3185, Accuracy:0.88
+Epoch [23/100], Step [150/450], Loss: 0.4904, Accuracy:0.88
+Epoch [23/100], Step [200/450], Loss: 0.2644, Accuracy:0.88
+Epoch [23/100], Step [250/450], Loss: 0.4543, Accuracy:0.88
+Epoch [23/100], Step [300/450], Loss: 0.2294, Accuracy:0.88
+Epoch [23/100], Step [350/450], Loss: 0.3699, Accuracy:0.88
+Epoch [23/100], Step [400/450], Loss: 0.4023, Accuracy:0.88
+Epoch [23/100], Step [450/450], Loss: 0.4537, Accuracy:0.88
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.90      0.88      0.89      4587
+       auto       0.94      0.94      0.94      4485
+       bird       0.83      0.84      0.84      4413
+        cat       0.78      0.76      0.77      4535
+       deer       0.87      0.86      0.87      4540
+        dog       0.79      0.83      0.81      4338
+       frog       0.91      0.90      0.91      4562
+      horse       0.90      0.90      0.90      4523
+       ship       0.93      0.92      0.93      4525
+      truck       0.92      0.92      0.92      4492
+
+avg / total       0.88      0.88      0.88     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.87      0.82      0.85       526
+       auto       0.90      0.94      0.92       478
+       bird       0.78      0.79      0.79       515
+        cat       0.67      0.77      0.72       488
+       deer       0.88      0.83      0.85       534
+        dog       0.74      0.76      0.75       465
+       frog       0.88      0.86      0.87       485
+      horse       0.88      0.83      0.86       495
+       ship       0.88      0.90      0.89       507
+      truck       0.91      0.89      0.90       507
+
+avg / total       0.84      0.84      0.84      5000
+
+Epoch 23 validation accuracy= 0.8380
+Epoch [24/100], Step [50/450], Loss: 0.2970, Accuracy:0.88
+Epoch [24/100], Step [100/450], Loss: 0.3501, Accuracy:0.89
+Epoch [24/100], Step [150/450], Loss: 0.3507, Accuracy:0.88
+Epoch [24/100], Step [200/450], Loss: 0.4041, Accuracy:0.88
+Epoch [24/100], Step [250/450], Loss: 0.3719, Accuracy:0.88
+Epoch [24/100], Step [300/450], Loss: 0.3684, Accuracy:0.88
+Epoch [24/100], Step [350/450], Loss: 0.3690, Accuracy:0.88
+Epoch [24/100], Step [400/450], Loss: 0.3847, Accuracy:0.88
+Epoch [24/100], Step [450/450], Loss: 0.3238, Accuracy:0.88
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.90      0.88      0.89      4587
+       auto       0.94      0.95      0.94      4454
+       bird       0.84      0.85      0.84      4434
+        cat       0.79      0.77      0.78      4507
+       deer       0.87      0.87      0.87      4515
+        dog       0.80      0.83      0.82      4347
+       frog       0.92      0.90      0.91      4592
+      horse       0.90      0.90      0.90      4543
+       ship       0.93      0.93      0.93      4528
+      truck       0.92      0.93      0.93      4493
+
+avg / total       0.88      0.88      0.88     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.81      0.85       541
+       auto       0.90      0.93      0.92       476
+       bird       0.78      0.80      0.79       506
+        cat       0.69      0.76      0.72       505
+       deer       0.83      0.84      0.83       495
+        dog       0.77      0.74      0.76       491
+       frog       0.88      0.88      0.88       476
+      horse       0.89      0.85      0.87       490
+       ship       0.90      0.91      0.90       506
+      truck       0.90      0.86      0.88       514
+
+avg / total       0.84      0.84      0.84      5000
+
+Epoch 24 validation accuracy= 0.8390
+Epoch [25/100], Step [50/450], Loss: 0.4105, Accuracy:0.89
+Epoch [25/100], Step [100/450], Loss: 0.3258, Accuracy:0.89
+Epoch [25/100], Step [150/450], Loss: 0.4392, Accuracy:0.88
+Epoch [25/100], Step [200/450], Loss: 0.3163, Accuracy:0.88
+Epoch [25/100], Step [250/450], Loss: 0.3719, Accuracy:0.88
+Epoch [25/100], Step [300/450], Loss: 0.3274, Accuracy:0.88
+Epoch [25/100], Step [350/450], Loss: 0.3350, Accuracy:0.89
+Epoch [25/100], Step [400/450], Loss: 0.3146, Accuracy:0.88
+Epoch [25/100], Step [450/450], Loss: 0.2789, Accuracy:0.88
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.90      0.88      0.89      4596
+       auto       0.94      0.95      0.94      4463
+       bird       0.84      0.85      0.85      4440
+        cat       0.78      0.78      0.78      4478
+       deer       0.88      0.87      0.88      4527
+        dog       0.81      0.84      0.82      4370
+       frog       0.92      0.91      0.92      4585
+      horse       0.91      0.90      0.90      4541
+       ship       0.94      0.93      0.93      4510
+      truck       0.93      0.93      0.93      4490
+
+avg / total       0.89      0.88      0.88     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.86      0.82      0.84       517
+       auto       0.92      0.92      0.92       494
+       bird       0.76      0.81      0.78       484
+        cat       0.71      0.73      0.72       546
+       deer       0.83      0.83      0.83       503
+        dog       0.76      0.75      0.75       475
+       frog       0.88      0.88      0.88       474
+      horse       0.88      0.83      0.86       497
+       ship       0.89      0.90      0.89       512
+      truck       0.89      0.88      0.88       498
+
+avg / total       0.84      0.84      0.84      5000
+
+Epoch 25 validation accuracy= 0.8356
+Epoch [26/100], Step [50/450], Loss: 0.4135, Accuracy:0.88
+Epoch [26/100], Step [100/450], Loss: 0.3331, Accuracy:0.89
+Epoch [26/100], Step [150/450], Loss: 0.3041, Accuracy:0.89
+Epoch [26/100], Step [200/450], Loss: 0.3526, Accuracy:0.89
+Epoch [26/100], Step [250/450], Loss: 0.3788, Accuracy:0.89
+Epoch [26/100], Step [300/450], Loss: 0.3936, Accuracy:0.89
+Epoch [26/100], Step [350/450], Loss: 0.2376, Accuracy:0.89
+Epoch [26/100], Step [400/450], Loss: 0.4190, Accuracy:0.89
+Epoch [26/100], Step [450/450], Loss: 0.3973, Accuracy:0.89
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.90      0.88      0.89      4612
+       auto       0.94      0.95      0.95      4448
+       bird       0.84      0.85      0.85      4421
+        cat       0.79      0.78      0.79      4503
+       deer       0.88      0.87      0.88      4536
+        dog       0.82      0.84      0.83      4381
+       frog       0.92      0.91      0.92      4569
+      horse       0.91      0.91      0.91      4514
+       ship       0.93      0.93      0.93      4493
+      truck       0.93      0.93      0.93      4523
+
+avg / total       0.89      0.89      0.89     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.84      0.86       517
+       auto       0.92      0.90      0.91       505
+       bird       0.80      0.82      0.81       505
+        cat       0.71      0.74      0.72       537
+       deer       0.86      0.84      0.85       512
+        dog       0.76      0.77      0.77       466
+       frog       0.87      0.88      0.87       470
+      horse       0.90      0.87      0.88       485
+       ship       0.90      0.91      0.91       510
+      truck       0.89      0.89      0.89       493
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 26 validation accuracy= 0.8462
+Epoch [27/100], Step [50/450], Loss: 0.2538, Accuracy:0.90
+Epoch [27/100], Step [100/450], Loss: 0.3987, Accuracy:0.89
+Epoch [27/100], Step [150/450], Loss: 0.3005, Accuracy:0.89
+Epoch [27/100], Step [200/450], Loss: 0.3050, Accuracy:0.89
+Epoch [27/100], Step [250/450], Loss: 0.2782, Accuracy:0.89
+Epoch [27/100], Step [300/450], Loss: 0.3781, Accuracy:0.89
+Epoch [27/100], Step [350/450], Loss: 0.2646, Accuracy:0.89
+Epoch [27/100], Step [400/450], Loss: 0.3224, Accuracy:0.89
+Epoch [27/100], Step [450/450], Loss: 0.4488, Accuracy:0.89
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.91      0.89      0.90      4608
+       auto       0.95      0.96      0.95      4473
+       bird       0.85      0.86      0.85      4472
+        cat       0.80      0.79      0.79      4498
+       deer       0.88      0.88      0.88      4491
+        dog       0.81      0.84      0.83      4373
+       frog       0.92      0.91      0.92      4585
+      horse       0.91      0.91      0.91      4505
+       ship       0.94      0.93      0.94      4507
+      truck       0.93      0.94      0.93      4488
+
+avg / total       0.89      0.89      0.89     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.85      0.85      0.85       496
+       auto       0.93      0.92      0.92       501
+       bird       0.75      0.82      0.79       474
+        cat       0.70      0.76      0.73       516
+       deer       0.86      0.78      0.82       556
+        dog       0.75      0.76      0.76       467
+       frog       0.89      0.86      0.87       491
+      horse       0.88      0.85      0.87       489
+       ship       0.90      0.90      0.90       516
+      truck       0.91      0.91      0.91       494
+
+avg / total       0.84      0.84      0.84      5000
+
+Epoch 27 validation accuracy= 0.8416
+Epoch [28/100], Step [50/450], Loss: 0.2237, Accuracy:0.90
+Epoch [28/100], Step [100/450], Loss: 0.4739, Accuracy:0.89
+Epoch [28/100], Step [150/450], Loss: 0.2194, Accuracy:0.90
+Epoch [28/100], Step [200/450], Loss: 0.3286, Accuracy:0.89
+Epoch [28/100], Step [250/450], Loss: 0.3309, Accuracy:0.90
+Epoch [28/100], Step [300/450], Loss: 0.3494, Accuracy:0.90
+Epoch [28/100], Step [350/450], Loss: 0.3760, Accuracy:0.89
+Epoch [28/100], Step [400/450], Loss: 0.2034, Accuracy:0.89
+Epoch [28/100], Step [450/450], Loss: 0.1891, Accuracy:0.89
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.91      0.89      0.90      4596
+       auto       0.94      0.95      0.95      4460
+       bird       0.85      0.87      0.86      4400
+        cat       0.80      0.79      0.80      4497
+       deer       0.89      0.88      0.89      4537
+        dog       0.82      0.84      0.83      4376
+       frog       0.93      0.92      0.92      4561
+      horse       0.91      0.91      0.91      4541
+       ship       0.94      0.93      0.94      4521
+      truck       0.93      0.93      0.93      4511
+
+avg / total       0.89      0.89      0.89     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.86      0.86      0.86       494
+       auto       0.92      0.92      0.92       492
+       bird       0.79      0.81      0.80       506
+        cat       0.72      0.75      0.73       537
+       deer       0.85      0.84      0.85       514
+        dog       0.75      0.78      0.76       458
+       frog       0.89      0.86      0.87       493
+      horse       0.89      0.85      0.87       489
+       ship       0.90      0.92      0.91       507
+      truck       0.90      0.87      0.89       510
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 28 validation accuracy= 0.8462
+Epoch [29/100], Step [50/450], Loss: 0.2595, Accuracy:0.89
+Epoch [29/100], Step [100/450], Loss: 0.2494, Accuracy:0.89
+Epoch [29/100], Step [150/450], Loss: 0.4751, Accuracy:0.89
+Epoch [29/100], Step [200/450], Loss: 0.1825, Accuracy:0.89
+Epoch [29/100], Step [250/450], Loss: 0.3230, Accuracy:0.89
+Epoch [29/100], Step [300/450], Loss: 0.3472, Accuracy:0.89
+Epoch [29/100], Step [350/450], Loss: 0.2212, Accuracy:0.89
+Epoch [29/100], Step [400/450], Loss: 0.2621, Accuracy:0.89
+Epoch [29/100], Step [450/450], Loss: 0.2890, Accuracy:0.89
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.91      0.89      0.90      4591
+       auto       0.95      0.95      0.95      4476
+       bird       0.86      0.86      0.86      4469
+        cat       0.80      0.79      0.80      4474
+       deer       0.89      0.88      0.88      4542
+        dog       0.82      0.85      0.84      4396
+       frog       0.93      0.92      0.92      4552
+      horse       0.91      0.92      0.91      4495
+       ship       0.94      0.94      0.94      4501
+      truck       0.94      0.94      0.94      4504
+
+avg / total       0.89      0.89      0.89     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.84      0.87       529
+       auto       0.91      0.94      0.92       483
+       bird       0.77      0.82      0.79       485
+        cat       0.72      0.74      0.73       548
+       deer       0.85      0.84      0.85       509
+        dog       0.76      0.75      0.76       476
+       frog       0.88      0.87      0.88       482
+      horse       0.89      0.86      0.88       483
+       ship       0.90      0.91      0.91       512
+      truck       0.89      0.89      0.89       493
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 29 validation accuracy= 0.8460
+Epoch [30/100], Step [50/450], Loss: 0.3088, Accuracy:0.89
+Epoch [30/100], Step [100/450], Loss: 0.3719, Accuracy:0.89
+Epoch [30/100], Step [150/450], Loss: 0.2990, Accuracy:0.89
+Epoch [30/100], Step [200/450], Loss: 0.2487, Accuracy:0.89
+Epoch [30/100], Step [250/450], Loss: 0.2352, Accuracy:0.89
+Epoch [30/100], Step [300/450], Loss: 0.3797, Accuracy:0.90
+Epoch [30/100], Step [350/450], Loss: 0.2395, Accuracy:0.90
+Epoch [30/100], Step [400/450], Loss: 0.3070, Accuracy:0.90
+Epoch [30/100], Step [450/450], Loss: 0.2761, Accuracy:0.89
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.92      0.89      0.90      4607
+       auto       0.94      0.95      0.95      4453
+       bird       0.86      0.87      0.86      4434
+        cat       0.80      0.79      0.79      4480
+       deer       0.89      0.89      0.89      4517
+        dog       0.82      0.85      0.84      4393
+       frog       0.93      0.92      0.92      4564
+      horse       0.92      0.92      0.92      4525
+       ship       0.94      0.93      0.94      4522
+      truck       0.93      0.93      0.93      4505
+
+avg / total       0.89      0.89      0.89     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.87      0.86      0.87       499
+       auto       0.91      0.93      0.92       486
+       bird       0.77      0.80      0.78       498
+        cat       0.69      0.77      0.73       500
+       deer       0.86      0.81      0.84       529
+        dog       0.78      0.75      0.77       496
+       frog       0.90      0.88      0.89       485
+      horse       0.87      0.84      0.86       484
+       ship       0.91      0.92      0.92       512
+      truck       0.92      0.89      0.90       511
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 30 validation accuracy= 0.8454
+Epoch [31/100], Step [50/450], Loss: 0.4423, Accuracy:0.90
+Epoch [31/100], Step [100/450], Loss: 0.3068, Accuracy:0.90
+Epoch [31/100], Step [150/450], Loss: 0.2233, Accuracy:0.90
+Epoch [31/100], Step [200/450], Loss: 0.2946, Accuracy:0.90
+Epoch [31/100], Step [250/450], Loss: 0.3415, Accuracy:0.90
+Epoch [31/100], Step [300/450], Loss: 0.4653, Accuracy:0.90
+Epoch [31/100], Step [350/450], Loss: 0.2239, Accuracy:0.90
+Epoch [31/100], Step [400/450], Loss: 0.2149, Accuracy:0.90
+Epoch [31/100], Step [450/450], Loss: 0.4546, Accuracy:0.90
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.91      0.90      0.90      4565
+       auto       0.95      0.95      0.95      4479
+       bird       0.86      0.86      0.86      4453
+        cat       0.80      0.79      0.80      4509
+       deer       0.89      0.89      0.89      4536
+        dog       0.82      0.85      0.84      4361
+       frog       0.93      0.92      0.92      4564
+      horse       0.91      0.92      0.91      4513
+       ship       0.94      0.94      0.94      4507
+      truck       0.94      0.94      0.94      4513
+
+avg / total       0.90      0.90      0.90     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.86      0.85      0.86       505
+       auto       0.92      0.94      0.93       489
+       bird       0.78      0.79      0.79       510
+        cat       0.70      0.75      0.73       521
+       deer       0.85      0.82      0.84       520
+        dog       0.76      0.78      0.77       462
+       frog       0.87      0.86      0.86       479
+      horse       0.91      0.84      0.87       502
+       ship       0.90      0.90      0.90       514
+      truck       0.91      0.90      0.91       498
+
+avg / total       0.85      0.84      0.85      5000
+
+Epoch 31 validation accuracy= 0.8446
+Epoch [32/100], Step [50/450], Loss: 0.2246, Accuracy:0.90
+Epoch [32/100], Step [100/450], Loss: 0.2819, Accuracy:0.90
+Epoch [32/100], Step [150/450], Loss: 0.2494, Accuracy:0.90
+Epoch [32/100], Step [200/450], Loss: 0.2328, Accuracy:0.90
+Epoch [32/100], Step [250/450], Loss: 0.2724, Accuracy:0.90
+Epoch [32/100], Step [300/450], Loss: 0.2500, Accuracy:0.90
+Epoch [32/100], Step [350/450], Loss: 0.3245, Accuracy:0.90
+Epoch [32/100], Step [400/450], Loss: 0.2965, Accuracy:0.90
+Epoch [32/100], Step [450/450], Loss: 0.4025, Accuracy:0.90
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.92      0.90      0.91      4583
+       auto       0.95      0.96      0.96      4483
+       bird       0.86      0.87      0.86      4437
+        cat       0.81      0.80      0.81      4506
+       deer       0.90      0.89      0.89      4540
+        dog       0.82      0.86      0.84      4347
+       frog       0.93      0.91      0.92      4598
+      horse       0.92      0.92      0.92      4521
+       ship       0.94      0.94      0.94      4509
+      truck       0.94      0.94      0.94      4476
+
+avg / total       0.90      0.90      0.90     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.87      0.86      0.86       500
+       auto       0.90      0.93      0.91       482
+       bird       0.80      0.81      0.80       512
+        cat       0.73      0.76      0.75       534
+       deer       0.84      0.85      0.85       496
+        dog       0.76      0.77      0.77       468
+       frog       0.89      0.87      0.88       486
+      horse       0.92      0.85      0.89       507
+       ship       0.89      0.90      0.90       508
+      truck       0.90      0.87      0.89       507
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 32 validation accuracy= 0.8480
+Epoch [33/100], Step [50/450], Loss: 0.2331, Accuracy:0.91
+Epoch [33/100], Step [100/450], Loss: 0.2421, Accuracy:0.90
+Epoch [33/100], Step [150/450], Loss: 0.2910, Accuracy:0.91
+Epoch [33/100], Step [200/450], Loss: 0.3442, Accuracy:0.90
+Epoch [33/100], Step [250/450], Loss: 0.2780, Accuracy:0.90
+Epoch [33/100], Step [300/450], Loss: 0.2868, Accuracy:0.90
+Epoch [33/100], Step [350/450], Loss: 0.2644, Accuracy:0.90
+Epoch [33/100], Step [400/450], Loss: 0.2698, Accuracy:0.90
+Epoch [33/100], Step [450/450], Loss: 0.2232, Accuracy:0.90
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.92      0.90      0.91      4613
+       auto       0.95      0.96      0.95      4469
+       bird       0.87      0.88      0.87      4427
+        cat       0.81      0.80      0.81      4472
+       deer       0.89      0.88      0.89      4542
+        dog       0.83      0.86      0.85      4397
+       frog       0.93      0.92      0.93      4566
+      horse       0.91      0.92      0.92      4512
+       ship       0.95      0.94      0.95      4506
+      truck       0.94      0.94      0.94      4496
+
+avg / total       0.90      0.90      0.90     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.84      0.86       519
+       auto       0.91      0.92      0.91       490
+       bird       0.75      0.81      0.78       485
+        cat       0.67      0.75      0.71       503
+       deer       0.83      0.83      0.83       506
+        dog       0.80      0.73      0.77       516
+       frog       0.86      0.87      0.87       474
+      horse       0.89      0.84      0.86       497
+       ship       0.88      0.91      0.90       498
+      truck       0.89      0.86      0.88       512
+
+avg / total       0.84      0.83      0.84      5000
+
+Epoch 33 validation accuracy= 0.8346
+Epoch [34/100], Step [50/450], Loss: 0.2893, Accuracy:0.90
+Epoch [34/100], Step [100/450], Loss: 0.2184, Accuracy:0.91
+Epoch [34/100], Step [150/450], Loss: 0.2471, Accuracy:0.90
+Epoch [34/100], Step [200/450], Loss: 0.3764, Accuracy:0.90
+Epoch [34/100], Step [250/450], Loss: 0.2462, Accuracy:0.90
+Epoch [34/100], Step [300/450], Loss: 0.1904, Accuracy:0.90
+Epoch [34/100], Step [350/450], Loss: 0.2319, Accuracy:0.90
+Epoch [34/100], Step [400/450], Loss: 0.3531, Accuracy:0.90
+Epoch [34/100], Step [450/450], Loss: 0.3542, Accuracy:0.90
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.92      0.90      0.91      4574
+       auto       0.95      0.96      0.95      4453
+       bird       0.87      0.88      0.87      4441
+        cat       0.82      0.81      0.82      4483
+       deer       0.90      0.89      0.89      4511
+        dog       0.84      0.86      0.85      4414
+       frog       0.93      0.93      0.93      4552
+      horse       0.92      0.91      0.92      4542
+       ship       0.95      0.94      0.94      4510
+      truck       0.94      0.94      0.94      4520
+
+avg / total       0.90      0.90      0.90     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.86      0.87      0.87       487
+       auto       0.92      0.92      0.92       494
+       bird       0.79      0.81      0.80       508
+        cat       0.70      0.73      0.72       533
+       deer       0.85      0.84      0.85       514
+        dog       0.75      0.75      0.75       475
+       frog       0.90      0.86      0.88       499
+      horse       0.89      0.87      0.88       479
+       ship       0.90      0.93      0.91       501
+      truck       0.92      0.89      0.91       510
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 34 validation accuracy= 0.8462
+Epoch [35/100], Step [50/450], Loss: 0.2957, Accuracy:0.91
+Epoch [35/100], Step [100/450], Loss: 0.2397, Accuracy:0.91
+Epoch [35/100], Step [150/450], Loss: 0.3795, Accuracy:0.91
+Epoch [35/100], Step [200/450], Loss: 0.2469, Accuracy:0.91
+Epoch [35/100], Step [250/450], Loss: 0.3589, Accuracy:0.91
+Epoch [35/100], Step [300/450], Loss: 0.2576, Accuracy:0.90
+Epoch [35/100], Step [350/450], Loss: 0.3025, Accuracy:0.90
+Epoch [35/100], Step [400/450], Loss: 0.3650, Accuracy:0.90
+Epoch [35/100], Step [450/450], Loss: 0.3575, Accuracy:0.90
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.92      0.90      0.91      4585
+       auto       0.95      0.96      0.96      4483
+       bird       0.87      0.88      0.87      4432
+        cat       0.82      0.82      0.82      4467
+       deer       0.90      0.89      0.90      4516
+        dog       0.84      0.86      0.85      4416
+       frog       0.93      0.92      0.93      4567
+      horse       0.92      0.92      0.92      4531
+       ship       0.95      0.94      0.94      4519
+      truck       0.94      0.94      0.94      4484
+
+avg / total       0.90      0.90      0.90     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.86      0.87      0.86       490
+       auto       0.91      0.92      0.91       490
+       bird       0.82      0.79      0.80       536
+        cat       0.72      0.78      0.75       520
+       deer       0.85      0.82      0.83       525
+        dog       0.76      0.79      0.77       453
+       frog       0.89      0.88      0.88       483
+      horse       0.88      0.86      0.87       483
+       ship       0.91      0.90      0.90       520
+      truck       0.91      0.90      0.91       500
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 35 validation accuracy= 0.8488
+Epoch [36/100], Step [50/450], Loss: 0.3096, Accuracy:0.91
+Epoch [36/100], Step [100/450], Loss: 0.2606, Accuracy:0.91
+Epoch [36/100], Step [150/450], Loss: 0.2985, Accuracy:0.91
+Epoch [36/100], Step [200/450], Loss: 0.2339, Accuracy:0.91
+Epoch [36/100], Step [250/450], Loss: 0.2871, Accuracy:0.91
+Epoch [36/100], Step [300/450], Loss: 0.2850, Accuracy:0.91
+Epoch [36/100], Step [350/450], Loss: 0.2539, Accuracy:0.91
+Epoch [36/100], Step [400/450], Loss: 0.2422, Accuracy:0.91
+Epoch [36/100], Step [450/450], Loss: 0.2749, Accuracy:0.91
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.92      0.90      0.91      4600
+       auto       0.95      0.96      0.96      4481
+       bird       0.87      0.88      0.88      4420
+        cat       0.82      0.81      0.82      4479
+       deer       0.90      0.90      0.90      4518
+        dog       0.84      0.87      0.85      4389
+       frog       0.94      0.93      0.93      4576
+      horse       0.92      0.92      0.92      4547
+       ship       0.95      0.95      0.95      4499
+      truck       0.94      0.94      0.94      4491
+
+avg / total       0.91      0.91      0.91     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.87      0.85      0.86       510
+       auto       0.93      0.92      0.93       498
+       bird       0.79      0.81      0.80       500
+        cat       0.71      0.77      0.74       511
+       deer       0.85      0.86      0.85       499
+        dog       0.80      0.75      0.77       503
+       frog       0.88      0.87      0.87       482
+      horse       0.88      0.85      0.87       484
+       ship       0.90      0.90      0.90       514
+      truck       0.90      0.89      0.90       499
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 36 validation accuracy= 0.8478
+Epoch [37/100], Step [50/450], Loss: 0.3572, Accuracy:0.91
+Epoch [37/100], Step [100/450], Loss: 0.3421, Accuracy:0.90
+Epoch [37/100], Step [150/450], Loss: 0.1793, Accuracy:0.91
+Epoch [37/100], Step [200/450], Loss: 0.1996, Accuracy:0.91
+Epoch [37/100], Step [250/450], Loss: 0.1564, Accuracy:0.91
+Epoch [37/100], Step [300/450], Loss: 0.2602, Accuracy:0.91
+Epoch [37/100], Step [350/450], Loss: 0.3020, Accuracy:0.91
+Epoch [37/100], Step [400/450], Loss: 0.2851, Accuracy:0.91
+Epoch [37/100], Step [450/450], Loss: 0.2283, Accuracy:0.91
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.92      0.91      0.91      4571
+       auto       0.95      0.96      0.96      4475
+       bird       0.87      0.88      0.88      4454
+        cat       0.82      0.82      0.82      4456
+       deer       0.90      0.90      0.90      4513
+        dog       0.84      0.86      0.85      4407
+       frog       0.94      0.93      0.93      4576
+      horse       0.92      0.92      0.92      4540
+       ship       0.95      0.95      0.95      4497
+      truck       0.94      0.94      0.94      4511
+
+avg / total       0.91      0.91      0.91     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.87      0.88       501
+       auto       0.93      0.91      0.92       502
+       bird       0.79      0.83      0.81       493
+        cat       0.73      0.75      0.74       546
+       deer       0.88      0.82      0.85       536
+        dog       0.77      0.76      0.77       478
+       frog       0.87      0.87      0.87       480
+      horse       0.87      0.87      0.87       465
+       ship       0.91      0.91      0.91       513
+      truck       0.89      0.90      0.90       486
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 37 validation accuracy= 0.8488
+Epoch [38/100], Step [50/450], Loss: 0.2693, Accuracy:0.91
+Epoch [38/100], Step [100/450], Loss: 0.2488, Accuracy:0.91
+Epoch [38/100], Step [150/450], Loss: 0.1961, Accuracy:0.91
+Epoch [38/100], Step [200/450], Loss: 0.3313, Accuracy:0.91
+Epoch [38/100], Step [250/450], Loss: 0.2140, Accuracy:0.91
+Epoch [38/100], Step [300/450], Loss: 0.2526, Accuracy:0.91
+Epoch [38/100], Step [350/450], Loss: 0.3112, Accuracy:0.91
+Epoch [38/100], Step [400/450], Loss: 0.2665, Accuracy:0.91
+Epoch [38/100], Step [450/450], Loss: 0.2348, Accuracy:0.91
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.93      0.91      0.92      4584
+       auto       0.95      0.96      0.96      4472
+       bird       0.88      0.88      0.88      4452
+        cat       0.83      0.82      0.82      4504
+       deer       0.90      0.90      0.90      4503
+        dog       0.85      0.87      0.86      4410
+       frog       0.94      0.93      0.93      4566
+      horse       0.93      0.93      0.93      4538
+       ship       0.94      0.95      0.95      4460
+      truck       0.95      0.94      0.94      4511
+
+avg / total       0.91      0.91      0.91     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.86      0.86      0.86       493
+       auto       0.93      0.91      0.92       507
+       bird       0.79      0.82      0.81       497
+        cat       0.74      0.76      0.75       542
+       deer       0.86      0.83      0.85       520
+        dog       0.77      0.77      0.77       478
+       frog       0.87      0.90      0.88       459
+      horse       0.92      0.86      0.89       498
+       ship       0.90      0.89      0.89       517
+      truck       0.88      0.89      0.89       489
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 38 validation accuracy= 0.8498
+Epoch [39/100], Step [50/450], Loss: 0.1964, Accuracy:0.91
+Epoch [39/100], Step [100/450], Loss: 0.2630, Accuracy:0.91
+Epoch [39/100], Step [150/450], Loss: 0.3026, Accuracy:0.91
+Epoch [39/100], Step [200/450], Loss: 0.2180, Accuracy:0.91
+Epoch [39/100], Step [250/450], Loss: 0.2233, Accuracy:0.91
+Epoch [39/100], Step [300/450], Loss: 0.2658, Accuracy:0.91
+Epoch [39/100], Step [350/450], Loss: 0.2325, Accuracy:0.91
+Epoch [39/100], Step [400/450], Loss: 0.2615, Accuracy:0.91
+Epoch [39/100], Step [450/450], Loss: 0.3617, Accuracy:0.91
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.92      0.91      0.92      4580
+       auto       0.96      0.96      0.96      4490
+       bird       0.88      0.89      0.89      4458
+        cat       0.83      0.82      0.82      4484
+       deer       0.91      0.90      0.91      4545
+        dog       0.85      0.88      0.86      4362
+       frog       0.94      0.93      0.94      4548
+      horse       0.93      0.92      0.92      4547
+       ship       0.95      0.94      0.95      4512
+      truck       0.94      0.95      0.95      4474
+
+avg / total       0.91      0.91      0.91     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.87      0.87      0.87       498
+       auto       0.92      0.92      0.92       493
+       bird       0.78      0.83      0.80       488
+        cat       0.71      0.75      0.73       528
+       deer       0.85      0.83      0.84       511
+        dog       0.78      0.75      0.76       495
+       frog       0.90      0.87      0.89       491
+      horse       0.88      0.85      0.86       487
+       ship       0.90      0.93      0.92       499
+      truck       0.91      0.88      0.89       510
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 39 validation accuracy= 0.8474
+Epoch [40/100], Step [50/450], Loss: 0.2213, Accuracy:0.92
+Epoch [40/100], Step [100/450], Loss: 0.1971, Accuracy:0.92
+Epoch [40/100], Step [150/450], Loss: 0.3201, Accuracy:0.91
+Epoch [40/100], Step [200/450], Loss: 0.1752, Accuracy:0.91
+Epoch [40/100], Step [250/450], Loss: 0.2402, Accuracy:0.91
+Epoch [40/100], Step [300/450], Loss: 0.2925, Accuracy:0.91
+Epoch [40/100], Step [350/450], Loss: 0.1950, Accuracy:0.91
+Epoch [40/100], Step [400/450], Loss: 0.2237, Accuracy:0.91
+Epoch [40/100], Step [450/450], Loss: 0.2533, Accuracy:0.91
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.93      0.91      0.92      4568
+       auto       0.96      0.96      0.96      4498
+       bird       0.88      0.88      0.88      4438
+        cat       0.84      0.82      0.83      4508
+       deer       0.91      0.90      0.91      4524
+        dog       0.85      0.88      0.87      4362
+       frog       0.94      0.93      0.94      4567
+      horse       0.93      0.93      0.93      4548
+       ship       0.95      0.95      0.95      4510
+      truck       0.94      0.95      0.95      4477
+
+avg / total       0.91      0.91      0.91     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.90      0.86      0.88       517
+       auto       0.91      0.95      0.93       477
+       bird       0.76      0.83      0.79       477
+        cat       0.69      0.75      0.72       517
+       deer       0.84      0.83      0.83       508
+        dog       0.79      0.71      0.75       526
+       frog       0.88      0.87      0.88       485
+      horse       0.89      0.86      0.88       482
+       ship       0.91      0.91      0.91       515
+      truck       0.91      0.90      0.91       496
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 40 validation accuracy= 0.8454
+Epoch [41/100], Step [50/450], Loss: 0.1759, Accuracy:0.92
+Epoch [41/100], Step [100/450], Loss: 0.2831, Accuracy:0.92
+Epoch [41/100], Step [150/450], Loss: 0.2546, Accuracy:0.92
+Epoch [41/100], Step [200/450], Loss: 0.1142, Accuracy:0.92
+Epoch [41/100], Step [250/450], Loss: 0.2918, Accuracy:0.92
+Epoch [41/100], Step [300/450], Loss: 0.2473, Accuracy:0.92
+Epoch [41/100], Step [350/450], Loss: 0.1808, Accuracy:0.92
+Epoch [41/100], Step [400/450], Loss: 0.4057, Accuracy:0.92
+Epoch [41/100], Step [450/450], Loss: 0.2630, Accuracy:0.92
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.92      0.93      4631
+       auto       0.96      0.97      0.96      4432
+       bird       0.88      0.90      0.89      4368
+        cat       0.84      0.85      0.84      4405
+       deer       0.92      0.91      0.91      4537
+        dog       0.87      0.88      0.87      4485
+       frog       0.95      0.93      0.94      4597
+      horse       0.93      0.93      0.93      4504
+       ship       0.96      0.95      0.95      4528
+      truck       0.95      0.95      0.95      4513
+
+avg / total       0.92      0.92      0.92     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.84      0.86       527
+       auto       0.92      0.93      0.92       495
+       bird       0.77      0.82      0.80       487
+        cat       0.73      0.76      0.74       544
+       deer       0.85      0.84      0.85       511
+        dog       0.77      0.78      0.78       473
+       frog       0.89      0.87      0.88       488
+      horse       0.89      0.87      0.88       478
+       ship       0.88      0.90      0.89       504
+      truck       0.90      0.90      0.90       493
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 41 validation accuracy= 0.8494
+Epoch [42/100], Step [50/450], Loss: 0.3769, Accuracy:0.92
+Epoch [42/100], Step [100/450], Loss: 0.2793, Accuracy:0.92
+Epoch [42/100], Step [150/450], Loss: 0.1560, Accuracy:0.92
+Epoch [42/100], Step [200/450], Loss: 0.3109, Accuracy:0.92
+Epoch [42/100], Step [250/450], Loss: 0.2544, Accuracy:0.92
+Epoch [42/100], Step [300/450], Loss: 0.2106, Accuracy:0.92
+Epoch [42/100], Step [350/450], Loss: 0.2046, Accuracy:0.92
+Epoch [42/100], Step [400/450], Loss: 0.1921, Accuracy:0.92
+Epoch [42/100], Step [450/450], Loss: 0.2394, Accuracy:0.92
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.93      0.92      0.93      4536
+       auto       0.96      0.97      0.96      4480
+       bird       0.89      0.90      0.89      4433
+        cat       0.85      0.84      0.85      4493
+       deer       0.92      0.91      0.91      4542
+        dog       0.87      0.89      0.88      4428
+       frog       0.95      0.94      0.94      4562
+      horse       0.94      0.93      0.93      4554
+       ship       0.95      0.95      0.95      4489
+      truck       0.95      0.95      0.95      4483
+
+avg / total       0.92      0.92      0.92     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.86      0.87       511
+       auto       0.93      0.92      0.92       501
+       bird       0.77      0.82      0.79       487
+        cat       0.72      0.76      0.74       533
+       deer       0.83      0.81      0.82       511
+        dog       0.79      0.76      0.77       492
+       frog       0.88      0.88      0.88       479
+      horse       0.87      0.85      0.86       481
+       ship       0.91      0.91      0.91       518
+      truck       0.89      0.90      0.90       487
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 42 validation accuracy= 0.8456
+Epoch [43/100], Step [50/450], Loss: 0.1097, Accuracy:0.92
+Epoch [43/100], Step [100/450], Loss: 0.2651, Accuracy:0.92
+Epoch [43/100], Step [150/450], Loss: 0.2432, Accuracy:0.92
+Epoch [43/100], Step [200/450], Loss: 0.1842, Accuracy:0.92
+Epoch [43/100], Step [250/450], Loss: 0.2297, Accuracy:0.92
+Epoch [43/100], Step [300/450], Loss: 0.2063, Accuracy:0.92
+Epoch [43/100], Step [350/450], Loss: 0.2926, Accuracy:0.92
+Epoch [43/100], Step [400/450], Loss: 0.2478, Accuracy:0.92
+Epoch [43/100], Step [450/450], Loss: 0.1392, Accuracy:0.92
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.92      0.93      4606
+       auto       0.96      0.97      0.96      4473
+       bird       0.89      0.89      0.89      4470
+        cat       0.84      0.84      0.84      4451
+       deer       0.92      0.91      0.92      4502
+        dog       0.86      0.88      0.87      4448
+       frog       0.95      0.93      0.94      4589
+      horse       0.93      0.94      0.94      4488
+       ship       0.96      0.96      0.96      4477
+      truck       0.95      0.96      0.96      4496
+
+avg / total       0.92      0.92      0.92     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.86      0.84      0.85       509
+       auto       0.92      0.90      0.91       504
+       bird       0.75      0.83      0.79       471
+        cat       0.71      0.76      0.74       528
+       deer       0.87      0.84      0.85       523
+        dog       0.77      0.76      0.76       486
+       frog       0.90      0.88      0.89       490
+      horse       0.89      0.86      0.87       485
+       ship       0.89      0.91      0.90       508
+      truck       0.90      0.89      0.89       496
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 43 validation accuracy= 0.8452
+Epoch [44/100], Step [50/450], Loss: 0.2614, Accuracy:0.92
+Epoch [44/100], Step [100/450], Loss: 0.2534, Accuracy:0.92
+Epoch [44/100], Step [150/450], Loss: 0.2662, Accuracy:0.92
+Epoch [44/100], Step [200/450], Loss: 0.1984, Accuracy:0.92
+Epoch [44/100], Step [250/450], Loss: 0.2227, Accuracy:0.92
+Epoch [44/100], Step [300/450], Loss: 0.1554, Accuracy:0.92
+Epoch [44/100], Step [350/450], Loss: 0.2233, Accuracy:0.92
+Epoch [44/100], Step [400/450], Loss: 0.2150, Accuracy:0.92
+Epoch [44/100], Step [450/450], Loss: 0.1812, Accuracy:0.92
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.92      0.93      4603
+       auto       0.96      0.97      0.96      4458
+       bird       0.89      0.90      0.90      4438
+        cat       0.85      0.84      0.85      4492
+       deer       0.92      0.92      0.92      4525
+        dog       0.86      0.88      0.87      4413
+       frog       0.95      0.94      0.95      4532
+      horse       0.93      0.94      0.93      4519
+       ship       0.96      0.95      0.95      4520
+      truck       0.95      0.95      0.95      4500
+
+avg / total       0.92      0.92      0.92     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.86      0.83      0.85       514
+       auto       0.91      0.91      0.91       492
+       bird       0.77      0.81      0.79       491
+        cat       0.71      0.77      0.74       514
+       deer       0.88      0.85      0.86       519
+        dog       0.75      0.74      0.75       478
+       frog       0.90      0.89      0.89       483
+      horse       0.90      0.83      0.87       503
+       ship       0.89      0.90      0.90       505
+      truck       0.90      0.88      0.89       501
+
+avg / total       0.85      0.84      0.84      5000
+
+Epoch 44 validation accuracy= 0.8434
+Epoch [45/100], Step [50/450], Loss: 0.1129, Accuracy:0.92
+Epoch [45/100], Step [100/450], Loss: 0.2149, Accuracy:0.93
+Epoch [45/100], Step [150/450], Loss: 0.2684, Accuracy:0.93
+Epoch [45/100], Step [200/450], Loss: 0.2131, Accuracy:0.93
+Epoch [45/100], Step [250/450], Loss: 0.2067, Accuracy:0.92
+Epoch [45/100], Step [300/450], Loss: 0.1872, Accuracy:0.92
+Epoch [45/100], Step [350/450], Loss: 0.2636, Accuracy:0.92
+Epoch [45/100], Step [400/450], Loss: 0.2504, Accuracy:0.92
+Epoch [45/100], Step [450/450], Loss: 0.3563, Accuracy:0.92
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.92      0.93      4567
+       auto       0.96      0.97      0.97      4489
+       bird       0.90      0.91      0.90      4455
+        cat       0.85      0.84      0.85      4451
+       deer       0.92      0.91      0.92      4539
+        dog       0.86      0.89      0.88      4359
+       frog       0.95      0.94      0.94      4583
+      horse       0.94      0.94      0.94      4553
+       ship       0.95      0.95      0.95      4487
+      truck       0.95      0.95      0.95      4517
+
+avg / total       0.92      0.92      0.92     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.86      0.87       504
+       auto       0.93      0.91      0.92       502
+       bird       0.79      0.82      0.81       497
+        cat       0.73      0.76      0.74       538
+       deer       0.87      0.88      0.87       497
+        dog       0.80      0.77      0.78       489
+       frog       0.88      0.87      0.88       479
+      horse       0.90      0.85      0.88       494
+       ship       0.90      0.92      0.91       506
+      truck       0.89      0.89      0.89       494
+
+avg / total       0.86      0.85      0.85      5000
+
+Epoch 45 validation accuracy= 0.8546
+Epoch [46/100], Step [50/450], Loss: 0.1908, Accuracy:0.92
+Epoch [46/100], Step [100/450], Loss: 0.2310, Accuracy:0.92
+Epoch [46/100], Step [150/450], Loss: 0.2816, Accuracy:0.93
+Epoch [46/100], Step [200/450], Loss: 0.1187, Accuracy:0.93
+Epoch [46/100], Step [250/450], Loss: 0.1568, Accuracy:0.93
+Epoch [46/100], Step [300/450], Loss: 0.3622, Accuracy:0.92
+Epoch [46/100], Step [350/450], Loss: 0.2390, Accuracy:0.92
+Epoch [46/100], Step [400/450], Loss: 0.2271, Accuracy:0.93
+Epoch [46/100], Step [450/450], Loss: 0.2175, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.93      4571
+       auto       0.96      0.97      0.97      4460
+       bird       0.90      0.91      0.90      4461
+        cat       0.86      0.85      0.85      4500
+       deer       0.92      0.92      0.92      4496
+        dog       0.87      0.89      0.88      4434
+       frog       0.95      0.94      0.94      4561
+      horse       0.94      0.94      0.94      4538
+       ship       0.96      0.96      0.96      4479
+      truck       0.95      0.95      0.95      4500
+
+avg / total       0.93      0.93      0.92     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.86      0.88       515
+       auto       0.93      0.93      0.93       497
+       bird       0.80      0.83      0.82       500
+        cat       0.72      0.77      0.74       530
+       deer       0.86      0.83      0.85       520
+        dog       0.78      0.79      0.79       469
+       frog       0.89      0.90      0.89       472
+      horse       0.89      0.83      0.86       500
+       ship       0.91      0.92      0.92       505
+      truck       0.90      0.91      0.90       492
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 46 validation accuracy= 0.8566
+Epoch [47/100], Step [50/450], Loss: 0.2754, Accuracy:0.92
+Epoch [47/100], Step [100/450], Loss: 0.2939, Accuracy:0.92
+Epoch [47/100], Step [150/450], Loss: 0.1238, Accuracy:0.92
+Epoch [47/100], Step [200/450], Loss: 0.1807, Accuracy:0.92
+Epoch [47/100], Step [250/450], Loss: 0.2245, Accuracy:0.92
+Epoch [47/100], Step [300/450], Loss: 0.2343, Accuracy:0.92
+Epoch [47/100], Step [350/450], Loss: 0.1684, Accuracy:0.92
+Epoch [47/100], Step [400/450], Loss: 0.2131, Accuracy:0.92
+Epoch [47/100], Step [450/450], Loss: 0.1558, Accuracy:0.92
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.92      0.93      4574
+       auto       0.96      0.97      0.96      4469
+       bird       0.90      0.90      0.90      4460
+        cat       0.84      0.84      0.84      4481
+       deer       0.92      0.92      0.92      4505
+        dog       0.86      0.89      0.88      4369
+       frog       0.95      0.94      0.95      4583
+      horse       0.94      0.93      0.94      4554
+       ship       0.96      0.95      0.96      4512
+      truck       0.95      0.95      0.95      4493
+
+avg / total       0.92      0.92      0.92     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.84      0.87       522
+       auto       0.91      0.93      0.92       486
+       bird       0.80      0.83      0.81       494
+        cat       0.73      0.78      0.75       529
+       deer       0.87      0.88      0.88       502
+        dog       0.78      0.77      0.77       481
+       frog       0.89      0.89      0.89       477
+      horse       0.92      0.86      0.89       500
+       ship       0.91      0.93      0.92       501
+      truck       0.90      0.88      0.89       508
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 47 validation accuracy= 0.8584
+Epoch [48/100], Step [50/450], Loss: 0.2055, Accuracy:0.92
+Epoch [48/100], Step [100/450], Loss: 0.2014, Accuracy:0.92
+Epoch [48/100], Step [150/450], Loss: 0.2755, Accuracy:0.92
+Epoch [48/100], Step [200/450], Loss: 0.2903, Accuracy:0.92
+Epoch [48/100], Step [250/450], Loss: 0.2527, Accuracy:0.92
+Epoch [48/100], Step [300/450], Loss: 0.1687, Accuracy:0.92
+Epoch [48/100], Step [350/450], Loss: 0.2573, Accuracy:0.92
+Epoch [48/100], Step [400/450], Loss: 0.1699, Accuracy:0.92
+Epoch [48/100], Step [450/450], Loss: 0.1392, Accuracy:0.92
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.92      0.93      4591
+       auto       0.96      0.97      0.96      4464
+       bird       0.90      0.91      0.90      4437
+        cat       0.85      0.85      0.85      4476
+       deer       0.92      0.91      0.91      4529
+        dog       0.87      0.88      0.87      4439
+       frog       0.95      0.94      0.95      4543
+      horse       0.94      0.93      0.94      4546
+       ship       0.96      0.96      0.96      4476
+      truck       0.95      0.95      0.95      4499
+
+avg / total       0.92      0.92      0.92     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.91      0.85      0.88       527
+       auto       0.92      0.91      0.91       503
+       bird       0.78      0.82      0.80       493
+        cat       0.71      0.77      0.74       516
+       deer       0.85      0.86      0.85       496
+        dog       0.79      0.76      0.78       488
+       frog       0.90      0.86      0.88       499
+      horse       0.88      0.86      0.87       482
+       ship       0.89      0.92      0.91       496
+      truck       0.91      0.90      0.91       500
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 48 validation accuracy= 0.8520
+Epoch [49/100], Step [50/450], Loss: 0.2717, Accuracy:0.93
+Epoch [49/100], Step [100/450], Loss: 0.2192, Accuracy:0.93
+Epoch [49/100], Step [150/450], Loss: 0.1570, Accuracy:0.93
+Epoch [49/100], Step [200/450], Loss: 0.1654, Accuracy:0.93
+Epoch [49/100], Step [250/450], Loss: 0.2769, Accuracy:0.93
+Epoch [49/100], Step [300/450], Loss: 0.2852, Accuracy:0.93
+Epoch [49/100], Step [350/450], Loss: 0.3436, Accuracy:0.92
+Epoch [49/100], Step [400/450], Loss: 0.1687, Accuracy:0.92
+Epoch [49/100], Step [450/450], Loss: 0.1973, Accuracy:0.92
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.93      4553
+       auto       0.96      0.97      0.97      4458
+       bird       0.90      0.91      0.90      4426
+        cat       0.85      0.84      0.85      4491
+       deer       0.92      0.91      0.92      4550
+        dog       0.86      0.89      0.88      4389
+       frog       0.95      0.94      0.95      4581
+      horse       0.93      0.93      0.93      4502
+       ship       0.96      0.95      0.96      4529
+      truck       0.96      0.95      0.95      4521
+
+avg / total       0.92      0.92      0.92     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.90      0.87      0.88       516
+       auto       0.93      0.92      0.92       502
+       bird       0.81      0.83      0.82       504
+        cat       0.72      0.76      0.74       532
+       deer       0.86      0.86      0.86       507
+        dog       0.78      0.78      0.78       478
+       frog       0.87      0.87      0.87       476
+      horse       0.91      0.86      0.89       495
+       ship       0.90      0.92      0.91       503
+      truck       0.89      0.90      0.90       487
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 49 validation accuracy= 0.8570
+Epoch [50/100], Step [50/450], Loss: 0.3136, Accuracy:0.93
+Epoch [50/100], Step [100/450], Loss: 0.3303, Accuracy:0.93
+Epoch [50/100], Step [150/450], Loss: 0.3018, Accuracy:0.93
+Epoch [50/100], Step [200/450], Loss: 0.1810, Accuracy:0.93
+Epoch [50/100], Step [250/450], Loss: 0.3228, Accuracy:0.93
+Epoch [50/100], Step [300/450], Loss: 0.2933, Accuracy:0.92
+Epoch [50/100], Step [350/450], Loss: 0.1773, Accuracy:0.93
+Epoch [50/100], Step [400/450], Loss: 0.1628, Accuracy:0.92
+Epoch [50/100], Step [450/450], Loss: 0.2204, Accuracy:0.92
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.93      4568
+       auto       0.97      0.97      0.97      4495
+       bird       0.90      0.90      0.90      4446
+        cat       0.85      0.84      0.84      4535
+       deer       0.92      0.91      0.92      4517
+        dog       0.86      0.89      0.87      4387
+       frog       0.95      0.94      0.94      4572
+      horse       0.94      0.94      0.94      4494
+       ship       0.96      0.96      0.96      4494
+      truck       0.95      0.96      0.96      4492
+
+avg / total       0.92      0.92      0.92     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.87      0.88       503
+       auto       0.94      0.91      0.92       513
+       bird       0.79      0.83      0.81       490
+        cat       0.72      0.78      0.75       517
+       deer       0.87      0.85      0.86       516
+        dog       0.77      0.76      0.76       482
+       frog       0.89      0.85      0.87       499
+      horse       0.90      0.85      0.88       495
+       ship       0.90      0.92      0.91       507
+      truck       0.90      0.93      0.91       478
+
+avg / total       0.86      0.85      0.86      5000
+
+Epoch 50 validation accuracy= 0.8546
+Epoch [51/100], Step [50/450], Loss: 0.2718, Accuracy:0.93
+Epoch [51/100], Step [100/450], Loss: 0.2026, Accuracy:0.93
+Epoch [51/100], Step [150/450], Loss: 0.2709, Accuracy:0.93
+Epoch [51/100], Step [200/450], Loss: 0.1778, Accuracy:0.92
+Epoch [51/100], Step [250/450], Loss: 0.1617, Accuracy:0.93
+Epoch [51/100], Step [300/450], Loss: 0.2047, Accuracy:0.93
+Epoch [51/100], Step [350/450], Loss: 0.1956, Accuracy:0.93
+Epoch [51/100], Step [400/450], Loss: 0.2439, Accuracy:0.93
+Epoch [51/100], Step [450/450], Loss: 0.2374, Accuracy:0.92
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.94      4572
+       auto       0.96      0.97      0.96      4465
+       bird       0.90      0.90      0.90      4472
+        cat       0.85      0.84      0.85      4496
+       deer       0.92      0.92      0.92      4500
+        dog       0.87      0.89      0.88      4438
+       frog       0.95      0.95      0.95      4551
+      horse       0.93      0.94      0.94      4498
+       ship       0.96      0.96      0.96      4505
+      truck       0.95      0.95      0.95      4503
+
+avg / total       0.92      0.92      0.92     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.86      0.88       510
+       auto       0.94      0.93      0.94       500
+       bird       0.79      0.82      0.81       495
+        cat       0.70      0.76      0.73       516
+       deer       0.86      0.86      0.86       505
+        dog       0.78      0.76      0.77       489
+       frog       0.90      0.88      0.89       486
+      horse       0.90      0.86      0.88       491
+       ship       0.91      0.93      0.92       502
+      truck       0.91      0.89      0.90       506
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 51 validation accuracy= 0.8560
+Epoch [52/100], Step [50/450], Loss: 0.2843, Accuracy:0.93
+Epoch [52/100], Step [100/450], Loss: 0.2011, Accuracy:0.92
+Epoch [52/100], Step [150/450], Loss: 0.1917, Accuracy:0.93
+Epoch [52/100], Step [200/450], Loss: 0.2698, Accuracy:0.93
+Epoch [52/100], Step [250/450], Loss: 0.2002, Accuracy:0.93
+Epoch [52/100], Step [300/450], Loss: 0.3446, Accuracy:0.93
+Epoch [52/100], Step [350/450], Loss: 0.2070, Accuracy:0.93
+Epoch [52/100], Step [400/450], Loss: 0.2726, Accuracy:0.93
+Epoch [52/100], Step [450/450], Loss: 0.1963, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.92      0.93      4591
+       auto       0.96      0.97      0.96      4497
+       bird       0.90      0.91      0.90      4425
+        cat       0.86      0.86      0.86      4448
+       deer       0.92      0.92      0.92      4510
+        dog       0.88      0.90      0.89      4424
+       frog       0.95      0.94      0.95      4574
+      horse       0.94      0.94      0.94      4544
+       ship       0.96      0.96      0.96      4483
+      truck       0.95      0.95      0.95      4504
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.84      0.86       523
+       auto       0.94      0.92      0.93       506
+       bird       0.79      0.82      0.81       496
+        cat       0.72      0.78      0.75       518
+       deer       0.87      0.84      0.86       521
+        dog       0.78      0.76      0.77       486
+       frog       0.89      0.90      0.90       471
+      horse       0.90      0.87      0.88       484
+       ship       0.89      0.92      0.91       498
+      truck       0.91      0.90      0.91       497
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 52 validation accuracy= 0.8558
+Epoch [53/100], Step [50/450], Loss: 0.2292, Accuracy:0.93
+Epoch [53/100], Step [100/450], Loss: 0.2135, Accuracy:0.93
+Epoch [53/100], Step [150/450], Loss: 0.1593, Accuracy:0.93
+Epoch [53/100], Step [200/450], Loss: 0.2800, Accuracy:0.93
+Epoch [53/100], Step [250/450], Loss: 0.2562, Accuracy:0.93
+Epoch [53/100], Step [300/450], Loss: 0.1815, Accuracy:0.93
+Epoch [53/100], Step [350/450], Loss: 0.2626, Accuracy:0.93
+Epoch [53/100], Step [400/450], Loss: 0.3775, Accuracy:0.93
+Epoch [53/100], Step [450/450], Loss: 0.1612, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.93      4550
+       auto       0.96      0.97      0.97      4454
+       bird       0.90      0.90      0.90      4441
+        cat       0.86      0.86      0.86      4442
+       deer       0.93      0.92      0.92      4544
+        dog       0.88      0.89      0.89      4455
+       frog       0.95      0.94      0.95      4574
+      horse       0.94      0.94      0.94      4515
+       ship       0.96      0.96      0.96      4521
+      truck       0.95      0.95      0.95      4504
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.88      0.88       496
+       auto       0.92      0.92      0.92       494
+       bird       0.79      0.83      0.81       491
+        cat       0.75      0.76      0.75       550
+       deer       0.85      0.84      0.85       509
+        dog       0.77      0.78      0.77       471
+       frog       0.88      0.89      0.89       472
+      horse       0.91      0.84      0.87       505
+       ship       0.89      0.91      0.90       505
+      truck       0.90      0.88      0.89       507
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 53 validation accuracy= 0.8524
+Epoch [54/100], Step [50/450], Loss: 0.2178, Accuracy:0.93
+Epoch [54/100], Step [100/450], Loss: 0.2291, Accuracy:0.92
+Epoch [54/100], Step [150/450], Loss: 0.1778, Accuracy:0.93
+Epoch [54/100], Step [200/450], Loss: 0.3346, Accuracy:0.93
+Epoch [54/100], Step [250/450], Loss: 0.1611, Accuracy:0.93
+Epoch [54/100], Step [300/450], Loss: 0.1738, Accuracy:0.92
+Epoch [54/100], Step [350/450], Loss: 0.2595, Accuracy:0.92
+Epoch [54/100], Step [400/450], Loss: 0.1344, Accuracy:0.93
+Epoch [54/100], Step [450/450], Loss: 0.1447, Accuracy:0.92
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.92      0.93      4587
+       auto       0.96      0.97      0.96      4455
+       bird       0.90      0.90      0.90      4457
+        cat       0.86      0.85      0.85      4494
+       deer       0.92      0.91      0.92      4541
+        dog       0.87      0.90      0.88      4372
+       frog       0.95      0.94      0.95      4567
+      horse       0.94      0.94      0.94      4521
+       ship       0.96      0.96      0.96      4490
+      truck       0.96      0.96      0.96      4516
+
+avg / total       0.93      0.92      0.92     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.85      0.86       510
+       auto       0.93      0.92      0.92       503
+       bird       0.81      0.84      0.83       500
+        cat       0.74      0.78      0.76       529
+       deer       0.87      0.85      0.86       517
+        dog       0.78      0.76      0.77       488
+       frog       0.87      0.89      0.88       465
+      horse       0.90      0.86      0.88       488
+       ship       0.90      0.91      0.91       508
+      truck       0.89      0.90      0.90       492
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 54 validation accuracy= 0.8564
+Epoch [55/100], Step [50/450], Loss: 0.2429, Accuracy:0.93
+Epoch [55/100], Step [100/450], Loss: 0.2401, Accuracy:0.93
+Epoch [55/100], Step [150/450], Loss: 0.1713, Accuracy:0.93
+Epoch [55/100], Step [200/450], Loss: 0.1976, Accuracy:0.93
+Epoch [55/100], Step [250/450], Loss: 0.2691, Accuracy:0.93
+Epoch [55/100], Step [300/450], Loss: 0.1595, Accuracy:0.93
+Epoch [55/100], Step [350/450], Loss: 0.2015, Accuracy:0.93
+Epoch [55/100], Step [400/450], Loss: 0.2347, Accuracy:0.93
+Epoch [55/100], Step [450/450], Loss: 0.1465, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.92      0.93      4572
+       auto       0.97      0.97      0.97      4497
+       bird       0.90      0.91      0.90      4441
+        cat       0.86      0.85      0.85      4469
+       deer       0.93      0.92      0.92      4542
+        dog       0.87      0.89      0.88      4412
+       frog       0.95      0.94      0.95      4565
+      horse       0.94      0.94      0.94      4509
+       ship       0.96      0.96      0.96      4503
+      truck       0.95      0.96      0.96      4490
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.85      0.87       521
+       auto       0.92      0.92      0.92       495
+       bird       0.81      0.83      0.82       505
+        cat       0.73      0.78      0.75       526
+       deer       0.84      0.84      0.84       507
+        dog       0.79      0.77      0.78       488
+       frog       0.88      0.88      0.88       476
+      horse       0.90      0.87      0.89       481
+       ship       0.89      0.92      0.90       500
+      truck       0.91      0.90      0.90       501
+
+avg / total       0.86      0.85      0.86      5000
+
+Epoch 55 validation accuracy= 0.8548
+Epoch [56/100], Step [50/450], Loss: 0.2534, Accuracy:0.93
+Epoch [56/100], Step [100/450], Loss: 0.2022, Accuracy:0.93
+Epoch [56/100], Step [150/450], Loss: 0.2108, Accuracy:0.92
+Epoch [56/100], Step [200/450], Loss: 0.1229, Accuracy:0.93
+Epoch [56/100], Step [250/450], Loss: 0.2948, Accuracy:0.93
+Epoch [56/100], Step [300/450], Loss: 0.1823, Accuracy:0.93
+Epoch [56/100], Step [350/450], Loss: 0.1470, Accuracy:0.93
+Epoch [56/100], Step [400/450], Loss: 0.1816, Accuracy:0.93
+Epoch [56/100], Step [450/450], Loss: 0.1505, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.93      4551
+       auto       0.96      0.97      0.96      4466
+       bird       0.90      0.91      0.91      4426
+        cat       0.86      0.86      0.86      4456
+       deer       0.93      0.92      0.92      4521
+        dog       0.88      0.89      0.88      4446
+       frog       0.96      0.95      0.95      4560
+      horse       0.94      0.94      0.94      4546
+       ship       0.96      0.96      0.96      4509
+      truck       0.96      0.95      0.95      4519
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.86      0.87       509
+       auto       0.93      0.91      0.92       506
+       bird       0.76      0.84      0.80       470
+        cat       0.74      0.76      0.75       547
+       deer       0.86      0.84      0.85       511
+        dog       0.77      0.78      0.77       466
+       frog       0.90      0.86      0.88       498
+      horse       0.91      0.87      0.89       493
+       ship       0.90      0.91      0.90       504
+      truck       0.89      0.89      0.89       496
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 56 validation accuracy= 0.8512
+Epoch [57/100], Step [50/450], Loss: 0.1903, Accuracy:0.93
+Epoch [57/100], Step [100/450], Loss: 0.2433, Accuracy:0.93
+Epoch [57/100], Step [150/450], Loss: 0.2241, Accuracy:0.93
+Epoch [57/100], Step [200/450], Loss: 0.2712, Accuracy:0.93
+Epoch [57/100], Step [250/450], Loss: 0.3371, Accuracy:0.93
+Epoch [57/100], Step [300/450], Loss: 0.2350, Accuracy:0.93
+Epoch [57/100], Step [350/450], Loss: 0.2663, Accuracy:0.93
+Epoch [57/100], Step [400/450], Loss: 0.2901, Accuracy:0.93
+Epoch [57/100], Step [450/450], Loss: 0.2296, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.93      4558
+       auto       0.97      0.97      0.97      4482
+       bird       0.91      0.90      0.90      4498
+        cat       0.85      0.85      0.85      4472
+       deer       0.92      0.92      0.92      4506
+        dog       0.87      0.89      0.88      4434
+       frog       0.95      0.95      0.95      4544
+      horse       0.94      0.94      0.94      4532
+       ship       0.96      0.96      0.96      4493
+      truck       0.96      0.96      0.96      4481
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.88      0.88       495
+       auto       0.93      0.93      0.93       495
+       bird       0.77      0.81      0.79       493
+        cat       0.72      0.77      0.75       528
+       deer       0.86      0.84      0.85       518
+        dog       0.78      0.77      0.78       480
+       frog       0.87      0.86      0.87       482
+      horse       0.90      0.86      0.88       488
+       ship       0.91      0.91      0.91       513
+      truck       0.92      0.89      0.91       508
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 57 validation accuracy= 0.8530
+Epoch [58/100], Step [50/450], Loss: 0.2621, Accuracy:0.93
+Epoch [58/100], Step [100/450], Loss: 0.3025, Accuracy:0.93
+Epoch [58/100], Step [150/450], Loss: 0.1402, Accuracy:0.93
+Epoch [58/100], Step [200/450], Loss: 0.1420, Accuracy:0.93
+Epoch [58/100], Step [250/450], Loss: 0.1976, Accuracy:0.93
+Epoch [58/100], Step [300/450], Loss: 0.2170, Accuracy:0.93
+Epoch [58/100], Step [350/450], Loss: 0.2298, Accuracy:0.93
+Epoch [58/100], Step [400/450], Loss: 0.2150, Accuracy:0.93
+Epoch [58/100], Step [450/450], Loss: 0.4293, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.93      4545
+       auto       0.96      0.97      0.97      4480
+       bird       0.90      0.90      0.90      4459
+        cat       0.85      0.86      0.85      4436
+       deer       0.93      0.92      0.92      4525
+        dog       0.88      0.89      0.88      4451
+       frog       0.95      0.94      0.95      4572
+      horse       0.94      0.94      0.94      4524
+       ship       0.96      0.96      0.96      4505
+      truck       0.95      0.96      0.95      4503
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.87      0.86      0.87       506
+       auto       0.93      0.93      0.93       498
+       bird       0.80      0.83      0.82       497
+        cat       0.72      0.77      0.74       530
+       deer       0.86      0.85      0.86       508
+        dog       0.77      0.76      0.77       481
+       frog       0.89      0.88      0.89       483
+      horse       0.89      0.84      0.87       497
+       ship       0.90      0.91      0.90       508
+      truck       0.90      0.91      0.90       492
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 58 validation accuracy= 0.8530
+Epoch [59/100], Step [50/450], Loss: 0.2034, Accuracy:0.93
+Epoch [59/100], Step [100/450], Loss: 0.2701, Accuracy:0.93
+Epoch [59/100], Step [150/450], Loss: 0.2838, Accuracy:0.93
+Epoch [59/100], Step [200/450], Loss: 0.3255, Accuracy:0.93
+Epoch [59/100], Step [250/450], Loss: 0.1869, Accuracy:0.93
+Epoch [59/100], Step [300/450], Loss: 0.1836, Accuracy:0.93
+Epoch [59/100], Step [350/450], Loss: 0.1385, Accuracy:0.93
+Epoch [59/100], Step [400/450], Loss: 0.2329, Accuracy:0.93
+Epoch [59/100], Step [450/450], Loss: 0.1899, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.93      4548
+       auto       0.96      0.97      0.97      4484
+       bird       0.90      0.91      0.90      4439
+        cat       0.86      0.85      0.86      4484
+       deer       0.92      0.92      0.92      4535
+        dog       0.87      0.89      0.88      4414
+       frog       0.95      0.95      0.95      4547
+      horse       0.94      0.94      0.94      4528
+       ship       0.96      0.95      0.96      4523
+      truck       0.95      0.96      0.96      4498
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.87      0.87       500
+       auto       0.93      0.93      0.93       496
+       bird       0.80      0.85      0.83       487
+        cat       0.72      0.80      0.76       504
+       deer       0.88      0.85      0.86       518
+        dog       0.79      0.78      0.78       485
+       frog       0.91      0.88      0.89       494
+      horse       0.90      0.84      0.86       501
+       ship       0.90      0.91      0.90       513
+      truck       0.91      0.90      0.91       502
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 59 validation accuracy= 0.8606
+Epoch [60/100], Step [50/450], Loss: 0.2095, Accuracy:0.92
+Epoch [60/100], Step [100/450], Loss: 0.1590, Accuracy:0.92
+Epoch [60/100], Step [150/450], Loss: 0.2263, Accuracy:0.92
+Epoch [60/100], Step [200/450], Loss: 0.2391, Accuracy:0.92
+Epoch [60/100], Step [250/450], Loss: 0.1519, Accuracy:0.93
+Epoch [60/100], Step [300/450], Loss: 0.2920, Accuracy:0.93
+Epoch [60/100], Step [350/450], Loss: 0.1793, Accuracy:0.93
+Epoch [60/100], Step [400/450], Loss: 0.2279, Accuracy:0.93
+Epoch [60/100], Step [450/450], Loss: 0.3017, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.94      4575
+       auto       0.96      0.97      0.97      4462
+       bird       0.90      0.90      0.90      4463
+        cat       0.86      0.85      0.85      4475
+       deer       0.92      0.92      0.92      4503
+        dog       0.86      0.89      0.88      4405
+       frog       0.95      0.94      0.95      4567
+      horse       0.94      0.94      0.94      4546
+       ship       0.96      0.96      0.96      4490
+      truck       0.96      0.95      0.95      4514
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.90      0.86      0.88       517
+       auto       0.93      0.94      0.93       493
+       bird       0.79      0.86      0.82       473
+        cat       0.72      0.75      0.74       534
+       deer       0.87      0.82      0.84       529
+        dog       0.78      0.75      0.77       493
+       frog       0.89      0.89      0.89       474
+      horse       0.90      0.87      0.89       484
+       ship       0.90      0.91      0.91       508
+      truck       0.91      0.91      0.91       495
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 60 validation accuracy= 0.8570
+Epoch [61/100], Step [50/450], Loss: 0.2418, Accuracy:0.93
+Epoch [61/100], Step [100/450], Loss: 0.3139, Accuracy:0.92
+Epoch [61/100], Step [150/450], Loss: 0.1389, Accuracy:0.93
+Epoch [61/100], Step [200/450], Loss: 0.1708, Accuracy:0.93
+Epoch [61/100], Step [250/450], Loss: 0.2981, Accuracy:0.93
+Epoch [61/100], Step [300/450], Loss: 0.2108, Accuracy:0.93
+Epoch [61/100], Step [350/450], Loss: 0.2590, Accuracy:0.93
+Epoch [61/100], Step [400/450], Loss: 0.2043, Accuracy:0.93
+Epoch [61/100], Step [450/450], Loss: 0.1529, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.92      0.93      4598
+       auto       0.96      0.97      0.97      4452
+       bird       0.89      0.91      0.90      4384
+        cat       0.86      0.85      0.86      4476
+       deer       0.93      0.92      0.92      4553
+        dog       0.88      0.89      0.88      4455
+       frog       0.95      0.94      0.95      4570
+      horse       0.94      0.94      0.94      4527
+       ship       0.96      0.96      0.96      4490
+      truck       0.96      0.96      0.96      4495
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.86      0.87       511
+       auto       0.93      0.91      0.92       504
+       bird       0.79      0.80      0.80       514
+        cat       0.72      0.76      0.74       532
+       deer       0.85      0.84      0.85       509
+        dog       0.77      0.77      0.77       477
+       frog       0.88      0.88      0.88       478
+      horse       0.89      0.87      0.88       480
+       ship       0.89      0.90      0.90       509
+      truck       0.89      0.91      0.90       486
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 61 validation accuracy= 0.8494
+Epoch [62/100], Step [50/450], Loss: 0.1877, Accuracy:0.92
+Epoch [62/100], Step [100/450], Loss: 0.1774, Accuracy:0.92
+Epoch [62/100], Step [150/450], Loss: 0.2633, Accuracy:0.93
+Epoch [62/100], Step [200/450], Loss: 0.2544, Accuracy:0.92
+Epoch [62/100], Step [250/450], Loss: 0.1637, Accuracy:0.93
+Epoch [62/100], Step [300/450], Loss: 0.2736, Accuracy:0.93
+Epoch [62/100], Step [350/450], Loss: 0.1470, Accuracy:0.93
+Epoch [62/100], Step [400/450], Loss: 0.1745, Accuracy:0.93
+Epoch [62/100], Step [450/450], Loss: 0.2497, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.93      4558
+       auto       0.97      0.96      0.97      4509
+       bird       0.90      0.91      0.90      4425
+        cat       0.85      0.85      0.85      4415
+       deer       0.93      0.92      0.92      4569
+        dog       0.88      0.89      0.88      4445
+       frog       0.95      0.94      0.95      4574
+      horse       0.94      0.94      0.94      4525
+       ship       0.96      0.95      0.95      4498
+      truck       0.95      0.96      0.96      4482
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.86      0.87       509
+       auto       0.93      0.92      0.93       500
+       bird       0.78      0.82      0.80       491
+        cat       0.74      0.77      0.75       545
+       deer       0.83      0.85      0.84       497
+        dog       0.78      0.76      0.77       486
+       frog       0.90      0.88      0.89       488
+      horse       0.90      0.86      0.88       487
+       ship       0.90      0.91      0.90       506
+      truck       0.89      0.90      0.89       491
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 62 validation accuracy= 0.8524
+Epoch [63/100], Step [50/450], Loss: 0.2972, Accuracy:0.93
+Epoch [63/100], Step [100/450], Loss: 0.1647, Accuracy:0.93
+Epoch [63/100], Step [150/450], Loss: 0.2107, Accuracy:0.93
+Epoch [63/100], Step [200/450], Loss: 0.2403, Accuracy:0.93
+Epoch [63/100], Step [250/450], Loss: 0.2017, Accuracy:0.93
+Epoch [63/100], Step [300/450], Loss: 0.2673, Accuracy:0.93
+Epoch [63/100], Step [350/450], Loss: 0.2921, Accuracy:0.93
+Epoch [63/100], Step [400/450], Loss: 0.1449, Accuracy:0.93
+Epoch [63/100], Step [450/450], Loss: 0.2297, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.95      0.93      0.94      4584
+       auto       0.96      0.97      0.97      4460
+       bird       0.91      0.91      0.91      4472
+        cat       0.85      0.85      0.85      4433
+       deer       0.93      0.92      0.92      4522
+        dog       0.88      0.90      0.89      4423
+       frog       0.96      0.94      0.95      4576
+      horse       0.94      0.94      0.94      4524
+       ship       0.96      0.96      0.96      4509
+      truck       0.96      0.96      0.96      4497
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.86      0.88       510
+       auto       0.92      0.92      0.92       497
+       bird       0.77      0.83      0.80       477
+        cat       0.74      0.77      0.75       538
+       deer       0.86      0.84      0.85       519
+        dog       0.78      0.78      0.78       477
+       frog       0.89      0.90      0.89       472
+      horse       0.90      0.87      0.89       483
+       ship       0.91      0.90      0.90       520
+      truck       0.90      0.88      0.89       507
+
+avg / total       0.86      0.85      0.85      5000
+
+Epoch 63 validation accuracy= 0.8540
+Epoch [64/100], Step [50/450], Loss: 0.2303, Accuracy:0.93
+Epoch [64/100], Step [100/450], Loss: 0.2420, Accuracy:0.93
+Epoch [64/100], Step [150/450], Loss: 0.1582, Accuracy:0.93
+Epoch [64/100], Step [200/450], Loss: 0.1786, Accuracy:0.93
+Epoch [64/100], Step [250/450], Loss: 0.2583, Accuracy:0.93
+Epoch [64/100], Step [300/450], Loss: 0.1342, Accuracy:0.93
+Epoch [64/100], Step [350/450], Loss: 0.1717, Accuracy:0.93
+Epoch [64/100], Step [400/450], Loss: 0.1157, Accuracy:0.93
+Epoch [64/100], Step [450/450], Loss: 0.1400, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.93      4558
+       auto       0.97      0.97      0.97      4485
+       bird       0.90      0.91      0.91      4423
+        cat       0.87      0.85      0.86      4510
+       deer       0.93      0.92      0.92      4527
+        dog       0.88      0.90      0.89      4417
+       frog       0.95      0.95      0.95      4550
+      horse       0.94      0.94      0.94      4503
+       ship       0.96      0.96      0.96      4499
+      truck       0.96      0.95      0.95      4528
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.87      0.83      0.85       518
+       auto       0.93      0.92      0.93       498
+       bird       0.77      0.83      0.80       482
+        cat       0.74      0.78      0.76       532
+       deer       0.88      0.84      0.86       525
+        dog       0.80      0.78      0.79       490
+       frog       0.89      0.89      0.89       474
+      horse       0.89      0.87      0.88       479
+       ship       0.91      0.91      0.91       515
+      truck       0.89      0.91      0.90       487
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 64 validation accuracy= 0.8552
+Epoch [65/100], Step [50/450], Loss: 0.2067, Accuracy:0.93
+Epoch [65/100], Step [100/450], Loss: 0.3426, Accuracy:0.93
+Epoch [65/100], Step [150/450], Loss: 0.2271, Accuracy:0.93
+Epoch [65/100], Step [200/450], Loss: 0.1570, Accuracy:0.93
+Epoch [65/100], Step [250/450], Loss: 0.2126, Accuracy:0.93
+Epoch [65/100], Step [300/450], Loss: 0.1804, Accuracy:0.93
+Epoch [65/100], Step [350/450], Loss: 0.1860, Accuracy:0.93
+Epoch [65/100], Step [400/450], Loss: 0.3177, Accuracy:0.93
+Epoch [65/100], Step [450/450], Loss: 0.2414, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.93      4563
+       auto       0.97      0.97      0.97      4481
+       bird       0.89      0.91      0.90      4415
+        cat       0.86      0.86      0.86      4437
+       deer       0.93      0.92      0.92      4551
+        dog       0.88      0.89      0.89      4446
+       frog       0.95      0.94      0.95      4571
+      horse       0.93      0.94      0.94      4505
+       ship       0.96      0.96      0.96      4515
+      truck       0.96      0.95      0.95      4516
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.86      0.87      0.86       488
+       auto       0.92      0.92      0.92       497
+       bird       0.78      0.81      0.79       496
+        cat       0.71      0.78      0.74       512
+       deer       0.87      0.84      0.86       522
+        dog       0.77      0.76      0.76       483
+       frog       0.90      0.88      0.89       490
+      horse       0.90      0.85      0.87       495
+       ship       0.90      0.91      0.91       509
+      truck       0.91      0.88      0.89       508
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 65 validation accuracy= 0.8496
+Epoch [66/100], Step [50/450], Loss: 0.1848, Accuracy:0.93
+Epoch [66/100], Step [100/450], Loss: 0.1362, Accuracy:0.93
+Epoch [66/100], Step [150/450], Loss: 0.2493, Accuracy:0.93
+Epoch [66/100], Step [200/450], Loss: 0.2178, Accuracy:0.93
+Epoch [66/100], Step [250/450], Loss: 0.2182, Accuracy:0.93
+Epoch [66/100], Step [300/450], Loss: 0.2191, Accuracy:0.93
+Epoch [66/100], Step [350/450], Loss: 0.2526, Accuracy:0.93
+Epoch [66/100], Step [400/450], Loss: 0.2059, Accuracy:0.93
+Epoch [66/100], Step [450/450], Loss: 0.1872, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.93      4547
+       auto       0.96      0.97      0.97      4485
+       bird       0.90      0.91      0.90      4441
+        cat       0.86      0.85      0.86      4473
+       deer       0.92      0.92      0.92      4507
+        dog       0.87      0.89      0.88      4419
+       frog       0.95      0.94      0.95      4580
+      horse       0.94      0.94      0.94      4553
+       ship       0.96      0.96      0.96      4484
+      truck       0.95      0.95      0.95      4511
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.87      0.86      0.86       497
+       auto       0.93      0.92      0.93       503
+       bird       0.78      0.82      0.80       496
+        cat       0.73      0.78      0.75       524
+       deer       0.87      0.85      0.86       514
+        dog       0.78      0.79      0.79       472
+       frog       0.90      0.89      0.90       481
+      horse       0.91      0.86      0.89       495
+       ship       0.91      0.90      0.91       518
+      truck       0.91      0.90      0.90       500
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 66 validation accuracy= 0.8576
+Epoch [67/100], Step [50/450], Loss: 0.1866, Accuracy:0.94
+Epoch [67/100], Step [100/450], Loss: 0.2546, Accuracy:0.93
+Epoch [67/100], Step [150/450], Loss: 0.1506, Accuracy:0.93
+Epoch [67/100], Step [200/450], Loss: 0.1600, Accuracy:0.93
+Epoch [67/100], Step [250/450], Loss: 0.2755, Accuracy:0.93
+Epoch [67/100], Step [300/450], Loss: 0.2317, Accuracy:0.93
+Epoch [67/100], Step [350/450], Loss: 0.1846, Accuracy:0.93
+Epoch [67/100], Step [400/450], Loss: 0.1735, Accuracy:0.93
+Epoch [67/100], Step [450/450], Loss: 0.2380, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.93      4584
+       auto       0.97      0.97      0.97      4482
+       bird       0.90      0.91      0.91      4457
+        cat       0.86      0.86      0.86      4472
+       deer       0.92      0.92      0.92      4533
+        dog       0.88      0.90      0.89      4399
+       frog       0.95      0.95      0.95      4562
+      horse       0.94      0.94      0.94      4504
+       ship       0.96      0.96      0.96      4498
+      truck       0.96      0.96      0.96      4509
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.85      0.87       518
+       auto       0.92      0.92      0.92       498
+       bird       0.79      0.83      0.81       490
+        cat       0.71      0.77      0.74       516
+       deer       0.86      0.85      0.86       513
+        dog       0.78      0.76      0.77       486
+       frog       0.90      0.88      0.89       486
+      horse       0.91      0.87      0.89       490
+       ship       0.89      0.93      0.91       495
+      truck       0.92      0.89      0.90       508
+
+avg / total       0.86      0.85      0.86      5000
+
+Epoch 67 validation accuracy= 0.8546
+Epoch [68/100], Step [50/450], Loss: 0.3001, Accuracy:0.93
+Epoch [68/100], Step [100/450], Loss: 0.2525, Accuracy:0.93
+Epoch [68/100], Step [150/450], Loss: 0.1357, Accuracy:0.93
+Epoch [68/100], Step [200/450], Loss: 0.1266, Accuracy:0.93
+Epoch [68/100], Step [250/450], Loss: 0.3236, Accuracy:0.93
+Epoch [68/100], Step [300/450], Loss: 0.2422, Accuracy:0.93
+Epoch [68/100], Step [350/450], Loss: 0.2018, Accuracy:0.93
+Epoch [68/100], Step [400/450], Loss: 0.2759, Accuracy:0.93
+Epoch [68/100], Step [450/450], Loss: 0.1924, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.95      0.93      0.94      4578
+       auto       0.97      0.97      0.97      4472
+       bird       0.91      0.92      0.91      4448
+        cat       0.86      0.85      0.85      4476
+       deer       0.92      0.92      0.92      4515
+        dog       0.88      0.90      0.89      4410
+       frog       0.95      0.94      0.95      4552
+      horse       0.94      0.94      0.94      4534
+       ship       0.96      0.96      0.96      4500
+      truck       0.96      0.96      0.96      4515
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.86      0.87       505
+       auto       0.92      0.92      0.92       493
+       bird       0.79      0.82      0.80       498
+        cat       0.74      0.77      0.75       537
+       deer       0.86      0.84      0.85       512
+        dog       0.77      0.76      0.77       480
+       frog       0.88      0.86      0.87       488
+      horse       0.90      0.88      0.89       478
+       ship       0.90      0.91      0.91       505
+      truck       0.91      0.89      0.90       504
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 68 validation accuracy= 0.8514
+Epoch [69/100], Step [50/450], Loss: 0.2664, Accuracy:0.93
+Epoch [69/100], Step [100/450], Loss: 0.2272, Accuracy:0.93
+Epoch [69/100], Step [150/450], Loss: 0.2510, Accuracy:0.93
+Epoch [69/100], Step [200/450], Loss: 0.1638, Accuracy:0.93
+Epoch [69/100], Step [250/450], Loss: 0.2440, Accuracy:0.93
+Epoch [69/100], Step [300/450], Loss: 0.2973, Accuracy:0.93
+Epoch [69/100], Step [350/450], Loss: 0.2596, Accuracy:0.93
+Epoch [69/100], Step [400/450], Loss: 0.2318, Accuracy:0.93
+Epoch [69/100], Step [450/450], Loss: 0.2110, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.94      4561
+       auto       0.96      0.97      0.97      4450
+       bird       0.91      0.91      0.91      4443
+        cat       0.86      0.85      0.85      4495
+       deer       0.93      0.92      0.92      4529
+        dog       0.87      0.90      0.88      4420
+       frog       0.95      0.94      0.95      4577
+      horse       0.94      0.94      0.94      4518
+       ship       0.96      0.96      0.96      4518
+      truck       0.95      0.96      0.96      4489
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.90      0.87      0.88       510
+       auto       0.92      0.91      0.91       500
+       bird       0.81      0.82      0.81       508
+        cat       0.70      0.75      0.72       517
+       deer       0.87      0.87      0.87       507
+        dog       0.79      0.77      0.78       488
+       frog       0.88      0.90      0.89       471
+      horse       0.90      0.86      0.88       488
+       ship       0.90      0.92      0.91       507
+      truck       0.89      0.88      0.89       504
+
+avg / total       0.86      0.85      0.85      5000
+
+Epoch 69 validation accuracy= 0.8538
+Epoch [70/100], Step [50/450], Loss: 0.1201, Accuracy:0.92
+Epoch [70/100], Step [100/450], Loss: 0.1695, Accuracy:0.92
+Epoch [70/100], Step [150/450], Loss: 0.2926, Accuracy:0.93
+Epoch [70/100], Step [200/450], Loss: 0.1824, Accuracy:0.93
+Epoch [70/100], Step [250/450], Loss: 0.2648, Accuracy:0.93
+Epoch [70/100], Step [300/450], Loss: 0.1894, Accuracy:0.93
+Epoch [70/100], Step [350/450], Loss: 0.1588, Accuracy:0.93
+Epoch [70/100], Step [400/450], Loss: 0.1483, Accuracy:0.93
+Epoch [70/100], Step [450/450], Loss: 0.1997, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.94      4557
+       auto       0.97      0.97      0.97      4483
+       bird       0.90      0.91      0.90      4456
+        cat       0.86      0.86      0.86      4441
+       deer       0.93      0.92      0.92      4540
+        dog       0.88      0.89      0.88      4472
+       frog       0.95      0.95      0.95      4561
+      horse       0.94      0.94      0.94      4498
+       ship       0.96      0.96      0.96      4478
+      truck       0.96      0.96      0.96      4514
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.90      0.86      0.88       520
+       auto       0.92      0.92      0.92       500
+       bird       0.77      0.84      0.80       476
+        cat       0.73      0.77      0.75       532
+       deer       0.89      0.84      0.86       533
+        dog       0.78      0.77      0.78       482
+       frog       0.88      0.88      0.88       477
+      horse       0.89      0.87      0.88       478
+       ship       0.90      0.92      0.91       505
+      truck       0.89      0.89      0.89       497
+
+avg / total       0.86      0.85      0.85      5000
+
+Epoch 70 validation accuracy= 0.8542
+Epoch [71/100], Step [50/450], Loss: 0.2222, Accuracy:0.93
+Epoch [71/100], Step [100/450], Loss: 0.1732, Accuracy:0.93
+Epoch [71/100], Step [150/450], Loss: 0.1839, Accuracy:0.93
+Epoch [71/100], Step [200/450], Loss: 0.2218, Accuracy:0.93
+Epoch [71/100], Step [250/450], Loss: 0.0984, Accuracy:0.93
+Epoch [71/100], Step [300/450], Loss: 0.2250, Accuracy:0.93
+Epoch [71/100], Step [350/450], Loss: 0.1692, Accuracy:0.93
+Epoch [71/100], Step [400/450], Loss: 0.1696, Accuracy:0.93
+Epoch [71/100], Step [450/450], Loss: 0.1259, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.93      4576
+       auto       0.97      0.97      0.97      4476
+       bird       0.90      0.91      0.91      4419
+        cat       0.86      0.85      0.86      4494
+       deer       0.93      0.92      0.93      4528
+        dog       0.88      0.90      0.89      4406
+       frog       0.95      0.94      0.95      4577
+      horse       0.94      0.94      0.94      4517
+       ship       0.96      0.96      0.96      4499
+      truck       0.96      0.96      0.96      4508
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.86      0.88       517
+       auto       0.93      0.93      0.93       493
+       bird       0.78      0.83      0.80       489
+        cat       0.71      0.75      0.73       532
+       deer       0.87      0.85      0.86       515
+        dog       0.80      0.75      0.78       502
+       frog       0.89      0.88      0.88       484
+      horse       0.89      0.88      0.89       474
+       ship       0.89      0.92      0.91       497
+      truck       0.90      0.90      0.90       497
+
+avg / total       0.86      0.85      0.85      5000
+
+Epoch 71 validation accuracy= 0.8540
+Epoch [72/100], Step [50/450], Loss: 0.2136, Accuracy:0.92
+Epoch [72/100], Step [100/450], Loss: 0.1930, Accuracy:0.93
+Epoch [72/100], Step [150/450], Loss: 0.1838, Accuracy:0.93
+Epoch [72/100], Step [200/450], Loss: 0.1815, Accuracy:0.93
+Epoch [72/100], Step [250/450], Loss: 0.2015, Accuracy:0.93
+Epoch [72/100], Step [300/450], Loss: 0.2607, Accuracy:0.93
+Epoch [72/100], Step [350/450], Loss: 0.2135, Accuracy:0.93
+Epoch [72/100], Step [400/450], Loss: 0.2640, Accuracy:0.93
+Epoch [72/100], Step [450/450], Loss: 0.1891, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.93      4558
+       auto       0.97      0.97      0.97      4483
+       bird       0.91      0.91      0.91      4475
+        cat       0.86      0.85      0.86      4497
+       deer       0.93      0.92      0.93      4536
+        dog       0.88      0.90      0.89      4416
+       frog       0.95      0.95      0.95      4564
+      horse       0.94      0.95      0.94      4494
+       ship       0.96      0.96      0.96      4497
+      truck       0.95      0.96      0.96      4480
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.87      0.88       511
+       auto       0.94      0.92      0.93       502
+       bird       0.79      0.84      0.81       485
+        cat       0.73      0.78      0.75       528
+       deer       0.86      0.87      0.86       499
+        dog       0.79      0.78      0.79       482
+       frog       0.92      0.88      0.90       500
+      horse       0.91      0.86      0.88       492
+       ship       0.90      0.92      0.91       507
+      truck       0.91      0.91      0.91       494
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 72 validation accuracy= 0.8620
+Epoch [73/100], Step [50/450], Loss: 0.2528, Accuracy:0.94
+Epoch [73/100], Step [100/450], Loss: 0.2026, Accuracy:0.93
+Epoch [73/100], Step [150/450], Loss: 0.2875, Accuracy:0.93
+Epoch [73/100], Step [200/450], Loss: 0.2366, Accuracy:0.93
+Epoch [73/100], Step [250/450], Loss: 0.1603, Accuracy:0.93
+Epoch [73/100], Step [300/450], Loss: 0.1972, Accuracy:0.93
+Epoch [73/100], Step [350/450], Loss: 0.1730, Accuracy:0.93
+Epoch [73/100], Step [400/450], Loss: 0.3013, Accuracy:0.93
+Epoch [73/100], Step [450/450], Loss: 0.3528, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.94      4566
+       auto       0.97      0.97      0.97      4468
+       bird       0.91      0.91      0.91      4473
+        cat       0.86      0.86      0.86      4436
+       deer       0.93      0.93      0.93      4511
+        dog       0.88      0.90      0.89      4438
+       frog       0.95      0.95      0.95      4535
+      horse       0.94      0.94      0.94      4551
+       ship       0.96      0.96      0.96      4512
+      truck       0.96      0.96      0.96      4510
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.86      0.87       506
+       auto       0.94      0.91      0.92       513
+       bird       0.77      0.84      0.81       478
+        cat       0.71      0.77      0.74       514
+       deer       0.86      0.84      0.85       516
+        dog       0.79      0.75      0.77       503
+       frog       0.91      0.88      0.89       495
+      horse       0.90      0.87      0.88       482
+       ship       0.90      0.92      0.91       500
+      truck       0.90      0.91      0.91       493
+
+avg / total       0.86      0.85      0.85      5000
+
+Epoch 73 validation accuracy= 0.8534
+Epoch [74/100], Step [50/450], Loss: 0.2830, Accuracy:0.92
+Epoch [74/100], Step [100/450], Loss: 0.1931, Accuracy:0.92
+Epoch [74/100], Step [150/450], Loss: 0.2251, Accuracy:0.93
+Epoch [74/100], Step [200/450], Loss: 0.2348, Accuracy:0.93
+Epoch [74/100], Step [250/450], Loss: 0.1633, Accuracy:0.93
+Epoch [74/100], Step [300/450], Loss: 0.1840, Accuracy:0.93
+Epoch [74/100], Step [350/450], Loss: 0.2310, Accuracy:0.93
+Epoch [74/100], Step [400/450], Loss: 0.2603, Accuracy:0.93
+Epoch [74/100], Step [450/450], Loss: 0.2385, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.95      0.93      0.94      4595
+       auto       0.96      0.97      0.97      4477
+       bird       0.91      0.91      0.91      4466
+        cat       0.86      0.86      0.86      4462
+       deer       0.92      0.92      0.92      4507
+        dog       0.88      0.90      0.89      4425
+       frog       0.96      0.95      0.95      4556
+      horse       0.94      0.94      0.94      4525
+       ship       0.96      0.96      0.96      4486
+      truck       0.96      0.96      0.96      4501
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.86      0.87       510
+       auto       0.94      0.92      0.93       509
+       bird       0.77      0.83      0.80       477
+        cat       0.70      0.76      0.73       518
+       deer       0.86      0.84      0.85       513
+        dog       0.79      0.76      0.77       498
+       frog       0.88      0.87      0.87       481
+      horse       0.90      0.83      0.87       505
+       ship       0.90      0.93      0.91       496
+      truck       0.90      0.90      0.90       493
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 74 validation accuracy= 0.8490
+Epoch [75/100], Step [50/450], Loss: 0.1570, Accuracy:0.93
+Epoch [75/100], Step [100/450], Loss: 0.1692, Accuracy:0.93
+Epoch [75/100], Step [150/450], Loss: 0.2300, Accuracy:0.93
+Epoch [75/100], Step [200/450], Loss: 0.1354, Accuracy:0.93
+Epoch [75/100], Step [250/450], Loss: 0.2261, Accuracy:0.93
+Epoch [75/100], Step [300/450], Loss: 0.2058, Accuracy:0.93
+Epoch [75/100], Step [350/450], Loss: 0.2664, Accuracy:0.93
+Epoch [75/100], Step [400/450], Loss: 0.1794, Accuracy:0.93
+Epoch [75/100], Step [450/450], Loss: 0.1886, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.94      4567
+       auto       0.96      0.97      0.97      4475
+       bird       0.91      0.91      0.91      4442
+        cat       0.87      0.86      0.86      4475
+       deer       0.93      0.92      0.92      4548
+        dog       0.88      0.90      0.89      4410
+       frog       0.95      0.95      0.95      4550
+      horse       0.94      0.94      0.94      4514
+       ship       0.96      0.96      0.96      4510
+      truck       0.96      0.96      0.96      4509
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.85      0.87       513
+       auto       0.92      0.92      0.92       497
+       bird       0.77      0.82      0.79       490
+        cat       0.72      0.78      0.75       520
+       deer       0.86      0.84      0.85       515
+        dog       0.78      0.77      0.77       480
+       frog       0.87      0.87      0.87       477
+      horse       0.90      0.86      0.88       494
+       ship       0.91      0.92      0.91       512
+      truck       0.90      0.89      0.89       502
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 75 validation accuracy= 0.8510
+Epoch [76/100], Step [50/450], Loss: 0.2274, Accuracy:0.94
+Epoch [76/100], Step [100/450], Loss: 0.1325, Accuracy:0.94
+Epoch [76/100], Step [150/450], Loss: 0.1824, Accuracy:0.93
+Epoch [76/100], Step [200/450], Loss: 0.2084, Accuracy:0.93
+Epoch [76/100], Step [250/450], Loss: 0.1580, Accuracy:0.93
+Epoch [76/100], Step [300/450], Loss: 0.1368, Accuracy:0.93
+Epoch [76/100], Step [350/450], Loss: 0.2292, Accuracy:0.93
+Epoch [76/100], Step [400/450], Loss: 0.1381, Accuracy:0.93
+Epoch [76/100], Step [450/450], Loss: 0.2659, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.94      4575
+       auto       0.97      0.97      0.97      4489
+       bird       0.91      0.91      0.91      4444
+        cat       0.86      0.86      0.86      4468
+       deer       0.93      0.92      0.93      4520
+        dog       0.88      0.90      0.89      4421
+       frog       0.96      0.95      0.95      4560
+      horse       0.94      0.94      0.94      4533
+       ship       0.96      0.96      0.96      4502
+      truck       0.95      0.96      0.96      4488
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.87      0.88       507
+       auto       0.91      0.91      0.91       495
+       bird       0.80      0.84      0.82       489
+        cat       0.72      0.77      0.75       523
+       deer       0.87      0.85      0.86       517
+        dog       0.78      0.76      0.77       482
+       frog       0.90      0.87      0.89       490
+      horse       0.90      0.87      0.88       488
+       ship       0.89      0.91      0.90       506
+      truck       0.91      0.89      0.90       503
+
+avg / total       0.86      0.85      0.86      5000
+
+Epoch 76 validation accuracy= 0.8548
+Epoch [77/100], Step [50/450], Loss: 0.2832, Accuracy:0.94
+Epoch [77/100], Step [100/450], Loss: 0.1217, Accuracy:0.94
+Epoch [77/100], Step [150/450], Loss: 0.3049, Accuracy:0.93
+Epoch [77/100], Step [200/450], Loss: 0.2868, Accuracy:0.93
+Epoch [77/100], Step [250/450], Loss: 0.2327, Accuracy:0.93
+Epoch [77/100], Step [300/450], Loss: 0.2647, Accuracy:0.93
+Epoch [77/100], Step [350/450], Loss: 0.2299, Accuracy:0.93
+Epoch [77/100], Step [400/450], Loss: 0.2546, Accuracy:0.93
+Epoch [77/100], Step [450/450], Loss: 0.2068, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.95      0.93      0.94      4572
+       auto       0.96      0.97      0.97      4466
+       bird       0.91      0.91      0.91      4441
+        cat       0.87      0.87      0.87      4468
+       deer       0.93      0.92      0.93      4532
+        dog       0.89      0.90      0.89      4444
+       frog       0.95      0.95      0.95      4545
+      horse       0.94      0.94      0.94      4526
+       ship       0.96      0.96      0.96      4518
+      truck       0.95      0.96      0.96      4488
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.87      0.86      0.87       500
+       auto       0.92      0.92      0.92       494
+       bird       0.81      0.83      0.82       505
+        cat       0.75      0.78      0.76       536
+       deer       0.87      0.87      0.87       504
+        dog       0.80      0.79      0.79       480
+       frog       0.88      0.88      0.88       477
+      horse       0.91      0.87      0.89       491
+       ship       0.91      0.93      0.92       507
+      truck       0.91      0.89      0.90       506
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 77 validation accuracy= 0.8604
+Epoch [78/100], Step [50/450], Loss: 0.1641, Accuracy:0.93
+Epoch [78/100], Step [100/450], Loss: 0.2475, Accuracy:0.93
+Epoch [78/100], Step [150/450], Loss: 0.2367, Accuracy:0.94
+Epoch [78/100], Step [200/450], Loss: 0.2035, Accuracy:0.93
+Epoch [78/100], Step [250/450], Loss: 0.2084, Accuracy:0.93
+Epoch [78/100], Step [300/450], Loss: 0.1671, Accuracy:0.93
+Epoch [78/100], Step [350/450], Loss: 0.2367, Accuracy:0.93
+Epoch [78/100], Step [400/450], Loss: 0.2585, Accuracy:0.93
+Epoch [78/100], Step [450/450], Loss: 0.2241, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.93      4574
+       auto       0.97      0.97      0.97      4474
+       bird       0.91      0.92      0.91      4421
+        cat       0.88      0.87      0.87      4502
+       deer       0.93      0.92      0.93      4529
+        dog       0.88      0.91      0.89      4396
+       frog       0.96      0.95      0.95      4584
+      horse       0.94      0.94      0.94      4535
+       ship       0.96      0.96      0.96      4492
+      truck       0.96      0.96      0.96      4493
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.86      0.88       510
+       auto       0.92      0.93      0.93       492
+       bird       0.78      0.81      0.80       496
+        cat       0.72      0.77      0.74       528
+       deer       0.87      0.86      0.86       508
+        dog       0.79      0.75      0.77       501
+       frog       0.88      0.89      0.89       470
+      horse       0.90      0.87      0.88       485
+       ship       0.91      0.92      0.91       508
+      truck       0.92      0.90      0.91       502
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 78 validation accuracy= 0.8562
+Epoch [79/100], Step [50/450], Loss: 0.1468, Accuracy:0.93
+Epoch [79/100], Step [100/450], Loss: 0.2196, Accuracy:0.93
+Epoch [79/100], Step [150/450], Loss: 0.2066, Accuracy:0.93
+Epoch [79/100], Step [200/450], Loss: 0.1230, Accuracy:0.93
+Epoch [79/100], Step [250/450], Loss: 0.1668, Accuracy:0.93
+Epoch [79/100], Step [300/450], Loss: 0.1607, Accuracy:0.93
+Epoch [79/100], Step [350/450], Loss: 0.2509, Accuracy:0.93
+Epoch [79/100], Step [400/450], Loss: 0.1914, Accuracy:0.93
+Epoch [79/100], Step [450/450], Loss: 0.1197, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.94      4570
+       auto       0.97      0.97      0.97      4482
+       bird       0.90      0.91      0.91      4448
+        cat       0.87      0.87      0.87      4454
+       deer       0.93      0.92      0.93      4509
+        dog       0.89      0.90      0.90      4472
+       frog       0.95      0.95      0.95      4526
+      horse       0.95      0.95      0.95      4534
+       ship       0.96      0.96      0.96      4506
+      truck       0.96      0.96      0.96      4499
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.87      0.86      0.87       499
+       auto       0.94      0.93      0.93       500
+       bird       0.79      0.82      0.80       499
+        cat       0.75      0.78      0.76       541
+       deer       0.87      0.85      0.86       518
+        dog       0.80      0.78      0.79       482
+       frog       0.90      0.90      0.90       477
+      horse       0.90      0.87      0.88       485
+       ship       0.91      0.92      0.91       511
+      truck       0.89      0.91      0.90       488
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 79 validation accuracy= 0.8602
+Epoch [80/100], Step [50/450], Loss: 0.2392, Accuracy:0.93
+Epoch [80/100], Step [100/450], Loss: 0.1736, Accuracy:0.93
+Epoch [80/100], Step [150/450], Loss: 0.2461, Accuracy:0.93
+Epoch [80/100], Step [200/450], Loss: 0.2647, Accuracy:0.93
+Epoch [80/100], Step [250/450], Loss: 0.2822, Accuracy:0.93
+Epoch [80/100], Step [300/450], Loss: 0.1142, Accuracy:0.93
+Epoch [80/100], Step [350/450], Loss: 0.1937, Accuracy:0.93
+Epoch [80/100], Step [400/450], Loss: 0.2931, Accuracy:0.93
+Epoch [80/100], Step [450/450], Loss: 0.2816, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.94      4560
+       auto       0.97      0.97      0.97      4485
+       bird       0.90      0.91      0.90      4439
+        cat       0.87      0.85      0.86      4506
+       deer       0.93      0.92      0.92      4536
+        dog       0.87      0.90      0.89      4379
+       frog       0.95      0.95      0.95      4551
+      horse       0.94      0.94      0.94      4539
+       ship       0.96      0.96      0.96      4508
+      truck       0.96      0.96      0.96      4497
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.85      0.86       515
+       auto       0.93      0.92      0.92       506
+       bird       0.77      0.83      0.80       484
+        cat       0.71      0.76      0.73       525
+       deer       0.86      0.83      0.85       518
+        dog       0.75      0.75      0.75       472
+       frog       0.93      0.89      0.91       498
+      horse       0.89      0.86      0.87       485
+       ship       0.89      0.92      0.91       501
+      truck       0.90      0.89      0.89       496
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 80 validation accuracy= 0.8490
+Epoch [81/100], Step [50/450], Loss: 0.2046, Accuracy:0.94
+Epoch [81/100], Step [100/450], Loss: 0.1641, Accuracy:0.93
+Epoch [81/100], Step [150/450], Loss: 0.1299, Accuracy:0.93
+Epoch [81/100], Step [200/450], Loss: 0.1600, Accuracy:0.93
+Epoch [81/100], Step [250/450], Loss: 0.2065, Accuracy:0.93
+Epoch [81/100], Step [300/450], Loss: 0.2548, Accuracy:0.93
+Epoch [81/100], Step [350/450], Loss: 0.2767, Accuracy:0.93
+Epoch [81/100], Step [400/450], Loss: 0.1913, Accuracy:0.93
+Epoch [81/100], Step [450/450], Loss: 0.2149, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.95      0.93      0.94      4574
+       auto       0.96      0.97      0.97      4469
+       bird       0.91      0.91      0.91      4467
+        cat       0.86      0.86      0.86      4453
+       deer       0.92      0.92      0.92      4495
+        dog       0.88      0.90      0.89      4446
+       frog       0.96      0.95      0.95      4565
+      horse       0.94      0.94      0.94      4523
+       ship       0.96      0.96      0.96      4500
+      truck       0.96      0.96      0.96      4508
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.85      0.86       509
+       auto       0.93      0.92      0.92       499
+       bird       0.81      0.84      0.82       501
+        cat       0.74      0.76      0.75       542
+       deer       0.84      0.84      0.84       502
+        dog       0.78      0.79      0.79       471
+       frog       0.90      0.88      0.89       490
+      horse       0.91      0.86      0.88       491
+       ship       0.89      0.93      0.91       495
+      truck       0.90      0.89      0.90       500
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 81 validation accuracy= 0.8556
+Epoch [82/100], Step [50/450], Loss: 0.2533, Accuracy:0.93
+Epoch [82/100], Step [100/450], Loss: 0.1738, Accuracy:0.93
+Epoch [82/100], Step [150/450], Loss: 0.3329, Accuracy:0.93
+Epoch [82/100], Step [200/450], Loss: 0.1917, Accuracy:0.93
+Epoch [82/100], Step [250/450], Loss: 0.1949, Accuracy:0.93
+Epoch [82/100], Step [300/450], Loss: 0.2434, Accuracy:0.93
+Epoch [82/100], Step [350/450], Loss: 0.2340, Accuracy:0.93
+Epoch [82/100], Step [400/450], Loss: 0.1533, Accuracy:0.93
+Epoch [82/100], Step [450/450], Loss: 0.1746, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.94      4567
+       auto       0.97      0.97      0.97      4485
+       bird       0.91      0.91      0.91      4467
+        cat       0.87      0.86      0.86      4485
+       deer       0.93      0.93      0.93      4513
+        dog       0.88      0.90      0.89      4414
+       frog       0.95      0.95      0.95      4548
+      horse       0.94      0.94      0.94      4530
+       ship       0.96      0.96      0.96      4501
+      truck       0.96      0.96      0.96      4490
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.85      0.86       513
+       auto       0.91      0.91      0.91       497
+       bird       0.76      0.84      0.80       466
+        cat       0.74      0.78      0.76       534
+       deer       0.87      0.84      0.85       525
+        dog       0.78      0.77      0.78       480
+       frog       0.89      0.89      0.89       477
+      horse       0.90      0.86      0.88       492
+       ship       0.89      0.90      0.89       506
+      truck       0.92      0.89      0.90       510
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 82 validation accuracy= 0.8520
+Epoch [83/100], Step [50/450], Loss: 0.2794, Accuracy:0.93
+Epoch [83/100], Step [100/450], Loss: 0.2425, Accuracy:0.93
+Epoch [83/100], Step [150/450], Loss: 0.2137, Accuracy:0.93
+Epoch [83/100], Step [200/450], Loss: 0.2119, Accuracy:0.93
+Epoch [83/100], Step [250/450], Loss: 0.1590, Accuracy:0.93
+Epoch [83/100], Step [300/450], Loss: 0.2240, Accuracy:0.93
+Epoch [83/100], Step [350/450], Loss: 0.1348, Accuracy:0.93
+Epoch [83/100], Step [400/450], Loss: 0.2049, Accuracy:0.93
+Epoch [83/100], Step [450/450], Loss: 0.2423, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.94      0.94      4535
+       auto       0.97      0.97      0.97      4481
+       bird       0.91      0.91      0.91      4466
+        cat       0.87      0.87      0.87      4463
+       deer       0.93      0.92      0.93      4525
+        dog       0.88      0.90      0.89      4430
+       frog       0.95      0.94      0.95      4580
+      horse       0.94      0.94      0.94      4528
+       ship       0.97      0.96      0.96      4505
+      truck       0.96      0.96      0.96      4487
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.83      0.86       521
+       auto       0.93      0.94      0.93       490
+       bird       0.78      0.83      0.81       487
+        cat       0.73      0.76      0.75       540
+       deer       0.86      0.84      0.85       517
+        dog       0.77      0.76      0.77       476
+       frog       0.88      0.87      0.88       483
+      horse       0.88      0.87      0.87       477
+       ship       0.90      0.92      0.91       502
+      truck       0.92      0.89      0.91       507
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 83 validation accuracy= 0.8518
+Epoch [84/100], Step [50/450], Loss: 0.1424, Accuracy:0.93
+Epoch [84/100], Step [100/450], Loss: 0.2316, Accuracy:0.93
+Epoch [84/100], Step [150/450], Loss: 0.1747, Accuracy:0.93
+Epoch [84/100], Step [200/450], Loss: 0.2393, Accuracy:0.93
+Epoch [84/100], Step [250/450], Loss: 0.3029, Accuracy:0.93
+Epoch [84/100], Step [300/450], Loss: 0.2639, Accuracy:0.93
+Epoch [84/100], Step [350/450], Loss: 0.1562, Accuracy:0.93
+Epoch [84/100], Step [400/450], Loss: 0.1645, Accuracy:0.93
+Epoch [84/100], Step [450/450], Loss: 0.1620, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.94      4546
+       auto       0.97      0.97      0.97      4491
+       bird       0.91      0.91      0.91      4462
+        cat       0.87      0.86      0.86      4469
+       deer       0.93      0.92      0.93      4537
+        dog       0.88      0.89      0.89      4456
+       frog       0.96      0.95      0.95      4553
+      horse       0.94      0.94      0.94      4507
+       ship       0.96      0.96      0.96      4489
+      truck       0.96      0.96      0.96      4490
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.85      0.86       509
+       auto       0.92      0.92      0.92       497
+       bird       0.79      0.84      0.82       490
+        cat       0.74      0.77      0.75       542
+       deer       0.86      0.85      0.86       507
+        dog       0.77      0.76      0.76       477
+       frog       0.90      0.90      0.90       473
+      horse       0.92      0.86      0.89       499
+       ship       0.89      0.91      0.90       504
+      truck       0.90      0.88      0.89       502
+
+avg / total       0.86      0.85      0.85      5000
+
+Epoch 84 validation accuracy= 0.8540
+Epoch [85/100], Step [50/450], Loss: 0.1507, Accuracy:0.93
+Epoch [85/100], Step [100/450], Loss: 0.1692, Accuracy:0.93
+Epoch [85/100], Step [150/450], Loss: 0.1675, Accuracy:0.93
+Epoch [85/100], Step [200/450], Loss: 0.2725, Accuracy:0.93
+Epoch [85/100], Step [250/450], Loss: 0.1050, Accuracy:0.93
+Epoch [85/100], Step [300/450], Loss: 0.1149, Accuracy:0.93
+Epoch [85/100], Step [350/450], Loss: 0.2396, Accuracy:0.93
+Epoch [85/100], Step [400/450], Loss: 0.1684, Accuracy:0.93
+Epoch [85/100], Step [450/450], Loss: 0.2894, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.95      0.93      0.94      4580
+       auto       0.96      0.98      0.97      4435
+       bird       0.91      0.91      0.91      4441
+        cat       0.87      0.86      0.87      4462
+       deer       0.93      0.93      0.93      4492
+        dog       0.89      0.91      0.90      4425
+       frog       0.96      0.95      0.95      4580
+      horse       0.94      0.94      0.94      4540
+       ship       0.96      0.96      0.96      4514
+      truck       0.96      0.96      0.96      4531
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.87      0.84      0.86       515
+       auto       0.92      0.92      0.92       499
+       bird       0.78      0.83      0.80       491
+        cat       0.74      0.76      0.75       540
+       deer       0.85      0.83      0.84       512
+        dog       0.77      0.76      0.76       478
+       frog       0.89      0.88      0.89       485
+      horse       0.89      0.86      0.88       484
+       ship       0.89      0.91      0.90       507
+      truck       0.88      0.89      0.89       489
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 85 validation accuracy= 0.8474
+Epoch [86/100], Step [50/450], Loss: 0.3493, Accuracy:0.93
+Epoch [86/100], Step [100/450], Loss: 0.1889, Accuracy:0.93
+Epoch [86/100], Step [150/450], Loss: 0.1554, Accuracy:0.93
+Epoch [86/100], Step [200/450], Loss: 0.1212, Accuracy:0.93
+Epoch [86/100], Step [250/450], Loss: 0.2778, Accuracy:0.93
+Epoch [86/100], Step [300/450], Loss: 0.2155, Accuracy:0.93
+Epoch [86/100], Step [350/450], Loss: 0.1557, Accuracy:0.93
+Epoch [86/100], Step [400/450], Loss: 0.2025, Accuracy:0.93
+Epoch [86/100], Step [450/450], Loss: 0.3114, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.95      0.93      0.94      4569
+       auto       0.97      0.97      0.97      4481
+       bird       0.91      0.92      0.92      4421
+        cat       0.86      0.86      0.86      4452
+       deer       0.93      0.93      0.93      4541
+        dog       0.89      0.90      0.90      4454
+       frog       0.95      0.95      0.95      4559
+      horse       0.94      0.95      0.95      4511
+       ship       0.96      0.96      0.96      4504
+      truck       0.96      0.96      0.96      4508
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.87      0.87      0.87       495
+       auto       0.92      0.92      0.92       496
+       bird       0.80      0.82      0.81       507
+        cat       0.73      0.76      0.75       535
+       deer       0.86      0.84      0.85       518
+        dog       0.80      0.77      0.79       490
+       frog       0.89      0.89      0.89       481
+      horse       0.88      0.86      0.87       479
+       ship       0.90      0.93      0.92       501
+      truck       0.89      0.89      0.89       498
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 86 validation accuracy= 0.8538
+Epoch [87/100], Step [50/450], Loss: 0.2009, Accuracy:0.93
+Epoch [87/100], Step [100/450], Loss: 0.1572, Accuracy:0.93
+Epoch [87/100], Step [150/450], Loss: 0.1825, Accuracy:0.94
+Epoch [87/100], Step [200/450], Loss: 0.1810, Accuracy:0.93
+Epoch [87/100], Step [250/450], Loss: 0.1830, Accuracy:0.93
+Epoch [87/100], Step [300/450], Loss: 0.1776, Accuracy:0.93
+Epoch [87/100], Step [350/450], Loss: 0.1440, Accuracy:0.93
+Epoch [87/100], Step [400/450], Loss: 0.2176, Accuracy:0.93
+Epoch [87/100], Step [450/450], Loss: 0.2610, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.94      4559
+       auto       0.96      0.97      0.97      4465
+       bird       0.91      0.92      0.92      4461
+        cat       0.87      0.86      0.87      4466
+       deer       0.93      0.93      0.93      4525
+        dog       0.88      0.90      0.89      4400
+       frog       0.96      0.95      0.95      4566
+      horse       0.94      0.94      0.94      4527
+       ship       0.97      0.96      0.96      4531
+      truck       0.96      0.96      0.96      4500
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.85      0.87       520
+       auto       0.91      0.93      0.92       482
+       bird       0.78      0.84      0.81       484
+        cat       0.77      0.77      0.77       557
+       deer       0.86      0.84      0.85       517
+        dog       0.79      0.79      0.79       476
+       frog       0.89      0.90      0.89       473
+      horse       0.91      0.90      0.90       473
+       ship       0.90      0.92      0.91       506
+      truck       0.92      0.88      0.90       512
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 87 validation accuracy= 0.8600
+Epoch [88/100], Step [50/450], Loss: 0.1107, Accuracy:0.93
+Epoch [88/100], Step [100/450], Loss: 0.1625, Accuracy:0.93
+Epoch [88/100], Step [150/450], Loss: 0.1544, Accuracy:0.93
+Epoch [88/100], Step [200/450], Loss: 0.1680, Accuracy:0.93
+Epoch [88/100], Step [250/450], Loss: 0.2423, Accuracy:0.93
+Epoch [88/100], Step [300/450], Loss: 0.1262, Accuracy:0.93
+Epoch [88/100], Step [350/450], Loss: 0.2080, Accuracy:0.93
+Epoch [88/100], Step [400/450], Loss: 0.1401, Accuracy:0.93
+Epoch [88/100], Step [450/450], Loss: 0.3523, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.95      0.93      0.94      4563
+       auto       0.97      0.97      0.97      4484
+       bird       0.91      0.92      0.91      4427
+        cat       0.87      0.87      0.87      4483
+       deer       0.93      0.92      0.93      4558
+        dog       0.88      0.91      0.89      4417
+       frog       0.95      0.95      0.95      4533
+      horse       0.94      0.94      0.94      4527
+       ship       0.96      0.96      0.96      4493
+      truck       0.96      0.96      0.96      4515
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.85      0.87       509
+       auto       0.92      0.91      0.91       501
+       bird       0.78      0.82      0.80       490
+        cat       0.73      0.78      0.76       524
+       deer       0.87      0.84      0.85       520
+        dog       0.78      0.77      0.78       477
+       frog       0.88      0.87      0.87       481
+      horse       0.90      0.85      0.88       496
+       ship       0.91      0.92      0.92       506
+      truck       0.91      0.91      0.91       496
+
+avg / total       0.86      0.85      0.85      5000
+
+Epoch 88 validation accuracy= 0.8534
+Epoch [89/100], Step [50/450], Loss: 0.2639, Accuracy:0.93
+Epoch [89/100], Step [100/450], Loss: 0.2084, Accuracy:0.93
+Epoch [89/100], Step [150/450], Loss: 0.2458, Accuracy:0.93
+Epoch [89/100], Step [200/450], Loss: 0.2126, Accuracy:0.93
+Epoch [89/100], Step [250/450], Loss: 0.1922, Accuracy:0.93
+Epoch [89/100], Step [300/450], Loss: 0.2061, Accuracy:0.93
+Epoch [89/100], Step [350/450], Loss: 0.1706, Accuracy:0.93
+Epoch [89/100], Step [400/450], Loss: 0.1646, Accuracy:0.93
+Epoch [89/100], Step [450/450], Loss: 0.2736, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.94      4552
+       auto       0.96      0.97      0.97      4463
+       bird       0.90      0.91      0.91      4471
+        cat       0.87      0.86      0.87      4488
+       deer       0.92      0.92      0.92      4492
+        dog       0.88      0.90      0.89      4439
+       frog       0.96      0.95      0.95      4555
+      horse       0.94      0.94      0.94      4526
+       ship       0.96      0.96      0.96      4501
+      truck       0.96      0.96      0.96      4513
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.87      0.84      0.85       516
+       auto       0.92      0.93      0.92       490
+       bird       0.79      0.83      0.81       490
+        cat       0.72      0.77      0.75       523
+       deer       0.86      0.83      0.84       522
+        dog       0.78      0.76      0.77       491
+       frog       0.89      0.88      0.88       479
+      horse       0.89      0.84      0.87       495
+       ship       0.88      0.93      0.91       488
+      truck       0.91      0.89      0.90       506
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 89 validation accuracy= 0.8488
+Epoch [90/100], Step [50/450], Loss: 0.2348, Accuracy:0.93
+Epoch [90/100], Step [100/450], Loss: 0.2371, Accuracy:0.94
+Epoch [90/100], Step [150/450], Loss: 0.1929, Accuracy:0.94
+Epoch [90/100], Step [200/450], Loss: 0.2729, Accuracy:0.93
+Epoch [90/100], Step [250/450], Loss: 0.2404, Accuracy:0.93
+Epoch [90/100], Step [300/450], Loss: 0.2040, Accuracy:0.93
+Epoch [90/100], Step [350/450], Loss: 0.2117, Accuracy:0.93
+Epoch [90/100], Step [400/450], Loss: 0.3110, Accuracy:0.93
+Epoch [90/100], Step [450/450], Loss: 0.2865, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.95      0.93      0.94      4576
+       auto       0.97      0.97      0.97      4487
+       bird       0.91      0.92      0.91      4450
+        cat       0.88      0.87      0.87      4493
+       deer       0.93      0.92      0.93      4520
+        dog       0.88      0.91      0.89      4374
+       frog       0.96      0.95      0.95      4558
+      horse       0.95      0.94      0.95      4547
+       ship       0.97      0.96      0.97      4506
+      truck       0.96      0.96      0.96      4489
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.86      0.87       510
+       auto       0.92      0.92      0.92       496
+       bird       0.76      0.81      0.78       481
+        cat       0.70      0.77      0.73       511
+       deer       0.87      0.85      0.86       518
+        dog       0.80      0.76      0.78       502
+       frog       0.90      0.87      0.89       490
+      horse       0.89      0.86      0.87       486
+       ship       0.90      0.93      0.92       501
+      truck       0.92      0.90      0.91       505
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 90 validation accuracy= 0.8524
+Epoch [91/100], Step [50/450], Loss: 0.1692, Accuracy:0.93
+Epoch [91/100], Step [100/450], Loss: 0.3121, Accuracy:0.94
+Epoch [91/100], Step [150/450], Loss: 0.2492, Accuracy:0.94
+Epoch [91/100], Step [200/450], Loss: 0.3258, Accuracy:0.93
+Epoch [91/100], Step [250/450], Loss: 0.1480, Accuracy:0.93
+Epoch [91/100], Step [300/450], Loss: 0.1565, Accuracy:0.93
+Epoch [91/100], Step [350/450], Loss: 0.2047, Accuracy:0.93
+Epoch [91/100], Step [400/450], Loss: 0.1584, Accuracy:0.93
+Epoch [91/100], Step [450/450], Loss: 0.2336, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.94      0.94      4529
+       auto       0.97      0.97      0.97      4495
+       bird       0.91      0.92      0.91      4453
+        cat       0.87      0.86      0.87      4512
+       deer       0.93      0.93      0.93      4505
+        dog       0.88      0.90      0.89      4414
+       frog       0.96      0.95      0.95      4571
+      horse       0.95      0.94      0.95      4545
+       ship       0.96      0.96      0.96      4493
+      truck       0.96      0.96      0.96      4483
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.85      0.86       511
+       auto       0.93      0.92      0.92       499
+       bird       0.79      0.83      0.81       493
+        cat       0.72      0.76      0.74       531
+       deer       0.85      0.84      0.85       510
+        dog       0.80      0.76      0.78       498
+       frog       0.89      0.87      0.88       486
+      horse       0.88      0.86      0.87       480
+       ship       0.90      0.91      0.91       508
+      truck       0.89      0.91      0.90       484
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 91 validation accuracy= 0.8508
+Epoch [92/100], Step [50/450], Loss: 0.1072, Accuracy:0.94
+Epoch [92/100], Step [100/450], Loss: 0.1429, Accuracy:0.94
+Epoch [92/100], Step [150/450], Loss: 0.1842, Accuracy:0.94
+Epoch [92/100], Step [200/450], Loss: 0.1875, Accuracy:0.94
+Epoch [92/100], Step [250/450], Loss: 0.2516, Accuracy:0.94
+Epoch [92/100], Step [300/450], Loss: 0.2082, Accuracy:0.94
+Epoch [92/100], Step [350/450], Loss: 0.1928, Accuracy:0.94
+Epoch [92/100], Step [400/450], Loss: 0.2450, Accuracy:0.93
+Epoch [92/100], Step [450/450], Loss: 0.1448, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.94      4542
+       auto       0.97      0.97      0.97      4493
+       bird       0.91      0.92      0.91      4446
+        cat       0.87      0.87      0.87      4458
+       deer       0.93      0.93      0.93      4529
+        dog       0.89      0.91      0.90      4418
+       frog       0.96      0.95      0.95      4582
+      horse       0.95      0.95      0.95      4525
+       ship       0.97      0.96      0.96      4513
+      truck       0.95      0.96      0.96      4494
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.87      0.88       501
+       auto       0.93      0.92      0.92       501
+       bird       0.78      0.84      0.81       485
+        cat       0.74      0.76      0.75       547
+       deer       0.84      0.84      0.84       503
+        dog       0.79      0.77      0.78       486
+       frog       0.89      0.88      0.89       481
+      horse       0.90      0.85      0.87       494
+       ship       0.89      0.92      0.90       499
+      truck       0.90      0.88      0.89       503
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 92 validation accuracy= 0.8528
+Epoch [93/100], Step [50/450], Loss: 0.1728, Accuracy:0.94
+Epoch [93/100], Step [100/450], Loss: 0.1616, Accuracy:0.94
+Epoch [93/100], Step [150/450], Loss: 0.2243, Accuracy:0.93
+Epoch [93/100], Step [200/450], Loss: 0.1531, Accuracy:0.93
+Epoch [93/100], Step [250/450], Loss: 0.1731, Accuracy:0.93
+Epoch [93/100], Step [300/450], Loss: 0.2441, Accuracy:0.93
+Epoch [93/100], Step [350/450], Loss: 0.1122, Accuracy:0.93
+Epoch [93/100], Step [400/450], Loss: 0.2640, Accuracy:0.93
+Epoch [93/100], Step [450/450], Loss: 0.1544, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.93      0.94      4566
+       auto       0.97      0.97      0.97      4480
+       bird       0.91      0.91      0.91      4463
+        cat       0.88      0.87      0.87      4486
+       deer       0.92      0.92      0.92      4496
+        dog       0.89      0.90      0.89      4436
+       frog       0.96      0.95      0.95      4564
+      horse       0.94      0.94      0.94      4512
+       ship       0.97      0.96      0.96      4508
+      truck       0.96      0.96      0.96      4489
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.86      0.87       510
+       auto       0.94      0.93      0.94       502
+       bird       0.78      0.83      0.80       488
+        cat       0.74      0.77      0.75       541
+       deer       0.87      0.85      0.86       512
+        dog       0.80      0.79      0.79       480
+       frog       0.89      0.89      0.89       478
+      horse       0.91      0.87      0.89       491
+       ship       0.89      0.92      0.90       496
+      truck       0.93      0.91      0.92       502
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 93 validation accuracy= 0.8604
+Epoch [94/100], Step [50/450], Loss: 0.2478, Accuracy:0.93
+Epoch [94/100], Step [100/450], Loss: 0.1107, Accuracy:0.94
+Epoch [94/100], Step [150/450], Loss: 0.2220, Accuracy:0.93
+Epoch [94/100], Step [200/450], Loss: 0.1995, Accuracy:0.93
+Epoch [94/100], Step [250/450], Loss: 0.1986, Accuracy:0.93
+Epoch [94/100], Step [300/450], Loss: 0.2579, Accuracy:0.93
+Epoch [94/100], Step [350/450], Loss: 0.1002, Accuracy:0.93
+Epoch [94/100], Step [400/450], Loss: 0.1724, Accuracy:0.93
+Epoch [94/100], Step [450/450], Loss: 0.1809, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.94      0.94      4528
+       auto       0.97      0.97      0.97      4466
+       bird       0.92      0.92      0.92      4450
+        cat       0.87      0.86      0.87      4443
+       deer       0.93      0.93      0.93      4527
+        dog       0.88      0.90      0.89      4443
+       frog       0.96      0.95      0.95      4566
+      horse       0.95      0.94      0.94      4563
+       ship       0.97      0.96      0.96      4504
+      truck       0.96      0.96      0.96      4510
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.87      0.87      0.87       499
+       auto       0.93      0.93      0.93       496
+       bird       0.77      0.83      0.80       482
+        cat       0.74      0.78      0.76       531
+       deer       0.88      0.84      0.86       529
+        dog       0.79      0.76      0.78       488
+       frog       0.89      0.88      0.89       482
+      horse       0.89      0.87      0.88       481
+       ship       0.91      0.91      0.91       516
+      truck       0.90      0.90      0.90       496
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 94 validation accuracy= 0.8558
+Epoch [95/100], Step [50/450], Loss: 0.1995, Accuracy:0.94
+Epoch [95/100], Step [100/450], Loss: 0.2043, Accuracy:0.93
+Epoch [95/100], Step [150/450], Loss: 0.3441, Accuracy:0.93
+Epoch [95/100], Step [200/450], Loss: 0.2685, Accuracy:0.93
+Epoch [95/100], Step [250/450], Loss: 0.2277, Accuracy:0.93
+Epoch [95/100], Step [300/450], Loss: 0.1779, Accuracy:0.94
+Epoch [95/100], Step [350/450], Loss: 0.0981, Accuracy:0.94
+Epoch [95/100], Step [400/450], Loss: 0.2037, Accuracy:0.93
+Epoch [95/100], Step [450/450], Loss: 0.1834, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.94      0.94      4535
+       auto       0.97      0.97      0.97      4475
+       bird       0.91      0.92      0.91      4465
+        cat       0.87      0.86      0.87      4482
+       deer       0.93      0.92      0.93      4532
+        dog       0.88      0.90      0.89      4434
+       frog       0.96      0.95      0.95      4558
+      horse       0.94      0.95      0.95      4518
+       ship       0.96      0.96      0.96      4503
+      truck       0.96      0.96      0.96      4498
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.85      0.87       516
+       auto       0.93      0.92      0.92       500
+       bird       0.79      0.82      0.81       499
+        cat       0.73      0.77      0.75       532
+       deer       0.84      0.85      0.85       496
+        dog       0.78      0.78      0.78       474
+       frog       0.90      0.89      0.89       480
+      horse       0.90      0.85      0.87       499
+       ship       0.91      0.92      0.91       509
+      truck       0.90      0.90      0.90       495
+
+avg / total       0.86      0.85      0.86      5000
+
+Epoch 95 validation accuracy= 0.8550
+Epoch [96/100], Step [50/450], Loss: 0.2250, Accuracy:0.93
+Epoch [96/100], Step [100/450], Loss: 0.2162, Accuracy:0.94
+Epoch [96/100], Step [150/450], Loss: 0.2245, Accuracy:0.94
+Epoch [96/100], Step [200/450], Loss: 0.2338, Accuracy:0.94
+Epoch [96/100], Step [250/450], Loss: 0.1776, Accuracy:0.93
+Epoch [96/100], Step [300/450], Loss: 0.1783, Accuracy:0.93
+Epoch [96/100], Step [350/450], Loss: 0.2212, Accuracy:0.93
+Epoch [96/100], Step [400/450], Loss: 0.1562, Accuracy:0.93
+Epoch [96/100], Step [450/450], Loss: 0.2135, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.95      0.94      0.94      4555
+       auto       0.97      0.97      0.97      4463
+       bird       0.91      0.92      0.91      4464
+        cat       0.87      0.87      0.87      4460
+       deer       0.93      0.93      0.93      4511
+        dog       0.89      0.91      0.90      4438
+       frog       0.96      0.95      0.95      4571
+      horse       0.94      0.95      0.95      4521
+       ship       0.96      0.96      0.96      4519
+      truck       0.96      0.96      0.96      4498
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.85      0.86       514
+       auto       0.92      0.93      0.93       487
+       bird       0.81      0.84      0.82       498
+        cat       0.71      0.77      0.74       520
+       deer       0.88      0.85      0.86       517
+        dog       0.77      0.75      0.76       487
+       frog       0.88      0.89      0.88       471
+      horse       0.90      0.87      0.88       480
+       ship       0.91      0.90      0.90       522
+      truck       0.90      0.89      0.90       504
+
+avg / total       0.86      0.85      0.85      5000
+
+Epoch 96 validation accuracy= 0.8536
+Epoch [97/100], Step [50/450], Loss: 0.2975, Accuracy:0.93
+Epoch [97/100], Step [100/450], Loss: 0.1769, Accuracy:0.93
+Epoch [97/100], Step [150/450], Loss: 0.2556, Accuracy:0.93
+Epoch [97/100], Step [200/450], Loss: 0.1950, Accuracy:0.93
+Epoch [97/100], Step [250/450], Loss: 0.2428, Accuracy:0.93
+Epoch [97/100], Step [300/450], Loss: 0.2347, Accuracy:0.93
+Epoch [97/100], Step [350/450], Loss: 0.1465, Accuracy:0.93
+Epoch [97/100], Step [400/450], Loss: 0.1981, Accuracy:0.93
+Epoch [97/100], Step [450/450], Loss: 0.1603, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.95      0.94      0.95      4568
+       auto       0.97      0.97      0.97      4486
+       bird       0.91      0.91      0.91      4460
+        cat       0.87      0.86      0.87      4485
+       deer       0.93      0.93      0.93      4501
+        dog       0.88      0.90      0.89      4419
+       frog       0.96      0.95      0.95      4562
+      horse       0.95      0.94      0.95      4541
+       ship       0.97      0.96      0.97      4496
+      truck       0.96      0.96      0.96      4482
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.85      0.85      0.85       497
+       auto       0.93      0.92      0.92       501
+       bird       0.79      0.81      0.80       505
+        cat       0.73      0.79      0.76       519
+       deer       0.86      0.84      0.85       517
+        dog       0.78      0.76      0.77       488
+       frog       0.89      0.90      0.89       470
+      horse       0.90      0.86      0.88       491
+       ship       0.91      0.91      0.91       514
+      truck       0.92      0.91      0.92       498
+
+avg / total       0.86      0.85      0.85      5000
+
+Epoch 97 validation accuracy= 0.8544
+Epoch [98/100], Step [50/450], Loss: 0.1693, Accuracy:0.93
+Epoch [98/100], Step [100/450], Loss: 0.2817, Accuracy:0.93
+Epoch [98/100], Step [150/450], Loss: 0.2331, Accuracy:0.93
+Epoch [98/100], Step [200/450], Loss: 0.2827, Accuracy:0.93
+Epoch [98/100], Step [250/450], Loss: 0.1425, Accuracy:0.93
+Epoch [98/100], Step [300/450], Loss: 0.1007, Accuracy:0.93
+Epoch [98/100], Step [350/450], Loss: 0.1644, Accuracy:0.93
+Epoch [98/100], Step [400/450], Loss: 0.1139, Accuracy:0.93
+Epoch [98/100], Step [450/450], Loss: 0.2349, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.94      0.94      4536
+       auto       0.97      0.97      0.97      4485
+       bird       0.91      0.92      0.91      4421
+        cat       0.87      0.87      0.87      4458
+       deer       0.94      0.92      0.93      4556
+        dog       0.89      0.90      0.89      4462
+       frog       0.96      0.95      0.95      4552
+      horse       0.94      0.94      0.94      4528
+       ship       0.96      0.96      0.96      4501
+      truck       0.96      0.96      0.96      4501
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.86      0.88       513
+       auto       0.92      0.92      0.92       498
+       bird       0.80      0.83      0.81       500
+        cat       0.72      0.77      0.75       525
+       deer       0.88      0.86      0.87       516
+        dog       0.80      0.79      0.80       476
+       frog       0.88      0.88      0.88       474
+      horse       0.91      0.86      0.89       494
+       ship       0.90      0.90      0.90       513
+      truck       0.90      0.91      0.91       491
+
+avg / total       0.86      0.86      0.86      5000
+
+Epoch 98 validation accuracy= 0.8588
+Epoch [99/100], Step [50/450], Loss: 0.1152, Accuracy:0.94
+Epoch [99/100], Step [100/450], Loss: 0.2642, Accuracy:0.94
+Epoch [99/100], Step [150/450], Loss: 0.2675, Accuracy:0.94
+Epoch [99/100], Step [200/450], Loss: 0.1553, Accuracy:0.94
+Epoch [99/100], Step [250/450], Loss: 0.1776, Accuracy:0.94
+Epoch [99/100], Step [300/450], Loss: 0.1891, Accuracy:0.94
+Epoch [99/100], Step [350/450], Loss: 0.1491, Accuracy:0.94
+Epoch [99/100], Step [400/450], Loss: 0.1881, Accuracy:0.94
+Epoch [99/100], Step [450/450], Loss: 0.2187, Accuracy:0.94
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.95      0.94      0.94      4573
+       auto       0.97      0.97      0.97      4485
+       bird       0.91      0.92      0.91      4445
+        cat       0.87      0.87      0.87      4461
+       deer       0.93      0.93      0.93      4521
+        dog       0.89      0.90      0.89      4439
+       frog       0.96      0.95      0.96      4548
+      horse       0.94      0.95      0.94      4511
+       ship       0.97      0.96      0.97      4508
+      truck       0.96      0.96      0.96      4509
+
+avg / total       0.94      0.94      0.94     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.89      0.87      0.88       502
+       auto       0.93      0.93      0.93       498
+       bird       0.77      0.83      0.80       485
+        cat       0.74      0.75      0.74       551
+       deer       0.85      0.83      0.84       516
+        dog       0.78      0.76      0.77       483
+       frog       0.87      0.88      0.88       473
+      horse       0.89      0.86      0.88       487
+       ship       0.91      0.92      0.92       507
+      truck       0.92      0.91      0.92       498
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 99 validation accuracy= 0.8536
+Epoch [100/100], Step [50/450], Loss: 0.1290, Accuracy:0.93
+Epoch [100/100], Step [100/450], Loss: 0.1976, Accuracy:0.93
+Epoch [100/100], Step [150/450], Loss: 0.2596, Accuracy:0.93
+Epoch [100/100], Step [200/450], Loss: 0.1425, Accuracy:0.93
+Epoch [100/100], Step [250/450], Loss: 0.1581, Accuracy:0.93
+Epoch [100/100], Step [300/450], Loss: 0.2066, Accuracy:0.93
+Epoch [100/100], Step [350/450], Loss: 0.1220, Accuracy:0.93
+Epoch [100/100], Step [400/450], Loss: 0.0833, Accuracy:0.93
+Epoch [100/100], Step [450/450], Loss: 0.2640, Accuracy:0.93
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.94      0.94      0.94      4546
+       auto       0.97      0.98      0.97      4456
+       bird       0.91      0.92      0.91      4456
+        cat       0.87      0.87      0.87      4464
+       deer       0.94      0.93      0.93      4547
+        dog       0.89      0.91      0.90      4428
+       frog       0.95      0.95      0.95      4532
+      horse       0.95      0.94      0.95      4544
+       ship       0.96      0.96      0.96      4507
+      truck       0.96      0.96      0.96      4520
+
+avg / total       0.93      0.93      0.93     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.88      0.85      0.86       513
+       auto       0.92      0.93      0.93       493
+       bird       0.77      0.82      0.80       488
+        cat       0.74      0.77      0.75       540
+       deer       0.85      0.85      0.85       501
+        dog       0.78      0.77      0.78       481
+       frog       0.88      0.86      0.87       486
+      horse       0.91      0.86      0.88       495
+       ship       0.90      0.92      0.91       503
+      truck       0.91      0.90      0.91       500
+
+avg / total       0.85      0.85      0.85      5000
+
+Epoch 100 validation accuracy= 0.8534
+TestScore:
+             precision    recall  f1-score   support
+
+      plane       0.90      0.87      0.88      1042
+       auto       0.96      0.92      0.94      1038
+       bird       0.83      0.83      0.83      1007
+        cat       0.73      0.82      0.77       886
+       deer       0.89      0.89      0.89       998
+        dog       0.81      0.84      0.82       967
+       frog       0.94      0.88      0.91      1068
+      horse       0.91      0.91      0.91       995
+       ship       0.93      0.93      0.93       998
+      truck       0.93      0.93      0.93      1001
+
+avg / total       0.88      0.88      0.88     10000
+
+Test Accuracy of the model on the 10000 test images: 88.18 %
+Predicted (row) labels vs targets (column)
+902 	7 	41 	17 	4 	9 	6 	11 	34 	11 	
+14 	956 	2 	3 	1 	2 	2 	3 	11 	44 	
+26 	0 	834 	45 	34 	21 	21 	11 	12 	3 	
+9 	0 	19 	729 	19 	82 	9 	14 	3 	2 	
+3 	2 	30 	28 	885 	23 	8 	19 	0 	0 	
+0 	0 	24 	94 	11 	810 	4 	23 	1 	0 	
+2 	0 	27 	50 	24 	18 	940 	4 	1 	2 	
+1 	1 	14 	17 	16 	29 	7 	907 	0 	3 	
+31 	5 	6 	10 	5 	3 	2 	2 	927 	7 	
+12 	29 	3 	7 	1 	3 	1 	6 	11 	928 	

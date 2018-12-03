@@ -1,0 +1,112 @@
+ConvNet(
+  (layer1): Sequential(
+    (0): Conv2d(3, 96, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer2): Sequential(
+    (0): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer3): Sequential(
+    (0): Conv2d(96, 192, kernel_size=(3, 3), stride=(2, 2))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer4): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer5): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer6): Sequential(
+    (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(2, 2))
+    (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (fc): Linear(in_features=3072, out_features=10, bias=True)
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.1
+    weight_decay: 0
+)
+Learning rate: 0.1
+Epoch [1/1], Step [50/450], Loss: 2.2714, Accuracy:0.15
+Epoch [1/1], Step [100/450], Loss: 1.9823, Accuracy:0.18
+Epoch [1/1], Step [150/450], Loss: 1.8292, Accuracy:0.21
+Epoch [1/1], Step [200/450], Loss: 1.9287, Accuracy:0.23
+Epoch [1/1], Step [250/450], Loss: 1.9306, Accuracy:0.24
+Epoch [1/1], Step [300/450], Loss: 1.9128, Accuracy:0.26
+Epoch [1/1], Step [350/450], Loss: 1.6842, Accuracy:0.27
+Epoch [1/1], Step [400/450], Loss: 1.6859, Accuracy:0.28
+Epoch [1/1], Step [450/450], Loss: 1.5779, Accuracy:0.29
+TrainingScore:
+             precision    recall  f1-score   support
+
+      plane       0.32      0.27      0.29      5214
+       auto       0.38      0.39      0.38      4301
+       bird       0.16      0.18      0.17      3979
+        cat       0.15      0.21      0.18      3322
+       deer       0.20      0.25      0.22      3527
+        dog       0.19      0.23      0.21      3669
+       frog       0.37      0.31      0.34      5371
+      horse       0.38      0.34      0.36      5021
+       ship       0.45      0.29      0.36      6855
+      truck       0.28      0.34      0.30      3741
+
+avg / total       0.31      0.29      0.29     45000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+      plane       0.34      0.41      0.37       407
+       auto       0.48      0.61      0.54       405
+       bird       0.12      0.34      0.18       180
+        cat       0.25      0.26      0.26       446
+       deer       0.24      0.30      0.26       420
+        dog       0.16      0.31      0.21       262
+       frog       0.44      0.37      0.40       581
+      horse       0.66      0.31      0.42      1062
+       ship       0.70      0.40      0.51       869
+      truck       0.38      0.54      0.45       368
+
+avg / total       0.46      0.38      0.39      5000
+
+Epoch 1 validation accuracy= 0.3772
+TestScore:
+             precision    recall  f1-score   support
+
+      plane       0.35      0.48      0.40       735
+       auto       0.44      0.60      0.51       741
+       bird       0.10      0.33      0.16       315
+        cat       0.24      0.27      0.26       878
+       deer       0.24      0.29      0.27       833
+        dog       0.15      0.31      0.20       480
+       frog       0.51      0.40      0.45      1263
+      horse       0.65      0.30      0.41      2117
+       ship       0.70      0.37      0.48      1894
+      truck       0.37      0.49      0.42       744
+
+avg / total       0.47      0.38      0.39     10000
+
+Test Accuracy of the model on the 10000 test images: 37.55 %
+Predicted (row) labels vs targets (column)
+351 	58 	55 	21 	43 	9 	5 	24 	121 	48 	
+32 	444 	10 	10 	4 	4 	5 	9 	40 	183 	
+43 	7 	103 	33 	45 	35 	13 	17 	15 	4 	
+14 	15 	92 	240 	59 	188 	146 	64 	31 	29 	
+34 	14 	177 	82 	245 	93 	76 	74 	13 	25 	
+13 	10 	62 	97 	39 	151 	30 	49 	11 	18 	
+15 	8 	183 	175 	193 	105 	511 	48 	9 	16 	
+86 	16 	216 	243 	303 	360 	161 	645 	26 	61 	
+388 	277 	79 	64 	47 	37 	22 	31 	699 	250 	
+24 	151 	23 	35 	22 	18 	31 	39 	35 	366 	

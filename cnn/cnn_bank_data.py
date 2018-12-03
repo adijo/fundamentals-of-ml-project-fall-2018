@@ -21,7 +21,7 @@ print("Using device:", device)
 num_epochs = 10
 num_classes = 2
 batch_size = 100
-learning_rate = 0.001
+learning_rate = 0.01
 
 
 #Adapting here to load a CSV dataset in pytorch. I feel like trying to kill a fly with a .50 cal machine gun. 
