@@ -12,6 +12,7 @@ import numpy as np
 from torch.utils.data.sampler import SubsetRandomSampler
 from torch.utils.data import DataLoader, Dataset
 import pandas as pd
+from sklearn.metrics import classification_report
 # Device configuration
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
@@ -21,7 +22,15 @@ print("Using device:", device)
 num_epochs = 10
 num_classes = 2
 batch_size = 100
-learning_rate = 0.01
+learning_rate = 1e-6
+
+target_names=["no", "yes"]
+
+def print_score(which, predicted, labels):
+    print(which + "Score:")
+    print(which + "Score:",file=logfile)
+    print(classification_report(predicted, labels, target_names=target_names))
+    print(classification_report(predicted, labels, target_names=target_names), file=logfile)
 
 
 #Adapting here to load a CSV dataset in pytorch. I feel like trying to kill a fly with a .50 cal machine gun. 
@@ -175,6 +184,11 @@ for epoch in range(num_epochs):
     total = 0
     validation_total = 0
     validation_correct = 0
+    full_train_predicted = []
+    full_train_labels = []
+    full_validation_predicted = []
+    full_validation_labels = []
+
     for i, (images, labels) in enumerate(train_loader):
         images = images.to(device)
         labels = labels.to(device)
@@ -191,12 +205,17 @@ for epoch in range(num_epochs):
         _, predicted = torch.max(outputs.data, 1)
         correct += (predicted == labels).sum().item()
         
+        full_train_predicted+=predicted.cpu().numpy().tolist()
+        full_train_labels+=labels.cpu().numpy().tolist()
+
+
         if (i+1) % (batch_size/2) == 0:
             print ('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}, Accuracy:{:.2f}' 
                    .format(epoch+1, num_epochs, i+1, total_step, loss.item(), correct/total), file=logfile)
             logfile.flush()
             print ('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}, Accuracy:{:.2f}' 
                    .format(epoch+1, num_epochs, i+1, total_step, loss.item(), correct/total))
+    print_score("Training", full_train_predicted, full_train_labels)
     #At the end of the epoch, perform validation.
     with torch.no_grad():
         validation_correct = 0
@@ -208,6 +227,9 @@ for epoch in range(num_epochs):
             _, validation_predicted = torch.max(validation_outputs.data, 1)
             validation_total += validation_labels.size(0)
             validation_correct += (validation_predicted == validation_labels).sum().item()
+            full_validation_predicted+=validation_predicted.cpu().numpy().tolist()
+            full_validation_labels+=validation_labels.cpu().numpy().tolist()
+        print_score("Validation", full_validation_predicted, full_validation_labels)
         print ("Epoch {} validation accuracy= {:.4f}".format(epoch+1, validation_correct/validation_total))
         print ("Epoch {} validation accuracy= {:.4f}".format(epoch+1, validation_correct/validation_total), file=logfile)
             
@@ -220,6 +242,8 @@ confusion_matrix = [[0 for x in range(w)] for y in range(h)]
 with torch.no_grad():
     correct = 0
     total = 0
+    full_test_predicted = []
+    full_test_labels = []
     for images, labels in test_loader:
         images = images.to(device)
         labels = labels.to(device)
@@ -229,11 +253,14 @@ with torch.no_grad():
         correct += (predicted == labels).sum().item()
         predicted = predicted.cpu().numpy().tolist()
         labels = labels.cpu().numpy().tolist()
+
+        full_test_predicted+=predicted
+        full_test_labels+=labels
         #Builds the confusion matrix
         for prediction, target in zip(predicted,labels):
             confusion_matrix[prediction][target]+=1
 
-
+    print_score("Test", full_test_predicted, full_test_labels)
     print('Test Accuracy of the model on the 10000 test images: {} %'.format(100 * correct / total), file=logfile)
     print('Test Accuracy of the model on the 10000 test images: {} %'.format(100 * correct / total))
 

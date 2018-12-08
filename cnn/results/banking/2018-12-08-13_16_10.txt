@@ -1,0 +1,224 @@
+ConvNet(
+  (layer1): Sequential(
+    (0): Conv1d(1, 96, kernel_size=(3,), stride=(1,))
+    (1): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer2): Sequential(
+    (0): Conv1d(96, 96, kernel_size=(3,), stride=(1,))
+    (1): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer3): Sequential(
+    (0): Conv1d(96, 192, kernel_size=(3,), stride=(2,))
+    (1): BatchNorm1d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer4): Sequential(
+    (0): Conv1d(192, 192, kernel_size=(3,), stride=(1,))
+    (1): BatchNorm1d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer5): Sequential(
+    (0): Conv1d(192, 192, kernel_size=(3,), stride=(1,))
+    (1): BatchNorm1d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer6): Sequential(
+    (0): Conv1d(192, 192, kernel_size=(3,), stride=(2,))
+    (1): BatchNorm1d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (fc): Linear(in_features=2112, out_features=2, bias=True)
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.0001
+    weight_decay: 0
+)
+Learning rate: 0.0001
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.99      0.89      0.94     29507
+        yes       0.08      0.53      0.14       493
+
+avg / total       0.98      0.89      0.93     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.98      0.92      0.95      2818
+        yes       0.27      0.67      0.39       132
+
+avg / total       0.95      0.90      0.92      2950
+
+Epoch 1 validation accuracy= 0.9047
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.98      0.92      0.95     28418
+        yes       0.30      0.65      0.41      1582
+
+avg / total       0.94      0.90      0.92     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95      2727
+        yes       0.45      0.65      0.53       223
+
+avg / total       0.93      0.91      0.92      2950
+
+Epoch 2 validation accuracy= 0.9132
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.98      0.92      0.95     28215
+        yes       0.34      0.65      0.45      1785
+
+avg / total       0.94      0.91      0.92     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.96      0.94      0.95      2694
+        yes       0.49      0.62      0.54       256
+
+avg / total       0.92      0.91      0.91      2950
+
+Epoch 3 validation accuracy= 0.9102
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.92      0.95     28003
+        yes       0.38      0.64      0.47      1997
+
+avg / total       0.93      0.91      0.92     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95      2721
+        yes       0.45      0.63      0.52       229
+
+avg / total       0.93      0.91      0.92      2950
+
+Epoch 4 validation accuracy= 0.9105
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.98      0.92      0.95     28126
+        yes       0.36      0.66      0.47      1874
+
+avg / total       0.94      0.91      0.92     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.96      0.94      0.95      2690
+        yes       0.48      0.60      0.53       260
+
+avg / total       0.92      0.91      0.91      2950
+
+Epoch 5 validation accuracy= 0.9068
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95     27946
+        yes       0.39      0.65      0.49      2054
+
+avg / total       0.93      0.91      0.92     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95      2722
+        yes       0.45      0.64      0.52       228
+
+avg / total       0.93      0.91      0.92      2950
+
+Epoch 6 validation accuracy= 0.9108
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95     27889
+        yes       0.41      0.65      0.50      2111
+
+avg / total       0.93      0.91      0.92     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95      2718
+        yes       0.45      0.63      0.53       232
+
+avg / total       0.93      0.91      0.92      2950
+
+Epoch 7 validation accuracy= 0.9108
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95     27818
+        yes       0.41      0.64      0.50      2182
+
+avg / total       0.93      0.91      0.92     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.98      0.93      0.95      2766
+        yes       0.39      0.69      0.50       184
+
+avg / total       0.94      0.91      0.92      2950
+
+Epoch 8 validation accuracy= 0.9136
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95     27704
+        yes       0.43      0.64      0.52      2296
+
+avg / total       0.93      0.91      0.92     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.98      0.92      0.95      2775
+        yes       0.36      0.66      0.46       175
+
+avg / total       0.94      0.91      0.92      2950
+
+Epoch 9 validation accuracy= 0.9092
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95     27787
+        yes       0.42      0.65      0.51      2213
+
+avg / total       0.93      0.91      0.92     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.98      0.92      0.95      2781
+        yes       0.36      0.69      0.47       169
+
+avg / total       0.94      0.91      0.92      2950
+
+Epoch 10 validation accuracy= 0.9112
+TestScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.92      0.95      7703
+        yes       0.35      0.62      0.45       535
+
+avg / total       0.93      0.90      0.91      8238
+
+Test Accuracy of the model on the 10000 test images: 90.19179412478756 %
+Predicted (row) labels vs targets (column)
+7097 	606 	
+202 	333 	

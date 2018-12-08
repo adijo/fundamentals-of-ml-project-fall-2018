@@ -1,0 +1,48 @@
+ConvNet(
+  (layer1): Sequential(
+    (0): Conv1d(1, 96, kernel_size=(3,), stride=(1,))
+    (1): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer2): Sequential(
+    (0): Conv1d(96, 96, kernel_size=(3,), stride=(1,))
+    (1): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer3): Sequential(
+    (0): Conv1d(96, 192, kernel_size=(3,), stride=(2,))
+    (1): BatchNorm1d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer4): Sequential(
+    (0): Conv1d(192, 192, kernel_size=(3,), stride=(1,))
+    (1): BatchNorm1d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer5): Sequential(
+    (0): Conv1d(192, 192, kernel_size=(3,), stride=(1,))
+    (1): BatchNorm1d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer6): Sequential(
+    (0): Conv1d(192, 192, kernel_size=(3,), stride=(2,))
+    (1): BatchNorm1d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (fc): Linear(in_features=2112, out_features=2, bias=True)
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.0001
+    weight_decay: 0
+)
+Learning rate: 0.0001
+Epoch [1/10], Step [50/300], Loss: 0.2522, Accuracy:0.89
+Epoch [1/10], Step [100/300], Loss: 0.1908, Accuracy:0.89
+Epoch [1/10], Step [150/300], Loss: 0.3206, Accuracy:0.90
+Epoch [1/10], Step [200/300], Loss: 0.2093, Accuracy:0.90
+Epoch [1/10], Step [250/300], Loss: 0.2809, Accuracy:0.90
+Epoch [1/10], Step [300/300], Loss: 0.1856, Accuracy:0.90

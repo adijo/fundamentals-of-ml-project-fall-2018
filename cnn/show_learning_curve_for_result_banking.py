@@ -11,6 +11,7 @@ else:
     for log_filename in sys.argv[1:]:
         filelist += glob.glob(log_filename)
 
+print(filelist)
 #Call the script using "python show_learning_curve_for_result.py results/2018-11-25-12_51_21.txt"
 
 regex = re.compile("Epoch \[(\d+)/(\d+)\], Step \[(\d+)/(\d+)\], Loss: (\d+\.\d+), Accuracy:(\d+\.\d+)")

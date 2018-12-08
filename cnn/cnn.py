@@ -15,7 +15,7 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 print("Using device:", device)
 # Hyper parameters
-num_epochs = 100
+num_epochs = 50
 num_classes = 10
 batch_size = 100
 learning_rate = 0.001
@@ -38,7 +38,7 @@ test_dataset = torchvision.datasets.CIFAR10(root='../../data/',
                                           transform=transforms.ToTensor())
 
 
-n_train = 45000
+n_train = 10000
 indices = list(range(len(train_dataset)))
 random.shuffle(indices)
 

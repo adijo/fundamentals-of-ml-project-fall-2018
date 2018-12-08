@@ -1,0 +1,284 @@
+ConvNet(
+  (layer1): Sequential(
+    (0): Conv1d(1, 96, kernel_size=(3,), stride=(1,))
+    (1): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer2): Sequential(
+    (0): Conv1d(96, 96, kernel_size=(3,), stride=(1,))
+    (1): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer3): Sequential(
+    (0): Conv1d(96, 192, kernel_size=(3,), stride=(2,))
+    (1): BatchNorm1d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer4): Sequential(
+    (0): Conv1d(192, 192, kernel_size=(3,), stride=(1,))
+    (1): BatchNorm1d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer5): Sequential(
+    (0): Conv1d(192, 192, kernel_size=(3,), stride=(1,))
+    (1): BatchNorm1d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer6): Sequential(
+    (0): Conv1d(192, 192, kernel_size=(3,), stride=(2,))
+    (1): BatchNorm1d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (fc): Linear(in_features=2112, out_features=2, bias=True)
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+Learning rate: 0.001
+Epoch [1/10], Step [50/300], Loss: 0.2333, Accuracy:0.89
+Epoch [1/10], Step [100/300], Loss: 0.2485, Accuracy:0.90
+Epoch [1/10], Step [150/300], Loss: 0.2177, Accuracy:0.90
+Epoch [1/10], Step [200/300], Loss: 0.2162, Accuracy:0.90
+Epoch [1/10], Step [250/300], Loss: 0.3671, Accuracy:0.90
+Epoch [1/10], Step [300/300], Loss: 0.2025, Accuracy:0.90
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.98      0.91      0.95     28549
+        yes       0.27      0.62      0.38      1451
+
+avg / total       0.95      0.90      0.92     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95      2730
+        yes       0.42      0.65      0.51       220
+
+avg / total       0.93      0.91      0.92      2950
+
+Epoch 1 validation accuracy= 0.9075
+Epoch [2/10], Step [50/300], Loss: 0.2374, Accuracy:0.90
+Epoch [2/10], Step [100/300], Loss: 0.2018, Accuracy:0.90
+Epoch [2/10], Step [150/300], Loss: 0.2673, Accuracy:0.91
+Epoch [2/10], Step [200/300], Loss: 0.3246, Accuracy:0.91
+Epoch [2/10], Step [250/300], Loss: 0.2546, Accuracy:0.91
+Epoch [2/10], Step [300/300], Loss: 0.1900, Accuracy:0.90
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95     27864
+        yes       0.39      0.62      0.48      2136
+
+avg / total       0.93      0.90      0.91     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.98      0.92      0.95      2784
+        yes       0.32      0.66      0.43       166
+
+avg / total       0.94      0.90      0.92      2950
+
+Epoch 2 validation accuracy= 0.9020
+Epoch [3/10], Step [50/300], Loss: 0.2052, Accuracy:0.91
+Epoch [3/10], Step [100/300], Loss: 0.2475, Accuracy:0.91
+Epoch [3/10], Step [150/300], Loss: 0.2191, Accuracy:0.91
+Epoch [3/10], Step [200/300], Loss: 0.1837, Accuracy:0.91
+Epoch [3/10], Step [250/300], Loss: 0.2064, Accuracy:0.91
+Epoch [3/10], Step [300/300], Loss: 0.2000, Accuracy:0.91
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95     27768
+        yes       0.42      0.63      0.50      2232
+
+avg / total       0.93      0.91      0.92     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.98      0.91      0.95      2803
+        yes       0.29      0.67      0.41       147
+
+avg / total       0.95      0.90      0.92      2950
+
+Epoch 3 validation accuracy= 0.9017
+Epoch [4/10], Step [50/300], Loss: 0.2190, Accuracy:0.91
+Epoch [4/10], Step [100/300], Loss: 0.1128, Accuracy:0.91
+Epoch [4/10], Step [150/300], Loss: 0.2270, Accuracy:0.91
+Epoch [4/10], Step [200/300], Loss: 0.2134, Accuracy:0.91
+Epoch [4/10], Step [250/300], Loss: 0.2495, Accuracy:0.91
+Epoch [4/10], Step [300/300], Loss: 0.1437, Accuracy:0.91
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95     27705
+        yes       0.43      0.63      0.51      2295
+
+avg / total       0.93      0.91      0.92     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95      2723
+        yes       0.43      0.65      0.52       227
+
+avg / total       0.93      0.91      0.92      2950
+
+Epoch 4 validation accuracy= 0.9078
+Epoch [5/10], Step [50/300], Loss: 0.2943, Accuracy:0.91
+Epoch [5/10], Step [100/300], Loss: 0.1469, Accuracy:0.91
+Epoch [5/10], Step [150/300], Loss: 0.2335, Accuracy:0.91
+Epoch [5/10], Step [200/300], Loss: 0.1781, Accuracy:0.91
+Epoch [5/10], Step [250/300], Loss: 0.1689, Accuracy:0.91
+Epoch [5/10], Step [300/300], Loss: 0.1966, Accuracy:0.91
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95     27729
+        yes       0.43      0.63      0.51      2271
+
+avg / total       0.93      0.91      0.92     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.96      0.93      0.95      2686
+        yes       0.49      0.63      0.55       264
+
+avg / total       0.92      0.91      0.91      2950
+
+Epoch 5 validation accuracy= 0.9075
+Epoch [6/10], Step [50/300], Loss: 0.2576, Accuracy:0.91
+Epoch [6/10], Step [100/300], Loss: 0.2605, Accuracy:0.91
+Epoch [6/10], Step [150/300], Loss: 0.1491, Accuracy:0.91
+Epoch [6/10], Step [200/300], Loss: 0.2109, Accuracy:0.91
+Epoch [6/10], Step [250/300], Loss: 0.1322, Accuracy:0.91
+Epoch [6/10], Step [300/300], Loss: 0.1127, Accuracy:0.91
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95     27617
+        yes       0.45      0.64      0.53      2383
+
+avg / total       0.93      0.91      0.92     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.95      0.95      0.95      2615
+        yes       0.58      0.59      0.59       335
+
+avg / total       0.91      0.91      0.91      2950
+
+Epoch 6 validation accuracy= 0.9058
+Epoch [7/10], Step [50/300], Loss: 0.2578, Accuracy:0.91
+Epoch [7/10], Step [100/300], Loss: 0.1024, Accuracy:0.91
+Epoch [7/10], Step [150/300], Loss: 0.2291, Accuracy:0.91
+Epoch [7/10], Step [200/300], Loss: 0.2082, Accuracy:0.91
+Epoch [7/10], Step [250/300], Loss: 0.1881, Accuracy:0.91
+Epoch [7/10], Step [300/300], Loss: 0.2239, Accuracy:0.91
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95     27572
+        yes       0.46      0.63      0.53      2428
+
+avg / total       0.92      0.91      0.92     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95      2721
+        yes       0.43      0.65      0.52       229
+
+avg / total       0.93      0.91      0.92      2950
+
+Epoch 7 validation accuracy= 0.9071
+Epoch [8/10], Step [50/300], Loss: 0.0939, Accuracy:0.91
+Epoch [8/10], Step [100/300], Loss: 0.1532, Accuracy:0.91
+Epoch [8/10], Step [150/300], Loss: 0.1464, Accuracy:0.91
+Epoch [8/10], Step [200/300], Loss: 0.2475, Accuracy:0.91
+Epoch [8/10], Step [250/300], Loss: 0.2959, Accuracy:0.91
+Epoch [8/10], Step [300/300], Loss: 0.1730, Accuracy:0.91
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95     27634
+        yes       0.44      0.62      0.52      2366
+
+avg / total       0.92      0.91      0.91     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95      2718
+        yes       0.43      0.63      0.51       232
+
+avg / total       0.93      0.91      0.91      2950
+
+Epoch 8 validation accuracy= 0.9054
+Epoch [9/10], Step [50/300], Loss: 0.1702, Accuracy:0.91
+Epoch [9/10], Step [100/300], Loss: 0.1125, Accuracy:0.91
+Epoch [9/10], Step [150/300], Loss: 0.2636, Accuracy:0.91
+Epoch [9/10], Step [200/300], Loss: 0.2166, Accuracy:0.91
+Epoch [9/10], Step [250/300], Loss: 0.2223, Accuracy:0.91
+Epoch [9/10], Step [300/300], Loss: 0.2161, Accuracy:0.91
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95     27575
+        yes       0.45      0.63      0.52      2425
+
+avg / total       0.92      0.91      0.91     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.98      0.92      0.95      2774
+        yes       0.34      0.66      0.45       176
+
+avg / total       0.94      0.90      0.92      2950
+
+Epoch 9 validation accuracy= 0.9041
+Epoch [10/10], Step [50/300], Loss: 0.1469, Accuracy:0.91
+Epoch [10/10], Step [100/300], Loss: 0.1157, Accuracy:0.91
+Epoch [10/10], Step [150/300], Loss: 0.2246, Accuracy:0.91
+Epoch [10/10], Step [200/300], Loss: 0.1881, Accuracy:0.91
+Epoch [10/10], Step [250/300], Loss: 0.1748, Accuracy:0.91
+Epoch [10/10], Step [300/300], Loss: 0.2125, Accuracy:0.91
+TrainingScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95     27591
+        yes       0.46      0.64      0.53      2409
+
+avg / total       0.93      0.91      0.92     30000
+
+ValidationScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95      2738
+        yes       0.41      0.66      0.50       212
+
+avg / total       0.93      0.91      0.92      2950
+
+Epoch 10 validation accuracy= 0.9068
+TestScore:
+             precision    recall  f1-score   support
+
+         no       0.97      0.93      0.95      7650
+        yes       0.40      0.64      0.49       588
+
+avg / total       0.93      0.91      0.92      8238
+
+Test Accuracy of the model on the 10000 test images: 90.54382131585336 %
+Predicted (row) labels vs targets (column)
+7085 	565 	
+214 	374 	
