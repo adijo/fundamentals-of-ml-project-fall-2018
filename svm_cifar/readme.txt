@@ -1,0 +1,2 @@
+The CIFAR-10 data is around 170MB and can be downloaded by running the command cifar10.maybe_download_and_extract() from cifar10.py
+Once the data is implemented, svm_on_cifar.py can be ran to load and pre-process the data, train and test the algorithm and plot the confusion matrix.
